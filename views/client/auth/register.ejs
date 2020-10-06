@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link rel="stylesheet" href="/css/authentication.css" />
+    <%- include("../../includes/bootstrap.ejs") %>
+  </head>
+  <body>
+    <form class="register-form" method="POST" action="/register">
+      <input
+        required
+        type="email"
+        class="form-control register-form__email"
+        placeholder="Email"
+        name="email"
+      />
+      <p class="register-form__error-message"><%= emailErr %></p>
+      <input
+        required
+        type="email"
+        class="form-control register-form__email"
+        placeholder="Confirm Email"
+        name="confirmEmail"
+      />
+      <p class="register-form__error-message"><%= emailErr %></p>
+      <input
+        required
+        type="password"
+        class="form-control register-form__password"
+        placeholder="Create a Password"
+        name="password"
+      />
+      <input
+        required
+        type="password"
+        class="form-control register-form__confirm-password"
+        placeholder="Confirm Password"
+        name="confirmPassword"
+      />
+      <p class="register-form__error-message"><%= passErr %></p>
+      <button type="submit" class="btn btn-info register-form__submit">
+        Register
+      </button>
+      <p class="register-form__form-caption">
+        Already have an account? Click
+        <a id="register-form__form-caption-link" href="/login">Here</a> to
+        login.
+      </p>
+    </form>
+  </body>
+</html>

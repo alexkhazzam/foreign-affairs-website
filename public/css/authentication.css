@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif !important;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(126, 23, 0, 0.85),
+    rgba(215, 31, 11, 0.85)
+  );
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+
+.register-form {
+  text-align: left;
+  width: 30%;
+  margin-top: 300px !important;
+  margin: auto;
+  padding: 15px;
+  padding-top: 30px;
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 1px 1px 5px rgba(32, 32, 32, 0.87);
+}
+
+.register-form__email,
+.register-form__username,
+.register-form__password,
+.register-form__confirm-password {
+  font-size: 0.9rem !important;
+  width: 90% !important;
+  margin: auto !important;
+  margin-top: 18px !important;
+  border-radius: 0px !important;
+  background-color: #f1f1f145 !important;
+}
+
+.register-form__submit,
+.register-form__password-caption {
+  margin: 18px;
+  margin-left: 5%;
+}
+
+.register-form__password-caption {
+  display: none;
+  color: rgb(140, 1, 1);
+  margin-top: 2px;
+  font-size: 0.8rem;
+}
+
+.register-form__submit {
+  width: 90% !important;
+  background-color: rgb(1, 155, 1) !important;
+  text-align: center !important;
+}
+
+.register-form__submit:hover {
+  background-color: green !important;
+}
+
+.register-form__form-caption {
+  font-size: 0.9rem;
+  margin: auto;
+  width: 90%;
+  text-align: center;
+}
+
+#register-form__form-caption-link {
+  color: rgb(2, 2, 152);
+  text-decoration: underline;
+}
+
+.register-form__error-message {
+  color: rgb(140, 1, 1);
+  font-size: 0.9rem;
+  margin-left: 5%;
+  margin-top: 2px;
+}
