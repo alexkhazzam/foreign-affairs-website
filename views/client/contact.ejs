@@ -1,0 +1,47 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/contact.css">
+    <script src="../../public/js/client/contact.js" defer></script>
+    <%- include("../includes/bootstrap.ejs") %>
+  </head>
+  <body>
+      <%- include("../includes/navbar.ejs") %>
+      <main class="contact-form">
+        <form action="/contact" method="POST">
+          <div class="form-group contact-form__section">
+            <label for="exampleInputPassword1" class="contact-form__label" >Email Address</label>
+            <input type="email" class="form-control contact-form__input" id="exampleInputPassword1" name="email" required/>
+          </div>
+          <div class="form-group contact-form__section"">
+            <label for="exampleInputPassword1" class="contact-form__label">First Name</label>
+            <input type="text" class="form-control contact-form__input" id="exampleInputPassword1" name="firstName" required/>
+          </div>
+          <div class="form-group contact-form__section"">
+            <label for="exampleInputPassword1" class="contact-form__label">Last Name</label>
+            <input type="text" class="form-control contact-form__input" id="exampleInputPassword1" name="lastName" required/>
+          </div>
+          <div class="form-group contact-form__section"">
+            <label for="exampleFormControlTextarea1" class="contact-form__label">Message</label>
+            <textarea
+              class="form-control contact-form__input"
+              id="exampleFormControlTextarea1"
+              rows="3" name="message" required
+            ></textarea>
+          </div>
+          <div class="spinner-border text-info contact-form__spinner-wrapper" role="status">
+            <span class="sr-only">Loading...</span>
+          </div>
+          <% if (emailMsg) { %>
+            <div class="alert alert-info contact-form__email-sent" role="alert">
+              Email was sent! You should hear back from us soon.
+            </div>
+            <% } else { %>
+              <button type="btn" class="btn btn-info contact-form__submit">Submit</button>
+              <% } %>
+        </form>
+      </main>
+  </body>
+</html>

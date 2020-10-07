@@ -21,15 +21,17 @@ body {
 }
 
 .register-form {
+  position: absolute;
   text-align: left;
-  width: 30%;
-  margin-top: 300px !important;
-  margin: auto;
+  width: 60%;
+  top: 25%;
+  left: 20%;
   padding: 15px;
   padding-top: 30px;
   background-color: white;
   border-radius: 0.25rem;
   box-shadow: 1px 1px 5px rgba(32, 32, 32, 0.87);
+  animation: 1s register-form;
 }
 
 .register-form__email,
@@ -84,4 +86,24 @@ body {
   font-size: 0.9rem;
   margin-left: 5%;
   margin-top: 2px;
+}
+
+.register-form__email-sent {
+  width: 90%;
+  font-size: 0.9rem;
+  margin-left: 5%;
+}
+
+.register-form__check-icon {
+  margin-left: 5px;
+}
+
+@keyframes register-form {
+  from {
+    top: 100%;
+  }
+
+  to {
+    top: 25%;
+  }
 }

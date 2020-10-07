@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif !important;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(125, 213, 111, 0.85),
+    rgba(40, 180, 135, 0.85)
+  );
+  background-repeat: no-repeat;
+  height: 100%;
+  border: 2px solid purple;
+  width: 100%;
+}
+
+.contact-form {
+  position: absolute !important;
+  border-radius: 0.25rem;
+  width: 60%;
+  padding: 20px;
+  top: 25%;
+  margin-left: 20%;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px 5px rgba(32, 32, 32, 0.87);
+  animation: 1s contact-form;
+}
+
+.contact-form__section {
+  margin: auto;
+  width: 90%;
+}
+
+.contact-form__label {
+  color: #495057 !important;
+}
+
+.contact-form__section input,
+.contact-form__section textarea {
+  border-radius: 0px !important;
+  background-color: #f1f1f145 !important;
+}
+
+.contact-form__email-sent {
+  width: 90% !important;
+  margin: auto !important;
+}
+
+.contact-form__submit {
+  margin-left: 5% !important;
+  margin-top: 15px !important;
+}
+
+.contact-form__spinner-wrapper {
+  display: none !important;
+  position: absolute !important;
+  top: 88.5%;
+  margin-left: 5% !important;
+}
+
+@keyframes contact-form {
+  from {
+    top: 100%;
+  }
+
+  to {
+    top: 25%;
+  }
+}

@@ -1,12 +1,18 @@
 const registerModel = require('../../../models/auth/registerModel');
+const confirmationEmail = require('../../../models/auth/confirmationEmail');
 
 let passErrMsg;
 let emailErrMsg;
+let emailSentMsg;
+let removeLogIn = false;
 
 exports.getRegister = (req, res, next) => {
   res.render('client/auth/register', {
     emailErr: emailErrMsg,
     passErr: passErrMsg,
+    emailSent: emailSentMsg,
+    removeLogin: removeLogIn,
+    loadingSpinner: registerModel.checkForm,
   });
 };
 
@@ -40,6 +46,22 @@ exports.postRegister = (req, res, next) => {
     emailErrMsg = 'Email must end in "student.gn.k12.ny.us"';
     res.redirect('/register');
   }
+  const sendConfEmail = new confirmationEmail.confirmationEmail(
+    studentEmail.email
+  );
+  sendConfEmail
+    .sendMail()
+    .then((data) => {
+      if (data) {
+        emailSentMsg =
+          'A confirmation link has been sent to your email. Click on it to activate your account!';
+        removeLogIn = true;
+        res.redirect('/register');
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+    });
 };
 
 exports.postLogin = (req, res, next) => {};

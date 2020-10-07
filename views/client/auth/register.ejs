@@ -8,6 +8,7 @@
     <%- include("../../includes/bootstrap.ejs") %>
   </head>
   <body>
+    <%- include("../../includes/navbar.ejs") %>
     <form class="register-form" method="POST" action="/register">
       <input
         required
@@ -40,6 +41,7 @@
         name="confirmPassword"
       />
       <p class="register-form__error-message"><%= passErr %></p>
+      <% if (!removeLogin) { %>
       <button type="submit" class="btn btn-info register-form__submit">
         Register
       </button>
@@ -48,6 +50,16 @@
         <a id="register-form__form-caption-link" href="/login">Here</a> to
         login.
       </p>
+      <% } else { %>
+      <p class="register-form__email-sent">
+        <%= emailSent %><img
+          class="register-form__check-icon"
+          src="/assets/icons/registerPage/green-check.png"
+          height="23"
+          width="23"
+        />
+      </p>
+      <% } %>
     </form>
   </body>
 </html>
