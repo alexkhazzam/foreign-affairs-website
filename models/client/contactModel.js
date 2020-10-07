@@ -35,7 +35,7 @@ exports.contactModel = class HandleForm {
     let mailOptions = {
       from: `${this.firstname} ${this.lastname}`,
       to: 'akhazzam1@student.gn.k12.ny.us',
-      subject: `${this.firstname} ${this.lastname} sent an email from the website!`,
+      subject: `${this.email} sent an email from the website!`,
       text: this.message,
     };
     let response = await this.wrappedSendMail(mailOptions);
