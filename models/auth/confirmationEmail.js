@@ -32,6 +32,8 @@ exports.confirmationEmail = class SendEmail {
       from: 'nhsforeignaffairs@gmail.com',
       to: this.email,
       subject: 'Email Confirmation',
+      text:
+        'click this link to confirm your email: www.possibleHashAndCrpyographyThatWillTakeForeverToDO.com',
     };
     let response = await this.wrappedSendMail(mailOptions);
     return response;

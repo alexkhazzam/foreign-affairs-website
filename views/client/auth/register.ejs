@@ -12,19 +12,24 @@
     <form class="register-form" method="POST" action="/register">
       <input
         required
-        type="email"
-        class="form-control register-form__email"
-        placeholder="Email"
-        name="email"
+        type="text"
+        class="form-control register-form__username"
+        placeholder="Create a Username"
+        name="createUsername"
       />
-      <p class="register-form__error-message"><%= emailErr %></p>
+      <p class="register-form__input-caption">
+        This is what people will see you as.
+      </p>
       <input
         required
         type="email"
         class="form-control register-form__email"
         placeholder="Confirm Email"
-        name="confirmEmail"
+        name="email"
       />
+      <p class="register-form__input-caption">
+        We will not share you're email with anyone else.
+      </p>
       <p class="register-form__error-message"><%= emailErr %></p>
       <input
         required

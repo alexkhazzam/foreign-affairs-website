@@ -21,13 +21,11 @@ body {
 }
 
 .register-form {
-  position: absolute;
-  text-align: left;
   width: 60%;
-  top: 25%;
-  left: 20%;
   padding: 15px;
   padding-top: 30px;
+  margin: auto;
+  margin-top: 15%;
   background-color: white;
   border-radius: 0.25rem;
   box-shadow: 1px 1px 5px rgba(32, 32, 32, 0.87);
@@ -88,6 +86,20 @@ body {
   margin-top: 2px;
 }
 
+.register-page__writable-text {
+  width: 60%;
+  text-align: left;
+  font-size: 1.8rem;
+  margin: 10% auto 2% auto;
+}
+
+.register-form__input-caption {
+  font-size: 0.8rem;
+  width: 90%;
+  margin: auto;
+  text-align: left;
+}
+
 .register-form__email-sent {
   width: 90%;
   font-size: 0.9rem;
@@ -100,10 +112,10 @@ body {
 
 @keyframes register-form {
   from {
-    top: 100%;
+    margin-top: 100%;
   }
 
   to {
-    top: 25%;
+    margin-top: 15%;
   }
 }

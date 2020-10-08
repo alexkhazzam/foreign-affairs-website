@@ -1,7 +1,6 @@
 exports.checkForm = class {
-  constructor(email, confirmEmail, password, confirmPassword) {
+  constructor(email, password, confirmPassword) {
     this.email = email;
-    this.confirmEmail = confirmEmail;
     this.password = password;
     this.confirmPassword = confirmPassword;
   }
@@ -28,12 +27,6 @@ exports.checkForm = class {
   }
 
   credentialsMatch() {
-    if (this.email !== this.confirmEmail) {
-      return {
-        errMsg: 'Emails must match.',
-        subject: 'email',
-      };
-    }
     if (this.password !== this.confirmPassword) {
       return {
         errMsg: 'Passwords must match.',

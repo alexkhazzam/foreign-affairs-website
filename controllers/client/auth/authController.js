@@ -23,7 +23,6 @@ exports.getLogin = (req, res, next) => {
 exports.postRegister = (req, res, next) => {
   const checkForm = new registerModel.checkForm(
     req.body.email,
-    req.body.confirmEmail,
     req.body.password,
     req.body.confirmPassword
   );
