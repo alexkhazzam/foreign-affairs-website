@@ -7,11 +7,16 @@ let emailSentMsg;
 let removeLogIn = false;
 
 exports.getRegister = (req, res, next) => {
+  let timer = setTimeout(() => {
+    return true;
+  }, 3000);
   res.render('client/auth/register', {
     emailErr: emailErrMsg,
     passErr: passErrMsg,
     emailSent: emailSentMsg,
     removeLogin: removeLogIn,
+    blob: 'himyname',
+    mike: timer,
     loadingSpinner: registerModel.checkForm,
   });
 };
@@ -23,6 +28,7 @@ exports.getLogin = (req, res, next) => {
 exports.postRegister = (req, res, next) => {
   const checkForm = new registerModel.checkForm(
     req.body.email,
+    req.body.confirmEmail,
     req.body.password,
     req.body.confirmPassword
   );
