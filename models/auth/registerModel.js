@@ -7,14 +7,14 @@ exports.checkForm = class {
   }
 
   checkStudentEmail() {
-    const emailBody = [];
+    this.emailBody = [];
     for (let i = 0; i <= this.email.length; i++) {
-      emailBody.push(this.email.charAt(i));
+      this.emailBody.push(this.email.charAt(i));
     }
 
     let parsedString = this.email.slice(
-      emailBody.indexOf('@') + 1,
-      emailBody.length
+      this.emailBody.indexOf('@') + 1,
+      this.emailBody.length
     );
     if (parsedString !== 'student.gn.k12.ny.us') {
       return {
@@ -28,28 +28,36 @@ exports.checkForm = class {
   }
 
   credentialsMatch() {
+    let passwordLength = 0;
+    let equalSign = false;
+    for (let i = 0; i <= this.password.length; i++) {
+      passwordLength++;
+      if (this.password.charAt(i) === '=') {
+        equalSign = true;
+      }
+    }
     if (this.password !== this.confirmPassword) {
-      console.log(this.password, this.confirmPassword);
-      console.log('not =');
       return {
-        errMsg: 'Passwords must match.',
-        subject: 'password',
+        subject: 'match',
       };
-    }
-    if (!/\d/.test(this.password)) {
-      console.log('number');
+    } else if (equalSign) {
       return {
-        errMsg: 'Password must include a number.',
-        subject: 'password',
+        subject: 'symbols',
       };
-    }
-    if (!/[a-z]/.test(this.password)) {
-      console.log('capital');
+    } else if (passwordLength <= 6) {
       return {
-        errMsg: 'Password must include a capital letter.',
-        subject: 'password',
+        subject: '6',
       };
+    } else if (passwordLength >= 30) {
+      return {
+        subject: '30',
+      };
+    } else if (!/\d/.test(this.password)) {
+      return {
+        subject: 'number',
+      };
+    } else {
+      return {};
     }
-    return {};
   }
 };

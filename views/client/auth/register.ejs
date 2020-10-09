@@ -17,7 +17,7 @@
         name="email"
       />
       <p class="register-form__error-message">
-        <% if (emailStatus) { %> Must have a Great Neck Public School email
+        <% if (queryEmail) { %> Must have a Great Neck Public School email
         address. <% } %>
       </p>
       <input
@@ -42,21 +42,25 @@
         name="confirmPassword"
       />
       <p class="register-form__error-message">
-        <% if (!queryPasswordLength) { %> <% } %> <% if (!queryPasswordMatch) {
-        %> <% } %> <% if (!queryPasswordUpper) { %> <% } %> <% if
-        (!queryPasswordNumber) { %> <% } %>
+        <% if (!accountCreated) { %> <% if (queryLength) { %> Password must be
+        at least 7 characters. <% } else if (querySymbol) { %> Password must not
+        include symbols. <% } else if (queryMatch) { %> Passwords must match. <%
+        } else if (queryCapital) { %> Password must include an upper case
+        character. <% } else if (queryNumber) { %> Password must include a
+        number. <% } else if (queryMaxLimit) { %> Password cannot not exceed 30
+        characters. <% } %><% } %>
       </p>
-      <% if (!queryRegister) { %>
-      <button type="submit" class="btn btn-info register-form__submit">
-        Register
-      </button>
-      <% } else { %>
+      <% if (emailSent) { %>
       <div class="alert alert-success register-form__email-sent" role="alert">
         <p class="" role="alert">
           Registration approved! Click the link that was sent to you to confirm
-          your email.
+          your email address.
         </p>
       </div>
+      <% } else { %>
+      <button type="submit" class="btn btn-info register-form__submit">
+        Register
+      </button>
       <% } %>
       <p class="register-form__form-caption">
         Already have an account? Click
