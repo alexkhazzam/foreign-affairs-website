@@ -65,7 +65,7 @@ body {
   margin-left: 5% !important;
 }
 
-@keyframes contact-form {
+/* @keyframes contact-form {
   from {
     top: 100%;
   }
@@ -73,4 +73,4 @@ body {
   to {
     top: 25%;
   }
-}
+} */

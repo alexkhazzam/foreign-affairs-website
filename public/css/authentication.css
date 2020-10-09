@@ -16,16 +16,15 @@ body {
     rgba(40, 180, 135, 0.85)
   );
   background-repeat: no-repeat;
-  height: 100%;
   width: 100%;
 }
 
 .register-form {
-  width: 60%;
+  width: 65%;
   padding: 15px;
   padding-top: 30px;
   margin: auto;
-  margin-top: 15%;
+  margin-top: 30%;
   background-color: white;
   border-radius: 0.25rem;
   box-shadow: 1px 1px 5px rgba(32, 32, 32, 0.87);
@@ -81,9 +80,9 @@ body {
 
 .register-form__error-message {
   color: rgb(140, 1, 1);
-  font-size: 0.9rem;
+  font-size: 0.8rem;
+  margin-top: 0px !important;
   margin-left: 5%;
-  margin-top: 2px;
 }
 
 .register-page__writable-text {
@@ -106,11 +105,16 @@ body {
   margin-left: 5%;
 }
 
-.register-form__check-icon {
-  margin-left: 5px;
+.register-form__email-sent p {
+  margin: 0px !important;
 }
 
-@keyframes register-form {
+.register-form__check-icon {
+  margin-left: 5px !important;
+  margin-bottom: 3px !important;
+}
+
+/* @keyframes register-form {
   from {
     margin-top: 100%;
   }
@@ -118,4 +122,4 @@ body {
   to {
     margin-top: 15%;
   }
-}
+} */

@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap');
+
+body {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.staff__collapsible-card {
+  width: 80% !important;
+  margin: auto !important;
+}
+
+.collapsible-card-1 {
+  margin-top: 5% !important;
+}
+
+.staff-title__section {
+  width: 80% !important;
+  margin: auto !important;
+  margin-bottom: 5px !important;
+  letter-spacing: 1px !important;
+}
+
+.staff-title__section:first-of-type {
+  margin-top: 10% !important;
+}
+
+.staff-title__span {
+  font-weight: bold;
+}

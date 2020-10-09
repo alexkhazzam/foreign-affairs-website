@@ -8,9 +8,18 @@
     <%- include("../../includes/bootstrap.ejs") %>
   </head>
   <body>
-    <%- include("../../includes/navbar.ejs") %> <% for (let i = 0; i <=
-    blob.length; i++) { %> <% console.log(mike) %> <% } %>
     <form class="register-form" method="POST" action="/register">
+      <input
+        required
+        type="email"
+        class="form-control register-form__email"
+        placeholder="Email"
+        name="email"
+      />
+      <p class="register-form__error-message">
+        <% if (emailStatus) { %> Must have a Great Neck Public School email
+        address. <% } %>
+      </p>
       <input
         required
         type="text"
@@ -18,20 +27,6 @@
         placeholder="Create a Username"
         name="createUsername"
       />
-      <p class="register-form__input-caption">
-        This is what people will see you as.
-      </p>
-      <input
-        required
-        type="email"
-        class="form-control register-form__email"
-        placeholder="Confirm Email"
-        name="email"
-      />
-      <p class="register-form__input-caption">
-        We will not share you're email with anyone else.
-      </p>
-      <p class="register-form__error-message"><%= emailErr %></p>
       <input
         required
         type="password"
@@ -46,26 +41,28 @@
         placeholder="Confirm Password"
         name="confirmPassword"
       />
-      <p class="register-form__error-message"><%= passErr %></p>
-      <% if (!removeLogin) { %>
+      <p class="register-form__error-message">
+        <% if (!queryPasswordLength) { %> <% } %> <% if (!queryPasswordMatch) {
+        %> <% } %> <% if (!queryPasswordUpper) { %> <% } %> <% if
+        (!queryPasswordNumber) { %> <% } %>
+      </p>
+      <% if (!queryRegister) { %>
       <button type="submit" class="btn btn-info register-form__submit">
         Register
       </button>
+      <% } else { %>
+      <div class="alert alert-success register-form__email-sent" role="alert">
+        <p class="" role="alert">
+          Registration approved! Click the link that was sent to you to confirm
+          your email.
+        </p>
+      </div>
+      <% } %>
       <p class="register-form__form-caption">
         Already have an account? Click
         <a id="register-form__form-caption-link" href="/login">Here</a> to
         login.
       </p>
-      <% } else { %>
-      <p class="register-form__email-sent">
-        <%= emailSent %><img
-          class="register-form__check-icon"
-          src="/assets/icons/registerPage/green-check.png"
-          height="23"
-          width="23"
-        />
-      </p>
-      <% } %>
     </form>
   </body>
 </html>
