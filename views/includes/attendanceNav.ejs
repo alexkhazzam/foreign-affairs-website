@@ -1,0 +1,22 @@
+<link rel="stylesheet" href="/css/attendance.css" />
+<div class="year-alert__wrapper">
+  <div class="alert alert-primary bootstrap-year-alert" role="alert">
+    Year: <%= blob %>
+  </div>
+</div>
+<div class="dropdown">
+  <button
+    class="btn btn-secondary dropdown-toggle choose-year-btn__dropdown"
+    type="button"
+    id="dropdownMenuButton"
+    data-toggle="dropdown"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    Pick a Year
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="/attendance/meeting/:2019">2019</a>
+    <a class="dropdown-item" href="/attendance/meeting/:2020">2020</a>
+  </div>
+</div>

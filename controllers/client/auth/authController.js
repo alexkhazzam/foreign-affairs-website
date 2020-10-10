@@ -30,19 +30,19 @@ exports.postRegister = (req, res, next) => {
   let studentEmail = checkForm.checkStudentEmail();
 
   if (studentEmail.email === null) {
-    res.redirect('/register/?queryEmail=fail');
+    res.redirect('/secure/register/?queryEmail=fail');
   } else if (errMsg.subject === 'match') {
-    res.redirect('/register/?queryMatch=fail');
+    res.redirect('/secure/register/?queryMatch=fail');
   } else if (errMsg.subject === '30') {
-    res.redirect('/register/?queryMaxLimit=fail');
+    res.redirect('/secure/register/?queryMaxLimit=fail');
   } else if (errMsg.subject === '6') {
-    res.redirect('/register/?queryLength=fail');
+    res.redirect('/secure/register/?queryLength=fail');
   } else if (errMsg.subject === 'symbols') {
-    res.redirect('/register/?querySymbol=fail');
+    res.redirect('/secure/register/?querySymbol=fail');
   } else if (errMsg.subject === 'number') {
-    res.redirect('/register/?queryNumber=fail');
+    res.redirect('/secure/register/?queryNumber=fail');
   } else if (errMsg.subject === 'capital') {
-    res.redirect('/register/?queryCapital=fail');
+    res.redirect('/secure/register/?queryCapital=fail');
   } else {
     const sendConfEmail = new confirmationEmail.confirmationEmail(
       studentEmail.email
@@ -52,7 +52,9 @@ exports.postRegister = (req, res, next) => {
       .then((data) => {
         if (data) {
           removeLogIn = true;
-          res.redirect('/register/?accountCreated=succcess&emailSent=success');
+          res.redirect(
+            '/secure/register/?accountCreated=succcess&emailSent=success'
+          );
         }
       })
       .catch((err) => {

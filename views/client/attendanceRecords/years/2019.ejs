@@ -4,37 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="/css/staff.css" />
-    <%- include("../includes/bootstrap.ejs") %>
+    <%- include("../../../includes/bootstrap.ejs") %>
+    <link rel="stylesheet" href="/css/attendance" />
   </head>
   <body>
-    <%- include("../includes/navbar.ejs") %>
-    <div class="collapse" id="collapseExample">
-      <div class="card card-body">
-        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
-        terry richardson ad squid. Nihil anim keffiyeh helvetica, craft beer
-        labore wes anderson cred nesciunt sapiente ea proident.
-      </div>
-    </div>
-    <div class="alert alert-info staff-title__section" role="alert">
-      <span class="staff-title__span">Club Advisor:</span> Dr. Libra Lane
-    </div>
-    <div class="alert alert-info staff-title__section" role="alert">
-      <span class="staff-title__span">Club Founder:</span> Alexander Khazzam
-    </div>
+    <%- include("../../../includes/navbar.ejs") %> <%-
+    include("../../../includes/attendanceNav.ejs") %>
     <div class="accordion" id="accordionExample">
-      <div class="staff__collapsible-card card collapsible-card-1">
+      <div class="attendance__collapsible-card card collapsible-card-1">
         <div class="card-header" id="headingOne">
           <h2 class="mb-0">
             <button
-              class="btn btn-link btn-block text-left"
+              class="btn btn-link btn-block text-left open-card-btn"
               type="button"
               data-toggle="collapse"
               data-target="#collapseOne"
               aria-expanded="true"
               aria-controls="collapseOne"
             >
-              Collapsible Group Item #1
+              Meeting One [ 10/1/2020 ]
             </button>
           </h2>
         </div>
@@ -58,7 +46,7 @@
           </div>
         </div>
       </div>
-      <div class="staff__collapsible-card card">
+      <div class="attendance__collapsible-card card">
         <div class="card-header" id="headingTwo">
           <h2 class="mb-0">
             <button
@@ -69,7 +57,7 @@
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-              Collapsible Group Item #2
+              Meeting Two [ 10/8/2020 ]
             </button>
           </h2>
         </div>
@@ -93,7 +81,7 @@
           </div>
         </div>
       </div>
-      <div class="staff__collapsible-card card">
+      <div class="attendance__collapsible-card card">
         <div class="card-header" id="headingThree">
           <h2 class="mb-0">
             <button

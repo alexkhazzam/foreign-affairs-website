@@ -9,7 +9,6 @@
     <%- include("../../includes/bootstrap.ejs") %>
   </head>
   <body>
-    <%- include("../../includes/navbar.ejs") %>
     <form class="register-form">
       <input
         required
@@ -28,7 +27,9 @@
       </button>
       <p class="register-form__form-caption">
         Don't have an account? Click
-        <a id="register-form__form-caption-link" href="/register">Here</a>
+        <a id="register-form__form-caption-link" href="/secure/register"
+          >Here</a
+        >
         to register.
       </p>
     </form>

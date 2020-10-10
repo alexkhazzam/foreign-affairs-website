@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.attendance__collapsible-card {
+  width: 80% !important;
+  margin: auto !important;
+}
+
+.year-alert__wrapper {
+  letter-spacing: 1px !important;
+  margin-top: 15%;
+  float: left;
+  margin-left: 10%;
+  width: 194.88px;
+}
+
+.attendance__card-1 {
+  border-top-left-radius: 0px !important;
+}
+
+.bootstrap-year-alert {
+  letter-spacing: 1px !important;
+  width: 100% !important;
+  margin-bottom: 0px !important;
+  padding-left: 30px !important;
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  border-top-right-radius: 0px !important;
+}
+
+.choose-year-btn__dropdown {
+  letter-spacing: 1px !important;
+  margin-top: 15% !important;
+  width: 194.88px !important;
+  height: 50px !important;
+  display: inline-block !important;
+  border-top-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
+.attendance-collapsible-section {
+  position: absolute;
+  margin-left: 50% !important;
+}
+
+.card-body ul {
+  width: 100%;
+  text-align: center;
+  padding: 0px !important;
+  margin: 0px !important;
+}
+
+.card-body li {
+  list-style: none !important;
+  display: inline-block !important;
+  margin: 10px;
+  letter-spacing: 1px;
+}
+
+.card-body span {
+  color: blue;
+  font-weight: bold;
+  margin-right: 3px;
+}

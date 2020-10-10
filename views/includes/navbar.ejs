@@ -33,6 +33,9 @@
           <a class="dropdown-item main-nav__link" href="/staff"
             >Officers & Members</a
           >
+          <a class="dropdown-item main-nav__link" href="/attendance"
+            >Attendance</a
+          >
           <a class="dropdown-item main-nav__link" href="#">Who</a>
           <div class="dropdown-divider"></div>
           <a class="dropdown-item main-nav__link" href="#">Bylaws</a>
@@ -44,7 +47,10 @@
         >
       </li>
       <li class="nav-item">
-        <a class="nav-link main-nav__link" href="/register" target="blank"
+        <a
+          class="nav-link main-nav__link"
+          href="/secure/register"
+          target="_blank"
           >Sign In</a
         >
       </li>
@@ -52,14 +58,17 @@
         <a class="nav-link main-nav__link" href="/contact">Contact</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
+    <form class="form-inline my-2 my-lg-0" action="/help" method="POST">
       <input
         class="form-control mr-sm-2 main-nav__search-bar"
         type="search"
         placeholder="Need help?"
         aria-label="Search"
+        name="searchValue"
       />
-      <button type="button" class="btn btn-outline-dark">Search</button>
+      <a href="/help"
+        ><button type="submit" class="btn btn-outline-dark">Search</button></a
+      >
     </form>
   </div>
 </nav>

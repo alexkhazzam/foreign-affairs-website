@@ -10,6 +10,7 @@
   background-color: rgb(243, 243, 243) !important;
   box-shadow: 1px 1px 5px rgba(32, 32, 32, 0.87);
   width: 100%;
+  z-index: 100 !important;
 }
 
 .main-nav__link {
