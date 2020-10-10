@@ -7,9 +7,9 @@ exports.helpModel = class {
     this.refs = [
       'Homepage',
       'Contact',
-      'Officers & Members',
-      'Sign In',
-      'Log In',
+      'Staff',
+      'Register',
+      'Login',
       'Join',
       'Attendance',
       'Who',
@@ -24,8 +24,22 @@ exports.helpModel = class {
         this.matchedRefs.push(ref);
       }
     });
-    return {
-      refs: this.matchedRefs.length === 0 ? 'success' : 'fail',
-    };
+
+    let string = 'co';
+    const linkObj = [];
+    this.refs.forEach((ref) => {
+      linkObj.push({ ref: ref, chars: [...ref.split('')] });
+    });
+    const splitSearch = [...string.split('')];
+    linkObj.forEach((link) => {
+      link.chars.forEach((char) => {
+        splitSearch.forEach((letter) => {
+          if (char === letter) {
+            console.log(link.ref);
+          }
+        });
+      });
+    });
+    return this.matchedRefs;
   }
 };

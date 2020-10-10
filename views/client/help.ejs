@@ -8,10 +8,22 @@
     <link rel="stylesheet" href="/css/help.css" />
   </head>
   <body>
-    <%- include("../includes/navbar.ejs") %> <% if (links.length === 0) { %>
-    <p>Nothing found</p>
-    <% } else { %> <% for (link in links) { %>
-    <p><%=link%></p>
-    <% } %> <% } %>
+    <%- include("../includes/navbar.ejs") %> <% if (links.length !== 0) { %>
+    <h1 class="help-page__links-found">
+      Helpful Links Found For
+      <span class="searched-value">"<%= searchedVal %>"</span>&nbsp;:
+    </h1>
+    <ul class="help-page__links">
+      <% for (let i = 0; i <= links.length; i++) { %>
+      <li class="help-page__link">
+        <a class="help-page__link-link" href="<%= links[i] %>"
+          ><%= links[i] %></a
+        >
+      </li>
+      <% } %>
+    </ul>
+    <% } else { %>
+    <h1 class="help-page__nothing-found">Nothing found!</h1>
+    <% } %>
   </body>
 </html>

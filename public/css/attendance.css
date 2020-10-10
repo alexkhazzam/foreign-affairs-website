@@ -6,11 +6,12 @@
 
 body {
   font-family: 'Montserrat', sans-serif !important;
-}
-
-.attendance__collapsible-card {
-  width: 80% !important;
-  margin: auto !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
 }
 
 .year-alert__wrapper {
@@ -65,8 +66,33 @@ body {
   letter-spacing: 1px;
 }
 
+.card-body__link {
+  display: block;
+  float: right;
+  color: #343a40;
+  margin-left: 2px;
+  text-align: left;
+}
+
+.card-body__link:hover {
+  color: navy;
+}
+
 .card-body span {
-  color: blue;
+  color: blue !important;
   font-weight: bold;
   margin-right: 3px;
+}
+
+.attendance__collapsible-card {
+  width: 80% !important;
+  margin: auto !important;
+}
+
+.card-body__link::first-letter {
+  color: black;
+  font-weight: bold !important;
+}
+
+@media (max-width: 1000px) {
 }

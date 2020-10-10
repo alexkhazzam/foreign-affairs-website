@@ -6,4 +6,64 @@
 
 body {
   background-color: white !important;
+  font-family: 'Montserrat', sans-serif !important;
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+.help-page__links-found {
+  text-align: center;
+  margin-top: 10%;
+  letter-spacing: 2px;
+}
+
+.help-page__links {
+  text-align: center;
+}
+
+.searched-value {
+  font-weight: bold;
+}
+
+.help-page__link {
+  width: 90%;
+  margin: auto;
+  margin-bottom: 5%;
+  list-style: none;
+  text-decoration: underline;
+}
+
+.help-page__link:first-of-type {
+  margin-top: 12%;
+}
+
+.help-page__link-link,
+.help-page__link-link:link,
+.help-page__link-link:visited {
+  color: navy;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.help-page__link-link:hover,
+.help-page__link-link:active {
+  font-weight: bold;
+  -webkit-transform: translateY(-2px);
+  transform: translateY(-2px);
+  text-shadow: 0 0.5rem 1rem black;
 }
