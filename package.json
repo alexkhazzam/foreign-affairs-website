@@ -4,7 +4,7 @@
   "description": "foreign affairs website server",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
@@ -26,7 +26,5 @@
     "mongodb": "^3.6.2",
     "nodemailer": "^6.4.13"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.4"
-  }
+  "devDependencies": {}
 }
