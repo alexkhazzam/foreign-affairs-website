@@ -8,6 +8,7 @@ const attendanceController = require('../../controllers/client/attendanceControl
 const helpController = require('../../controllers/client/helpController');
 const memberController = require('../../controllers/client/MemberController');
 const bylawController = require('../../controllers/client/bylawController');
+const joinController = require('../../controllers/client/joinController');
 
 Router.get('/home', homepageController.getHomepage);
 Router.get('/contact', contactController.getContactPage);
@@ -17,8 +18,10 @@ Router.get('/attendance/meeting/:id', attendanceController.getAttendanceYear);
 Router.get('/help', helpController.getHelpPage);
 Router.get('/members/:member', memberController.getMemberPage);
 Router.get('/bylaws', bylawController.getBylawPage);
+Router.get('/join', joinController.getJoinPage);
 
 Router.post('/contact', contactController.postContactPage);
 Router.post('/help', helpController.postHelpPage);
+Router.post('/join', joinController.postJoinPage);
 
 module.exports = Router;
