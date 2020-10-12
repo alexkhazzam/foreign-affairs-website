@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="/css/staff.css" />
+    <script src="/js/client/staff.js" defer></script>
     <%- include("../includes/bootstrap.ejs") %>
   </head>
   <body>
@@ -16,12 +17,16 @@
         labore wes anderson cred nesciunt sapiente ea proident.
       </div>
     </div>
-    <div class="alert alert-info staff-title__section" role="alert">
+    <div
+      class="alert alert-info staff-title__section club-advisor"
+      role="alert"
+    >
       <span class="staff-title__span">Club Advisor:</span> Dr. Libra Lane
     </div>
     <div class="alert alert-info staff-title__section" role="alert">
       <span class="staff-title__span">Club Founder:</span> Alexander Khazzam
     </div>
+    <h3 class="staff-page__writeable-text"></h3>
     <div class="accordion" id="accordionExample">
       <div class="staff__collapsible-card card collapsible-card-1">
         <div class="card-header" id="headingOne">

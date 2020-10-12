@@ -17,9 +17,9 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown nav-li__about">
         <a
-          class="nav-link dropdown-toggle main-nav__link"
+          class="nav-link dropdown-toggle main-nav__link about"
           href="#"
           id="navbarDropdown"
           role="button"
@@ -30,45 +30,60 @@
           About
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item main-nav__link" href="/staff"
+          <a class="dropdown-item main-nav__link link-dropdown" href="/staff"
             >Officers & Members</a
           >
-          <a class="dropdown-item main-nav__link" href="/attendance"
+          <a
+            class="dropdown-item main-nav__link link-dropdown"
+            href="/attendance"
             >Attendance</a
           >
-          <a class="dropdown-item main-nav__link" href="#">Who</a>
+          <a class="dropdown-item main-nav__link link-dropdown" href="#">Who</a>
           <div class="dropdown-divider"></div>
-          <a class="dropdown-item main-nav__link" href="#">Bylaws</a>
+          <a class="dropdown-item main-nav__link link-dropdown" href="#"
+            >Bylaws</a
+          >
         </div>
       </li>
-      <li class="nav-item active">
+      <li class="nav-item active nav-li__join">
         <a class="nav-link main-nav__link" href="#"
           >Join <span class="sr-only">(current)</span></a
         >
       </li>
-      <li class="nav-item">
-        <a
-          class="nav-link main-nav__link"
-          href="/secure/register"
-          target="_blank"
-          >Sign In</a
+      <li class="nav-item nav-li__contact">
+        <a class="nav-link main-nav__link" href="/contact/?submitted=fail"
+          >Contact</a
         >
-      </li>
-      <li class="nav-item">
-        <a class="nav-link main-nav__link" href="/contact">Contact</a>
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0" action="/help" method="POST">
       <input
         class="form-control mr-sm-2 main-nav__search-bar"
         type="search"
-        placeholder="Need help?"
+        placeholder="Search..."
         aria-label="Search"
         name="searchValue"
       />
-      <a href="/help"
-        ><button type="submit" class="btn btn-outline-dark">Search</button></a
-      >
+      <li class="nav-item auth-li main-nav__auth-li-signin">
+        <a
+          class="nav-link main-nav__link main-nav__auth"
+          href="/secure/login"
+          target="_blank"
+        >
+          <button type="button" class="btn btn-outline-dark">Log In</button></a
+        >
+      </li>
+      <li class="nav-item auth-li main-nav__auth-li-login">
+        <a
+          class="nav-link main-nav__link main-nav__auth"
+          href="/secure/register"
+          target="_blank"
+        >
+          <button type="button" class="btn btn-outline-success">
+            Sign Up
+          </button></a
+        >
+      </li>
     </form>
   </div>
 </nav>

@@ -12,12 +12,11 @@ body {
   font-family: 'Montserrat', sans-serif !important;
   background-image: linear-gradient(
     to bottom right,
-    rgba(125, 213, 111, 0.85),
-    rgba(40, 180, 135, 0.85)
+    rgba(12, 206, 206, 0.85),
+    rgba(133, 10, 204, 0.85)
   );
   background-repeat: no-repeat;
   height: 100%;
-  border: 2px solid purple;
   width: 100%;
   -webkit-touch-callout: none !important;
   -webkit-user-select: none !important;
@@ -25,6 +24,20 @@ body {
   -moz-user-select: none !important;
   -ms-user-select: none !important;
   user-select: none !important;
+}
+
+.map-container-2 {
+  overflow: hidden;
+  padding-bottom: 56.25%;
+  position: relative;
+  height: 0;
+}
+.map-container-2 iframe {
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  position: absolute;
 }
 
 .contact-form {
@@ -51,7 +64,7 @@ body {
 .contact-form__section input,
 .contact-form__section textarea {
   border-radius: 0px !important;
-  background-color: #f1f1f145 !important;
+  background-color: transparent !important;
 }
 
 .contact-form__email-sent {
@@ -69,6 +82,15 @@ body {
   position: absolute !important;
   top: 88.5%;
   margin-left: 5% !important;
+}
+
+.contact-form__writeable-text {
+  margin-left: 20%;
+  position: absolute;
+  top: 20%;
+  color: white;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
 }
 
 /* @keyframes contact-form {

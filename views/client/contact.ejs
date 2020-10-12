@@ -4,15 +4,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="/css/contact.css">
-    <script src="../../public/js/client/contact.js" defer></script>
+    <script src="/js/client/contact.js" defer></script> 
+    <script src="/js/client/navbar.js" defer></script>
     <%- include("../includes/bootstrap.ejs") %>
   </head>
   <body>
       <%- include("../includes/navbar.ejs") %>
+      <h3 class="contact-form__writeable-text"></h3>
       <main class="contact-form">
         <form action="/contact" method="POST">
           <div class="form-group contact-form__section">
-            <label for="exampleInputPassword1" class="contact-form__label" >Email Address</label>
+            <label for="exampleInputPassword1" class="contact-form__label email-input" >Email Address</label>
             <input type="email" class="form-control contact-form__input" id="exampleInputPassword1" name="email" required/>
           </div>
           <div class="form-group contact-form__section"">
@@ -31,9 +33,6 @@
               rows="3" name="message" required
             ></textarea>
           </div>
-          <div class="spinner-border text-info contact-form__spinner-wrapper" role="status">
-            <span class="sr-only">Loading...</span>
-          </div>
           <% if (emailMsg) { %>
             <div class="alert alert-info contact-form__email-sent" role="alert">
               Email was sent! You should hear back from us soon.
@@ -43,5 +42,18 @@
               <% } %>
         </form>
       </main>
+      <div id="map-container-google-2" class="z-depth-1-half map-container" style="height: 500px">
+        <iframe src="https://maps.google.com/maps?q=greatneck&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
+          style="border:0" allowfullscreen></iframe>
+      </div>
+      <a class="btn btn-primary btn-lg">Click me</a>
+
+<!--Mask with wave-->
+<div class="view overlay">
+  <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20(54).jpg" class="img-fluid" alt="Sample image with waves effect.">
+  <a href="#">
+    <div class="mask waves-effect waves-light rgba-white-slight"></div>
+  </a>
+</div>
   </body>
 </html>

@@ -12,8 +12,8 @@ body {
   font-family: 'Montserrat', sans-serif !important;
   background-image: linear-gradient(
     to bottom right,
-    rgba(125, 213, 111, 0.85),
-    rgba(40, 180, 135, 0.85)
+    rgba(12, 206, 206, 0.85),
+    rgba(133, 10, 204, 0.85)
   );
   background-repeat: no-repeat;
   width: 100%;
@@ -118,6 +118,12 @@ body {
 .register-form__check-icon {
   margin-left: 5px !important;
   margin-bottom: 3px !important;
+}
+
+@media (min-width: 1000px) {
+  .register-form {
+    margin-top: 15%;
+  }
 }
 
 /* @keyframes register-form {

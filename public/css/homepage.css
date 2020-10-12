@@ -35,3 +35,47 @@ body {
   -webkit-user-select: none;
   z-index: -2;
 }
+
+.homepage-opening-text {
+  color: white;
+  letter-spacing: 3px;
+  font-size: 1.3rem;
+  text-align: center;
+  margin-top: 20%;
+  animation: 1s slide-up-opening-text;
+}
+
+.writeable-club-text {
+  color: white;
+  letter-spacing: 5px;
+  font-size: 2rem;
+  text-align: center;
+  margin-top: 20%;
+  display: none;
+  animation: 1s slide-up-opening-text;
+}
+
+.main-buttons-wrapper {
+  margin: auto;
+  text-align: center;
+  padding: 30px;
+  display: none;
+  margin-top: 50px;
+}
+
+.homepage-btn--cta {
+  width: 150px !important;
+  margin-right: 15px !important;
+  border-radius: 50px !important;
+  padding: 15px !important;
+}
+
+@keyframes slide-up-opening-text {
+  from {
+    margin-top: 100%;
+  }
+
+  to {
+    margin-left: 0px;
+  }
+}

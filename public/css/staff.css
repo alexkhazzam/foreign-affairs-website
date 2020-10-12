@@ -16,7 +16,7 @@ body {
 }
 
 .collapsible-card-1 {
-  margin-top: 5% !important;
+  margin-top: 2% !important;
 }
 
 .staff-title__section {
@@ -26,10 +26,18 @@ body {
   letter-spacing: 1px !important;
 }
 
-.staff-title__section:first-of-type {
+.club-advisor {
   margin-top: 10% !important;
 }
 
 .staff-title__span {
   font-weight: bold;
+}
+
+.staff-page__writeable-text {
+  margin-left: 10%;
+  margin-top: 10%;
+  color: rgb(36, 36, 36);
+  font-size: 1.5rem;
+  letter-spacing: 3px;
 }

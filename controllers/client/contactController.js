@@ -3,7 +3,9 @@ const contactModel = require('../../models/client/contactModel');
 let emailSentMsg = false;
 
 exports.getContactPage = (req, res, next) => {
-  res.render('client/contact', { emailMsg: emailSentMsg });
+  res.render('client/contact', {
+    emailMsg: req.query.submitted === 'success' ? true : false,
+  });
 };
 
 exports.postContactPage = (req, res, next) => {
@@ -18,7 +20,7 @@ exports.postContactPage = (req, res, next) => {
     .then((data) => {
       if (data) {
         emailSentMsg = true;
-        res.redirect('/contact');
+        res.redirect('/contact/?submitted=success');
       }
     })
     .catch((err) => {
