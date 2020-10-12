@@ -25,12 +25,17 @@ body {
   user-select: none !important;
 }
 
+.logo-wrapper {
+  text-align: center;
+  margin-top: 20%;
+}
+
 .register-form {
   width: 65%;
   padding: 15px;
-  padding-top: 30px;
+  padding-top: 15px;
   margin: auto;
-  margin-top: 30%;
+  margin-top: 20px !important;
   background-color: white;
   border-radius: 0.25rem;
   box-shadow: 1px 1px 5px rgba(32, 32, 32, 0.87);
@@ -89,6 +94,36 @@ body {
   font-size: 0.8rem;
   margin-top: 0px !important;
   margin-left: 5%;
+}
+
+.back-arrow-wrapper {
+  margin-top: 5px;
+  margin-left: 5px;
+  width: fit-content;
+  opacity: 1;
+}
+
+.back-arrow-wrapper,
+.back-arrow-wrapper:link,
+.back-arrow-wrapper:visited {
+  letter-spacing: 2px;
+  font-size: 1.6rem;
+  text-decoration: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.back-arrow-wrapper:hover,
+.back-arrow-wrapper:active {
+  -webkit-transform: translateY(-2px);
+  transform: translateY(-2px);
 }
 
 .register-page__writable-text {

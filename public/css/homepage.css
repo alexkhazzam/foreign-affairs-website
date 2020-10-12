@@ -52,7 +52,7 @@ body {
   text-align: center;
   margin-top: 20%;
   display: none;
-  animation: 1s slide-up-opening-text;
+  animation: 2s slide-up-opening-text;
 }
 
 .main-buttons-wrapper {

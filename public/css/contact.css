@@ -49,7 +49,7 @@ body {
   margin-left: 20%;
   background-color: rgb(255, 255, 255);
   box-shadow: 1px 1px 5px rgba(32, 32, 32, 0.87);
-  animation: 1s contact-form;
+  animation: 2s contact-form;
 }
 
 .contact-form__section {
@@ -93,7 +93,7 @@ body {
   letter-spacing: 3px;
 }
 
-/* @keyframes contact-form {
+@keyframes contact-form {
   from {
     top: 100%;
   }
@@ -101,4 +101,4 @@ body {
   to {
     top: 25%;
   }
-} */
+}

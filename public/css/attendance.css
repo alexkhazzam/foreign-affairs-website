@@ -4,8 +4,20 @@
   box-sizing: border-box;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   font-family: 'Montserrat', sans-serif !important;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(12, 206, 206, 0.85),
+    rgba(133, 10, 204, 0.85)
+  );
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
   -webkit-touch-callout: none !important;
   -webkit-user-select: none !important;
   -khtml-user-select: none !important;

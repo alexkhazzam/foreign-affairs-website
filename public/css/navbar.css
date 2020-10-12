@@ -106,15 +106,21 @@ body {
     margin-left: 15px !important;
   }
   .main-nav__auth {
-    margin-top: 10px;
     margin-left: 10px !important;
     width: 100px !important;
   }
-  .main-nav__auth-li-login {
-    margin-top: 25px !important;
-  }
+  .main-nav__auth-li-login,
   .main-nav__auth-li-signin {
-    margin-bottom: 5px !important;
+    width: 100% !important;
+  }
+  .main-nav__search-bar {
+    margin-bottom: 45px !important;
+  }
+  .main-nav__auth-li-login button {
+    width: 150px !important;
+  }
+  .main-nav__auth button {
+    width: 200px !important;
   }
 }
 

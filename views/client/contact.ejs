@@ -9,7 +9,8 @@
     <%- include("../includes/bootstrap.ejs") %>
   </head>
   <body>
-      <%- include("../includes/navbar.ejs") %>
+    <%- include("../includes/navbar.ejs") %>
+    <div class="form-wrapper">
       <h3 class="contact-form__writeable-text"></h3>
       <main class="contact-form">
         <form action="/contact" method="POST">
@@ -42,18 +43,6 @@
               <% } %>
         </form>
       </main>
-      <div id="map-container-google-2" class="z-depth-1-half map-container" style="height: 500px">
-        <iframe src="https://maps.google.com/maps?q=greatneck&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0"
-          style="border:0" allowfullscreen></iframe>
-      </div>
-      <a class="btn btn-primary btn-lg">Click me</a>
-
-<!--Mask with wave-->
-<div class="view overlay">
-  <img src="https://mdbootstrap.com/img/Photos/Horizontal/Nature/6-col/img%20(54).jpg" class="img-fluid" alt="Sample image with waves effect.">
-  <a href="#">
-    <div class="mask waves-effect waves-light rgba-white-slight"></div>
-  </a>
-</div>
+    </div>
   </body>
 </html>

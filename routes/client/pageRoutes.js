@@ -7,6 +7,7 @@ const staffController = require('../../controllers/client/staffController');
 const attendanceController = require('../../controllers/client/attendanceController');
 const helpController = require('../../controllers/client/helpController');
 const memberController = require('../../controllers/client/MemberController');
+const bylawController = require('../../controllers/client/bylawController');
 
 Router.get('/home', homepageController.getHomepage);
 Router.get('/contact', contactController.getContactPage);
@@ -15,6 +16,7 @@ Router.get('/attendance', attendanceController.getAttendancePage);
 Router.get('/attendance/meeting/:id', attendanceController.getAttendanceYear);
 Router.get('/help', helpController.getHelpPage);
 Router.get('/members/:member', memberController.getMemberPage);
+Router.get('/bylaws', bylawController.getBylawPage);
 
 Router.post('/contact', contactController.postContactPage);
 Router.post('/help', helpController.postHelpPage);
