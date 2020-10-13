@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bylaw DropBox</title>
+    <link rel="stylesheet" href="/css/register.css" />
+    <link rel="stylesheet" href="/css/authentication.css" />
+    <link rel="stylesheet" href="/css/bylawDropbox.css" />
+    <%- include("../includes/bootstrap.ejs") %>
+  </head>
+  <body>
+    <div class="back-arrow-wrapper">
+      <a href="/bylaws">
+        <img src="https://img.icons8.com/cotton/64/000000/circled-left--v2.png"/
+        width="45" height="45" />
+      </a>
+    </div>
+    <div class="logo-wrapper">
+      <a class="main-nav__logo" href="/homepage"
+        ><img src="/assets/icons/navbar/school-logo.png" height="75" width="75"
+      /></a>
+    </div>
+    <form class="register-form" method="POST" action="/bylaw-dropbox">
+      <input
+        required
+        type="email"
+        class="form-control bylaw__input"
+        placeholder="Email"
+        name="email"
+      />
+      <input
+        required
+        type="text"
+        class="form-control bylaw__input"
+        placeholder="First Name"
+        name="firstName"
+      />
+      <input
+        required
+        type="text"
+        class="form-control bylaw__input"
+        placeholder="Last Name"
+        name="lastName"
+      />
+      <p class="bylaw-comment">
+        Please list any comments, questions, or concerns you have about the
+        current bylaws.
+      </p>
+      <textarea
+        class="form-control bylaw__input bylaw-message"
+        required
+        name="message"
+      >
+      </textarea>
+      <div class="custom-file">
+        <input
+          type="file"
+          class="custom-file-input bylaw__input"
+          id="inputGroupFile02"
+          name="bylawUpload"
+        />
+        <label
+          class="custom-file-label bylaw__input bylaw-dropbox-input"
+          for="inputGroupFile02"
+          >Edited bylaw (optional)
+        </label>
+      </div>
+      <% if (!emailSent ) { %>
+      <button type="submit" class="btn btn-info register-form__submit">
+        Send Form
+      </button>
+      <% } else { %>
+        <div class="alert alert-success register-form__email-sent" role="alert">
+          <p class="register-form__form-caption">
+            Feedback was recieved! We should get back to you soon.
+        </div>
+      </p>
+      <% } %>
+    </form>
+  </body>
+</html>

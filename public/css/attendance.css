@@ -18,12 +18,12 @@ body {
   background-repeat: no-repeat;
   height: 100%;
   width: 100%;
-  -webkit-touch-callout: none !important;
+  /* -webkit-touch-callout: none !important;
   -webkit-user-select: none !important;
   -khtml-user-select: none !important;
   -moz-user-select: none !important;
   -ms-user-select: none !important;
-  user-select: none !important;
+  user-select: none !important; */
 }
 
 .year-alert__wrapper {
@@ -34,8 +34,12 @@ body {
   width: 194.88px;
 }
 
-.attendance__card-1 {
+.collapsible-card-1 {
   border-top-left-radius: 0px !important;
+}
+
+.year {
+  font-weight: bolder !important;
 }
 
 .bootstrap-year-alert {
@@ -43,6 +47,7 @@ body {
   width: 100% !important;
   margin-bottom: 0px !important;
   padding-left: 30px !important;
+  color: black !important;
   border-bottom-left-radius: 0px !important;
   border-bottom-right-radius: 0px !important;
   border-top-right-radius: 0px !important;

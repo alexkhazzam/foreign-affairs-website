@@ -1,0 +1,47 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif !important;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(12, 206, 206, 0.85),
+    rgba(133, 10, 204, 0.85)
+  );
+  background-repeat: no-repeat;
+  width: 100%;
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+.bylaw-dropbox-input {
+  color: #495057 !important;
+  -webkit-margin-bottom-collapse: 20px !important;
+}
+
+.bylaw-message {
+  margin-top: 0px !important;
+}
+
+.bylaw-comment {
+  margin-left: 5%;
+  margin-top: 10px;
+  font-size: 0.9rem;
+  margin-bottom: 0px;
+}
+
+.custom-file {
+  margin-bottom: 18px !important;
+  height: fit-content !important;
+}

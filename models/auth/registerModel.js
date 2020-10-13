@@ -16,7 +16,10 @@ exports.checkForm = class {
       this.emailBody.indexOf('@') + 1,
       this.emailBody.length
     );
-    if (parsedString !== 'student.gn.k12.ny.us') {
+    if (
+      parsedString !== 'student.gn.k12.ny.us' ||
+      this.email === 'aohebshalom2@student.gn.k12.ny.us'
+    ) {
       return {
         email: null,
       };

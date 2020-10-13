@@ -62,7 +62,8 @@ body {
 .register-form__email,
 .register-form__username,
 .register-form__password,
-.register-form__confirm-password {
+.register-form__confirm-password,
+.bylaw__input {
   font-size: 0.9rem !important;
   width: 90% !important;
   margin: auto !important;

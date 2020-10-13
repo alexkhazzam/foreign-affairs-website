@@ -18,12 +18,6 @@ body {
   background-repeat: no-repeat;
   height: fit-content;
   width: 100%;
-  -webkit-touch-callout: none !important;
-  -webkit-user-select: none !important;
-  -khtml-user-select: none !important;
-  -moz-user-select: none !important;
-  -ms-user-select: none !important;
-  user-select: none !important;
 }
 
 .bylaws-wrapper {
@@ -33,7 +27,6 @@ body {
   text-align: center;
   margin: auto;
   margin-top: 10%;
-  padding: 20px;
   color: black;
   line-height: 2;
 }
@@ -68,6 +61,24 @@ body {
   font-weight: bold;
   font-size: 1.1rem;
   color: black;
+}
+
+#bylaw-main-wrapper {
+  padding: 0px !important;
+}
+
+.bylaw-edit-link {
+  color: black !important;
+  letter-spacing: 1px !important;
+}
+
+.bylaw-content-wrapper {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.bylaw-edit-link a {
+  text-decoration: underline !important;
 }
 
 @keyframes bylaws {

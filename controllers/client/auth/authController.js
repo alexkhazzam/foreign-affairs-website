@@ -20,7 +20,6 @@ exports.getLogin = (req, res, next) => {
 };
 
 exports.postRegister = (req, res, next) => {
-  console.log('hi there');
   const checkForm = new registerModel.checkForm(
     req.body.email,
     req.body.username,
@@ -45,7 +44,6 @@ exports.postRegister = (req, res, next) => {
   } else if (errMsg.subject === 'capital') {
     res.redirect('/secure/register/?queryCapital=fail');
   } else {
-    console.log('hi');
     const sendConfEmail = new confirmationEmail.confirmationEmail(
       studentEmail.email
     );
@@ -60,7 +58,7 @@ exports.postRegister = (req, res, next) => {
         }
       })
       .catch((err) => {
-        console.log(err);
+        res.redirect('/secure/register/?accountCreated=fail&emailSent=fail');
       });
   }
 };

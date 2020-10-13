@@ -10,11 +10,8 @@
   <body>
     <div class="back-arrow-wrapper">
       <a href="/homepage">
-        <img
-          src="https://img.icons8.com/ios/50/000000/circled-left-2.png"
-          width="45"
-          height="45"
-        />
+        <img src="https://img.icons8.com/cotton/64/000000/circled-left--v2.png"/
+        width="45" height="45" />
       </a>
     </div>
     <div class="logo-wrapper">
@@ -62,7 +59,7 @@
         } else if (queryCapital) { %> Password must include an upper case
         character. <% } else if (queryNumber) { %> Password must include a
         number. <% } else if (queryMaxLimit) { %> Password cannot not exceed 30
-        characters. <% } %><% } %>
+        characters. <% } %> <% } %>
       </p>
       <% if (emailSent) { %>
       <div class="alert alert-success register-form__email-sent" role="alert">

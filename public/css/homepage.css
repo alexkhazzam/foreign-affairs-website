@@ -4,11 +4,6 @@
 
 body {
   font-family: 'Montserrat', sans-serif !important;
-  background-image: linear-gradient(
-    to bottom right,
-    rgba(125, 213, 111, 0.85),
-    rgba(40, 180, 135, 0.85)
-  );
   background-repeat: no-repeat;
   height: 100%;
   width: 100%;
@@ -68,6 +63,36 @@ body {
   margin-right: 15px !important;
   border-radius: 50px !important;
   padding: 15px !important;
+}
+
+@media (max-width: 800px) and (orientation: landscape) {
+  .homepage-opening-text {
+    margin-top: 15%;
+  }
+  .writeable-club-text {
+    margin-top: 10%;
+    animation: 1s slide-up-opening-text;
+  }
+  .main-buttons-wrapper {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 500px) and (orientation: portrait) {
+  .homepage-opening-text {
+    margin-top: 30%;
+  }
+  .writeable-club-text {
+    margin-top: 25%;
+    animation: 2s slide-up-opening-text;
+  }
+  .main-buttons-wrapper {
+    margin-top: 10px;
+  }
+  .homepage-btn--cta {
+    width: 100%;
+    margin-bottom: 20px;
+  }
 }
 
 @keyframes slide-up-opening-text {

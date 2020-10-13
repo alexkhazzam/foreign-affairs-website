@@ -34,10 +34,11 @@ exports.contactModel = class HandleForm {
   async sendEmail() {
     let mailOptions = {
       from: `${this.firstname} ${this.lastname}`,
-      to: 'akhazzam1@student.gn.k12.ny.us',
+      to: 'nhsforeignaffairs@gmail.com',
       subject: `${this.email} sent an email from the website!`,
       text: this.message,
     };
+    console.log(mailOptions);
     let response = await this.wrappedSendMail(mailOptions);
     return response;
   }

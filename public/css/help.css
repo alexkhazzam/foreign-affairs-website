@@ -23,6 +23,7 @@ body {
 
 .help-page__links {
   text-align: center;
+  padding: 0px;
 }
 
 .searched-value {
@@ -66,4 +67,9 @@ body {
   -webkit-transform: translateY(-2px);
   transform: translateY(-2px);
   text-shadow: 0 0.5rem 1rem black;
+}
+
+.nothing-found-header {
+  text-decoration: none !important;
+  text-align: center;
 }
