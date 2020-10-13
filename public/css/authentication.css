@@ -42,6 +42,23 @@ body {
   animation: 1s register-form;
 }
 
+.logo-wrapper-2 {
+  text-align: center;
+  margin-top: 20%;
+}
+
+.register-form-2 {
+  width: 65%;
+  padding: 15px;
+  padding-top: 15px;
+  margin: auto;
+  margin-top: 20px !important;
+  background-color: white;
+  border-radius: 0.25rem;
+  box-shadow: 1px 1px 5px rgba(32, 32, 32, 0.87);
+  animation: 1s register-form;
+}
+
 .register-form__email,
 .register-form__username,
 .register-form__password,
@@ -155,9 +172,52 @@ body {
   margin-bottom: 3px !important;
 }
 
-@media (min-width: 1000px) {
+@media (min-width: 1200px) {
   .register-form {
     margin-top: 15%;
+  }
+}
+
+@media (max-width: 1400px) and (orientation: landscape) {
+  .logo-wrapper {
+    margin-top: 15%;
+  }
+}
+
+@media (max-width: 1200px) and (orientation: portrait) {
+  .logo-wrapper {
+    margin-top: 20%;
+  }
+}
+
+@media (max-width: 1200px) and (orientation: landscape) {
+  .logo-wrapper-2 {
+    margin-top: 12%;
+  }
+}
+
+@media (max-width: 600px) and (orientation: portrait) {
+  .logo-wrapper {
+    margin-top: 6%;
+  }
+  .register-form {
+    width: 90%;
+  }
+  .register-form-2 {
+    width: 90%;
+  }
+}
+
+@media (max-width: 800px) and (orientation: landscape) {
+  .logo-wrapper {
+    margin-top: 0px;
+  }
+  .register-form {
+    width: 85%;
+  }
+  html {
+    height: fit-content;
+    padding-bottom: 100px;
   }
 }
 
