@@ -41,11 +41,10 @@ body {
 }
 
 .contact-form {
-  position: absolute !important;
   border-radius: 0.25rem;
   width: 60%;
   padding: 20px;
-  top: 25%;
+  margin-top: 25%;
   margin-left: 20%;
   background-color: rgb(255, 255, 255);
   box-shadow: 1px 1px 5px rgba(32, 32, 32, 0.87);
@@ -95,10 +94,49 @@ body {
 
 @keyframes contact-form {
   from {
-    top: 100%;
+    margin-top: 100%;
   }
 
   to {
-    top: 25%;
+    margin-top: 25%;
+  }
+}
+
+@media (max-width: 700px) and (orientation: landscape) {
+  .contact-form {
+    margin-top: 60%;
+  }
+  @keyframes contact-form {
+    from {
+      margin-top: 100%;
+    }
+
+    to {
+      margin-top: 60%;
+    }
+  }
+  .contact-form__writeable-text {
+    margin-top: 50%;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 700px) and (orientation: portrait) {
+  .contact-form {
+    width: 80% !important;
+    margin-left: 10% !important;
+    margin-top: 30%;
+  }
+  .contact-form__writeable-text {
+    margin-left: 10% !important;
+  }
+  @keyframes contact-form {
+    from {
+      margin-top: 100%;
+    }
+
+    to {
+      margin-top: 30%;
+    }
   }
 }

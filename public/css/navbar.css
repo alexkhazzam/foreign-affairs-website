@@ -124,6 +124,12 @@ body {
   }
 }
 
+@media (max-width: 700px) and (orientation: landscape) {
+  .main-nav__search-bar {
+    margin-bottom: 10px !important;
+  }
+}
+
 @media (max-width: 1000px) {
   .main-nav__search-bar {
     width: 60% !important;
