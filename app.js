@@ -17,7 +17,6 @@ app.use(clientRoutes);
 app.use(authRoutes);
 
 app.use('/', (req, res, next) => {
-  console.log('gotten');
   res.render('client/homepage', {});
 });
 

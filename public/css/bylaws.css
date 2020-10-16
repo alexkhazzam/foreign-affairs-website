@@ -31,6 +31,10 @@ body {
   line-height: 2;
 }
 
+.main-footer {
+  position: static;
+}
+
 .bylaws-title {
   text-align: center;
   color: black;

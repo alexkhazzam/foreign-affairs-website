@@ -50,6 +50,32 @@ body {
   float: left !important;
 }
 
+.email-warning-alert {
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  margin-bottom: 0px !important;
+  width: 60% !important;
+  margin: auto !important;
+  text-align: center !important;
+}
+
+.classroom-link-wrapper {
+  word-wrap: break-word !important;
+  text-align: center !important;
+  width: 60% !important;
+  margin: auto !important;
+  border-top-right-radius: 0px !important;
+  border-top-left-radius: 0px !important;
+}
+
+.copy-class-code {
+  cursor: pointer;
+}
+
+.classroom-link-wrapper a {
+  text-decoration: underline;
+}
+
 .get-location-btn {
   margin-top: 20px !important;
   margin-left: 5px !important;

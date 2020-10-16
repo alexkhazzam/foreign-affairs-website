@@ -14,20 +14,4 @@ const printTxt = () => {
   }, 45);
 };
 
-submitBtn.addEventListener('click', () => {
-  let inputFilled = 0;
-  contactFormLabel.forEach((input) => {
-    if (input.textContent === '') {
-      inputFilled++;
-    }
-  });
-  if (
-    inputFilled === 3 &&
-    /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(
-      emailInput.textContent
-    ) === true
-  ) {
-    console.log('hi');
-  }
-});
 printTxt();

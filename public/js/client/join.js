@@ -1,5 +1,6 @@
 const getLocationBtn = document.querySelector('.get-location-btn');
 const loadingSpinner = document.querySelector('.loading-spinner-wrapper');
+const classCodeBtn = document.querySelector('.copy-class-code');
 
 let lat;
 let long;
@@ -29,8 +30,8 @@ function outputCoordinates() {
       const longP = document.querySelector('.longitude');
       latP.style.display = 'inline-block';
       longP.style.display = 'inline-block';
-      latP.textContent = lat;
-      longP.textContent = long;
+      latP.textContent = `Latitude: ${lat}`;
+      longP.textContent = `Longitude: ${long}`;
       loadingSpinner.style.display = 'none';
     })
     .catch((err) => {
@@ -38,8 +39,8 @@ function outputCoordinates() {
       const longP = document.querySelector('.longitude');
       latP.style.display = 'inline-block';
       longP.style.display = 'inline-block';
-      latP.textContent = lat;
-      longP.textContent = long;
+      latP.textContent = `Latitude: ${lat}`;
+      longP.textContent = `Longitude: ${long}`;
       loadingSpinner.style.display = 'none';
     });
 }
@@ -47,4 +48,11 @@ function outputCoordinates() {
 getLocationBtn.addEventListener('click', () => {
   loadingSpinner.style.display = 'block';
   outputCoordinates();
+});
+
+classCodeBtn.addEventListener('click', () => {
+  navigator.clipboard.readText().then((clipText) => {
+    clipText = 'hi';
+    console.log(clipText);
+  });
 });
