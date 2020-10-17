@@ -1,9 +1,9 @@
+const twentyNineteen = require('../../models/client/attendanceModels/2019Model');
+
 exports.getAttendancePage = (req, res, next) => {
-  res.render('client/attendanceRecords/attendance', { blob: 1 });
+  const meeting1 = twentyNineteen.TwentyNineteen.getAttendance(0);
+  console.log(meeting1);
+  res.send('hi');
 };
 
-exports.getAttendanceYear = (req, res, next) => {
-  res.render(`client/attendanceRecords/years/${req.params.id.split(':')[1]}`, {
-    blob: req.params.id.split(':')[1],
-  });
-};
+exports.getAttendanceYear = (req, res, next) => {};

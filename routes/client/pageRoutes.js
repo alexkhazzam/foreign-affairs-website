@@ -9,17 +9,19 @@ const helpController = require('../../controllers/client/helpController');
 const memberController = require('../../controllers/client/MemberController');
 const bylawController = require('../../controllers/client/bylawController');
 const joinController = require('../../controllers/client/joinController');
+const websiteController = require('../../controllers/client/websiteController');
 
 Router.get('/home', homepageController.getHomepage);
 Router.get('/contact', contactController.getContactPage);
 Router.get('/staff', staffController.getStaffPage);
 Router.get('/attendance', attendanceController.getAttendancePage);
-Router.get('/attendance/meeting/:id', attendanceController.getAttendanceYear);
+Router.get('/attendance/:id', attendanceController.getAttendanceYear);
 Router.get('/help', helpController.getHelpPage);
 Router.get('/members/:member', memberController.getMemberPage);
 Router.get('/bylaws', bylawController.getBylawPage);
 Router.get('/join', joinController.getJoinPage);
 Router.get('/bylaw-dropbox', bylawController.getBylawDropbox);
+Router.get('/this-website', websiteController.getThisWebsite);
 
 Router.post('/contact', contactController.postContactPage);
 Router.post('/help', helpController.postHelpPage);
