@@ -1,26 +1,14 @@
-exports.TwentyNineteen = class {
-  constructor() {}
+const fs = require('fs');
+const path = require('path');
 
+exports.TwentyNineteen = class {
   static getAttendance(meeting) {
-    this.meetings = [
-      [
-        'members/Abby-Levy',
-        'members/Alex-Khazzam',
-        'members/Brandon-Maher',
-        'members/Cheong-Jun',
-        'members/Ethan-Kane',
-        'members/Jonathan-Moalemi',
-        'members/Kalyn-Jones',
-        'members/Leon-Asnadi',
-        'members/Luke-Cronin',
-        'members/Michael-Chan',
-        'members/Parker-Cohen',
-        'members/Zachary-Astrof',
-        'members/Zachary-Levine',
-        'members/Zachary-Zieglar',
-      ],
-    ];
-    const people = [...this.meetings[meeting]].map((member) => {
+    const meetingObj = fs.readFileSync(
+      path.join(__dirname, 'data', 'meetings.json'),
+      'utf-8'
+    );
+    const parsedJson = [...JSON.parse(meetingObj)];
+    const people = [...parsedJson[meeting]].map((member) => {
       const memberStr = `${member.split('/')[1].split('-')[0]} ${
         member.split('/')[1].split('-')[1]
       }`;
