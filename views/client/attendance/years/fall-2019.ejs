@@ -33,15 +33,18 @@
           data-parent="#accordion"
         >
           <div class="card-body">
-            <% for (let i = 0; i <= attendanceArr[0].length; i++) { %>
-            <li clas="card-body__person">
-              <span><%= (i + 1) %>)</span>
-              <% let ref = attendanceArr[0][1]%>
-              <a class="card-body__link" href="/members/:<%= ref %>"
-                ><%= `${ref.split("-")[0]} ${ref.split("-")[1]}` %></a
-              >
-            </li>
-            <% } %>
+            <ul class="people">
+              <% for (let i = 0; i <= ([...attendanceArr[0].sort()].length - 1);
+              i++) { %>
+              <li class="card-body__person">
+                <span class="number"><%= (i + 1) %>)</span>
+                <% let ref = attendanceArr[0][i] %>
+                <a class="card-body__link" href="/members/:<%= ref %>"
+                  ><%= `${ref.split("-")[0]} ${ref.split("-")[1]}` %></a
+                >
+              </li>
+              <% } %>
+            </ul>
           </div>
         </div>
       </div>

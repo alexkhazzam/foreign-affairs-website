@@ -68,3 +68,26 @@ body {
   margin: auto !important;
   border-radius: 0px !important;
 }
+
+.card-body__person {
+  display: inline-block;
+  margin: 5px;
+}
+
+.number {
+  color: rgb(0, 0, 165);
+  font-weight: bolder;
+}
+
+.card-body__link {
+  color: black;
+}
+
+.card-body__link::first-letter {
+  font-weight: bold;
+}
+
+.people {
+  text-align: center;
+  padding: 0px;
+}
