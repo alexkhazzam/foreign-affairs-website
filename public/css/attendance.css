@@ -53,10 +53,18 @@ body {
   margin-top: 16px !important;
   border-top-right-radius: 0px !important;
   border-bottom-right-radius: 0px !important;
-  margin-left: 20% !important;
+  border-bottom-left-radius: 0px !important;
+  margin-left: 10% !important;
 }
 
 .toggle-years {
   border-top-left-radius: 0px !important;
   border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+}
+
+.card {
+  width: 80% !important;
+  margin: auto !important;
+  border-radius: 0px !important;
 }
