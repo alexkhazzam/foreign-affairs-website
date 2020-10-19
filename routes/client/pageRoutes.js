@@ -15,7 +15,7 @@ Router.get('/home', homepageController.getHomepage);
 Router.get('/contact', contactController.getContactPage);
 Router.get('/staff', staffController.getStaffPage);
 Router.get('/attendance', attendanceController.getAttendancePage);
-Router.get('/attendance/:id', attendanceController.getAttendanceYear);
+Router.get('/attendance/:yearId', attendanceController.getAttendanceYear);
 Router.get('/help', helpController.getHelpPage);
 Router.get('/members/:member', memberController.getMemberPage);
 Router.get('/bylaws', bylawController.getBylawPage);

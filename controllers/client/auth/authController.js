@@ -16,7 +16,9 @@ exports.getRegister = (req, res, next) => {
 };
 
 exports.getLogin = (req, res, next) => {
-  res.render('client/auth/login', {});
+  res.render('client/auth/login', {
+    login: req.query.login === 'fail' ? false : true,
+  });
 };
 
 exports.postRegister = (req, res, next) => {
@@ -63,4 +65,10 @@ exports.postRegister = (req, res, next) => {
   }
 };
 
-exports.postLogin = (req, res, next) => {};
+exports.postLogin = (req, res, next) => {
+  const email = req.body.email;
+  if (email.split('@')[1] !== 'student.gn.k12.ny.us') {
+    res.redirect('/secure/login/?login=fail');
+  } else {
+  }
+};

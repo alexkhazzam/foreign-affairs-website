@@ -97,6 +97,24 @@ body {
   margin-top: 45px !important;
 }
 
+.join__title {
+  color: white;
+  width: 80%;
+  margin: 10% auto 20px auto;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.separators {
+  text-align: center;
+  margin-bottom: 8%;
+}
+
+.separator {
+  margin: 5px;
+  display: inline-block;
+}
+
 .map-container {
   width: 60% !important;
   margin-left: 20% !important;
@@ -104,4 +122,10 @@ body {
   border-radius: 0.25rem !important;
   animation: 2s contact-form;
   height: 400px !important;
+}
+
+@media (max-width: 1000px) {
+  html {
+    height: fit-content;
+  }
 }

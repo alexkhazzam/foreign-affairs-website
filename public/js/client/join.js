@@ -1,6 +1,7 @@
 const getLocationBtn = document.querySelector('.get-location-btn');
 const loadingSpinner = document.querySelector('.loading-spinner-wrapper');
 const classCodeBtn = document.querySelector('.copy-class-code');
+const joinTitle = document.querySelector('.join__title');
 
 let lat;
 let long;
@@ -56,3 +57,17 @@ classCodeBtn.addEventListener('click', () => {
     console.log(clipText);
   });
 });
+
+let i = 0;
+let text =
+  'Stay up to date with the latest scoop on world policies by joining our Google Classroom!';
+
+const printTxt = () => {
+  setTimeout(() => {
+    joinTitle.textContent += text.charAt(i);
+    i++;
+    printTxt();
+  }, 40);
+};
+
+printTxt();

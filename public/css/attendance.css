@@ -18,98 +18,45 @@ body {
   background-repeat: no-repeat;
   height: 100%;
   width: 100%;
-  /* -webkit-touch-callout: none !important;
-  -webkit-user-select: none !important;
-  -khtml-user-select: none !important;
-  -moz-user-select: none !important;
-  -ms-user-select: none !important;
-  user-select: none !important; */
 }
 
-.year-alert__wrapper {
-  letter-spacing: 1px !important;
-  margin-top: 15%;
-  float: left;
-  margin-left: 10%;
-  width: 194.88px;
-}
-
-.collapsible-card-1 {
-  border-top-left-radius: 0px !important;
-}
-
-.year {
-  font-weight: bolder !important;
-}
-
-.bootstrap-year-alert {
-  letter-spacing: 1px !important;
-  width: 100% !important;
-  margin-bottom: 0px !important;
-  padding-left: 30px !important;
-  color: black !important;
-  border-bottom-left-radius: 0px !important;
-  border-bottom-right-radius: 0px !important;
-  border-top-right-radius: 0px !important;
-}
-
-.choose-year-btn__dropdown {
-  letter-spacing: 1px !important;
-  margin-top: 15% !important;
-  width: 194.88px !important;
-  height: 50px !important;
-  display: inline-block !important;
-  border-top-left-radius: 0px !important;
-  border-bottom-right-radius: 0px !important;
-  border-bottom-left-radius: 0px !important;
-}
-
-.attendance-collapsible-section {
-  position: absolute;
-  margin-left: 50% !important;
-}
-
-.card-body ul {
-  width: 100%;
-  text-align: center;
-  padding: 0px !important;
-  margin: 0px !important;
-}
-
-.card-body li {
-  list-style: none !important;
-  display: inline-block !important;
-  margin: 10px;
-  letter-spacing: 1px;
-}
-
-.card-body__link {
-  display: block;
-  float: right;
-  color: #343a40;
-  margin-left: 2px;
-  text-align: left;
-}
-
-.card-body__link:hover {
-  color: navy;
-}
-
-.card-body span {
-  color: blue !important;
-  font-weight: bold;
-  margin-right: 3px;
-}
-
-.attendance__collapsible-card {
-  width: 80% !important;
-  margin: auto !important;
-}
-
-.card-body__link::first-letter {
-  color: black;
+.dropdown-item:hover {
+  opacity: 1.5 !important;
   font-weight: bold !important;
+  background-color: transparent !important;
 }
 
-@media (max-width: 1000px) {
+.dropdown-item,
+.dropdown-item:link,
+.dropdown-item:visited {
+  letter-spacing: 2px !important;
+  font-size: 1rem !important;
+  text-decoration: none !important;
+  -webkit-box-align: center !important;
+  -ms-flex-align: center !important;
+  -webkit-transition: all 0.2s !important;
+  transition: all 0.2s !important;
+  cursor: pointer !important;
+}
+
+.dropdown-item:hover,
+.dropdown-item:active {
+  font-weight: bolder !important;
+  -webkit-transform: translateY(-2px) !important;
+  transform: translateY(-2px) !important;
+  text-shadow: 0 0.5rem 1rem black !important;
+}
+
+.year-readonly {
+  width: 150px !important;
+  float: left !important;
+  margin-top: 16px !important;
+  border-top-right-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  margin-left: 20% !important;
+}
+
+.toggle-years {
+  border-top-left-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
 }

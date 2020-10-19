@@ -20,19 +20,27 @@
         ><img src="/assets/icons/navbar/school-logo.png" height="75" width="75"
       /></a>
     </div>
-    <form class="register-form-2">
+    <form class="register-form-2" method="POST" action="/secure/login">
       <input
         required
         type="email"
+        name="email"
         class="form-control register-form__email"
         placeholder="Email"
       />
+      <% if (!login) { %>
+      <p class="register-form__error-message">Invalid Email or Password</p>
+      <% } %>
       <input
         required
+        name="password"
         type="password"
         class="form-control register-form__password"
         placeholder="Password"
       />
+      <% if (!login) { %>
+      <p class="register-form__error-message">Invalid Email or Password</p>
+      <% } %>
       <button type="submit" class="btn btn-info register-form__submit">
         Login
       </button>

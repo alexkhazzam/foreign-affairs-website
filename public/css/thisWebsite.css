@@ -25,15 +25,15 @@ body {
 }
 
 .website__header {
-  color: black;
-  letter-spacing: 3px;
+  color: white;
+  letter-spacing: 2px;
   text-align: center;
-  margin-top: 10%;
-  margin-bottom: 10%;
+  width: 80%;
+  margin: 10% auto 10% auto;
 }
 
 .creator {
-  color: white;
+  color: black;
   width: 100%;
   text-align: center;
   margin-top: 5%;

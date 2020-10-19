@@ -173,12 +173,6 @@ body {
   margin-bottom: 3px !important;
 }
 
-@media (min-width: 1200px) {
-  .register-form {
-    margin-top: 15%;
-  }
-}
-
 @media (max-width: 1400px) and (orientation: landscape) {
   .logo-wrapper {
     margin-top: 15%;
@@ -222,11 +216,16 @@ body {
   }
 }
 
+@media (min-width: 1200px) {
+  .logo-wrapper {
+    margin-top: 10%;
+  }
+}
 /* @keyframes register-form {
   from {
     margin-top: 100%;
   }
-
+  
   to {
     margin-top: 15%;
   }

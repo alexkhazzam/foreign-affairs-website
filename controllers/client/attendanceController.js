@@ -1,9 +1,12 @@
-const twentyNineteen = require('../../models/client/attendanceModels/2019Model');
-
 exports.getAttendancePage = (req, res, next) => {
-  const meeting1 = twentyNineteen.TwentyNineteen.getAttendance(0);
-  console.log(meeting1);
-  res.send('hi');
+  res.render('client/attendance/currentYear', {});
 };
 
-exports.getAttendanceYear = (req, res, next) => {};
+exports.getAttendanceYear = (req, res, next) => {
+  console.log(req.params.yearId);
+  res.render(
+    `client/attendance/years/${req.params.yearId.split('-')[0].split(':')[1]}-${
+      req.params.yearId.split('-')[1]
+    }`
+  );
+};
