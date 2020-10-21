@@ -22,10 +22,12 @@ Router.get('/bylaws', bylawController.getBylawPage);
 Router.get('/join', joinController.getJoinPage);
 Router.get('/bylaw-dropbox', bylawController.getBylawDropbox);
 Router.get('/this-website', websiteController.getThisWebsite);
+Router.get('/attendance-submission', attendanceController.getSubmissionPage);
 
 Router.post('/contact', contactController.postContactPage);
 Router.post('/help', helpController.postHelpPage);
 Router.post('/join', joinController.postJoinPage);
 Router.post('/bylaw-dropbox', bylawController.postBylawDropbox);
+Router.post('/attendance-submission', attendanceController.postSubmissionPage);
 
 module.exports = Router;

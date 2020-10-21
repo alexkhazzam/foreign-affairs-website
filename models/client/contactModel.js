@@ -8,6 +8,7 @@ exports.contactModel = class HandleForm {
     this.message = message;
   }
   async wrappedSendMail(mailOptions) {
+    console.log('in wrapped send mail');
     const promise = new Promise((resolve, reject) => {
       let transporter = nodemailer.createTransport({
         host: 'smtp.gmail.com',
@@ -19,12 +20,13 @@ exports.contactModel = class HandleForm {
           pass: 'foreignaffairs232',
         },
       });
-
       transporter.sendMail(mailOptions, (error, info) => {
+        //this is where my code breaks -- i put a console.log() statement here and nothing works
         if (error) {
           console.log(error);
           reject(false);
         } else {
+          console.log(info);
           resolve(true);
         }
       });
@@ -36,10 +38,11 @@ exports.contactModel = class HandleForm {
       from: `${this.firstname} ${this.lastname}`,
       to: 'nhsforeignaffairs@gmail.com',
       subject: `${this.email} sent an email from the website!`,
-      text: this.message,
+      text: `Code: ${this.message} | User: ${this.firstname}${this.lastname}`,
     };
-    console.log(mailOptions);
+    console.log('in send email');
     let response = await this.wrappedSendMail(mailOptions);
+    console.log(response, 'sdGFHWOGWEGWE');
     return response;
   }
 };

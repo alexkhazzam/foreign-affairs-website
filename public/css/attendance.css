@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sansita+Swashed:wght@300;700&display=swap');
 
 * {
   box-sizing: border-box;
@@ -20,41 +21,71 @@ body {
   width: 100%;
 }
 
+.card-body__link,
+.card-body__link:link,
+.card-body__link:visited {
+  letter-spacing: 2px;
+  font-size: 1rem;
+  text-decoration: none;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+.card-body__link:hover,
+.card-body__link:active {
+  font-weight: bolder;
+  -webkit-transform: translateY(-2px);
+  transform: translateY(-2px);
+  color: navy !important;
+  text-shadow: 0 0.5rem 1rem black;
+}
+
 .dropdown-item:hover {
   opacity: 1.5 !important;
   font-weight: bold !important;
   background-color: transparent !important;
 }
 
-.dropdown-item,
-.dropdown-item:link,
-.dropdown-item:visited {
-  letter-spacing: 2px !important;
-  font-size: 1rem !important;
-  text-decoration: none !important;
-  -webkit-box-align: center !important;
-  -ms-flex-align: center !important;
-  -webkit-transition: all 0.2s !important;
-  transition: all 0.2s !important;
-  cursor: pointer !important;
+.form-group-attendance,
+.navigation-wrapper-attendance {
+  width: 200px !important;
+  display: inline-block !important;
+  margin: 0px !important;
+  margin-right: -20px !important;
+  vertical-align: middle !important;
+  border: none !important;
 }
 
-.dropdown-item:hover,
-.dropdown-item:active {
-  font-weight: bolder !important;
-  -webkit-transform: translateY(-2px) !important;
-  transform: translateY(-2px) !important;
-  text-shadow: 0 0.5rem 1rem black !important;
+.form-group-attendance-1 {
+  margin-left: 10% !important;
 }
 
 .year-readonly {
-  width: 150px !important;
-  float: left !important;
-  margin-top: 16px !important;
   border-top-right-radius: 0px !important;
   border-bottom-right-radius: 0px !important;
   border-bottom-left-radius: 0px !important;
-  margin-left: 10% !important;
+}
+
+.next-meetings__header {
+  text-align: center;
+  margin-top: 45px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.next-meetings__btn {
+  cursor: pointer;
+}
+
+.meetings-readonly {
+  border-radius: 0px !important;
 }
 
 .toggle-years {
@@ -67,27 +98,68 @@ body {
   width: 80% !important;
   margin: auto !important;
   border-radius: 0px !important;
+  border: 0.5px solid white !important;
+}
+
+.card-header button {
+  color: navy !important;
 }
 
 .card-body__person {
   display: inline-block;
-  margin: 5px;
+  margin: 8px;
 }
 
 .number {
-  color: rgb(0, 0, 165);
-  font-weight: bolder;
+  color: #bd2130;
+  font-weight: bold;
 }
 
 .card-body__link {
   color: black;
 }
 
-.card-body__link::first-letter {
+.btn-link {
+  color: black !important;
+}
+
+.card-body__link-div::first-letter {
+  /* font-family: 'Sansita Swashed', cursive; */
   font-weight: bold;
+  font-size: 1.1rem;
 }
 
 .people {
   text-align: center;
   padding: 0px;
+}
+
+.attendance__header {
+  width: 80%;
+  margin: 15% auto 20px auto;
+  color: white;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+}
+
+.hidden-meetings {
+  display: none;
+}
+
+.attendance-wrapper {
+  animation: 2s scroll-up-attendance;
+}
+
+.attendance-header-wrapper {
+  animation: 3.5s scroll-up-attendance;
+}
+
+@keyframes scroll-up-attendance {
+  from {
+    margin-top: 100%;
+  }
+
+  to {
+    margin-top: 0px;
+  }
 }
