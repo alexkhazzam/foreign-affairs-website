@@ -147,11 +147,11 @@ body {
 }
 
 .attendance-wrapper {
-  animation: 2s scroll-up-attendance;
+  animation: 1.5s scroll-up-attendance;
 }
 
 .attendance-header-wrapper {
-  animation: 3.5s scroll-up-attendance;
+  animation: 1.5s scroll-up-attendance;
 }
 
 @keyframes scroll-up-attendance {

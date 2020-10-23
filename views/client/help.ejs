@@ -17,7 +17,8 @@
     <ul class="help-page__links">
       <% for (let i = 0; i <= links.length; i++) { %>
       <li class="help-page__link">
-        <a class="help-page__link-link" href="<%= links[i] %>"
+        <% console.log(links[i]) %>
+        <a class="help-page__link-link" href="/<%= links[i] %>"
           ><%= links[i] %></a
         >
       </li>
