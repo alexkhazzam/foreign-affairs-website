@@ -4,7 +4,8 @@
   "description": "foreign affairs website server",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon --ignore '**/data/**/*' server.js"
+    "start": "node server.js",
+    "start:dev": "nodemon --ignore '**/data/**/*' server.js"
   },
   "repository": {
     "type": "git",
