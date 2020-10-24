@@ -1,6 +1,7 @@
 const attendanceModel = require('../../models/client/attendanceModels/attendanceModel');
 const studentCodeModel = require('../../models/client/attendanceModels/studentCodeModel');
 const contactModel = require('../../models/client/contactModel');
+const generateCodeModel = require('../../models/client/attendanceModels/generateCodeModel');
 
 let currLink;
 
@@ -17,6 +18,52 @@ exports.getAttendancePage = (req, res, next) => {
     meetingLength: attendance.length,
     refId: currLink,
   });
+};
+
+exports.getGenerateCode = (req, res, next) => {
+  res.render('client/attendance/generateCode', {
+    emailSent: req.query.generateCode === 'success' ? true : false,
+    emailStatus: req.query.emailStatus === 'fail' ? false : true,
+    emailUse: req.query.emailUse === 'fail' ? false : true,
+  });
+};
+
+exports.postGenerateCode = (req, res, next) => {
+  const generateCode = new generateCodeModel.GenerateCode(
+    req.body.firstName,
+    req.body.lastName,
+    req.body.email
+  );
+  const result = generateCode.verifyEmail();
+  if (!result.success && result.emailStatus === false) {
+    res.redirect('/attendance-submission/generate-code/?emailStatus=fail');
+  } else if (!result.success && result.emailUse === false) {
+    res.redirect('/attendance-submission/generate-code/?emailUse=fail');
+  }
+  if (result.success) {
+    const sendEmail = new contactModel.contactModel(
+      req.body.email,
+      req.body.firstName,
+      null,
+      result.id
+    );
+    sendEmail
+      .sendGenerateCode()
+      .then((data) => {
+        if (data) {
+          res.redirect(
+            '/attendance-submission/generate-code/?generateCode=success/?emailStatus=success/?emailUse=true'
+          );
+        }
+      })
+      .catch((err) => {
+        if (err) {
+          console.log(err);
+          throw err;
+        }
+      });
+    console.log(result.success);
+  }
 };
 
 exports.getAttendanceYear = (req, res, next) => {
