@@ -24,42 +24,41 @@ exports.SubmitCode = class {
     this.id = id;
     let result = false;
     if (this.id.length < 6) {
+      console.log('too short');
       result = false;
     }
     for (let i = 0; i <= this.id.length; i++) {
       if (this.id.charAt(i).toUpperCase() !== this.id.charAt(i)) {
-        return (result = false);
+        console.log('wrong case');
+        return {
+          result: false,
+        };
       }
     }
     const ids = fs.readFileSync(`${__dirname}/data/memberCodes.json`, 'utf-8');
     const parsedIds = [...JSON.parse(ids)];
     const matchId = parsedIds.find((member) => member.id === this.id);
     if (matchId === undefined) {
-      result = false;
-    } else {
-      const currentIds = fs.readFileSync(
-        `${__dirname}/data/memberCodesSubmitted.json`,
-        'utf-8'
-      );
-      const currentParsedIds = [...JSON.parse(currentIds)];
-      currentParsedIds.push(`${matchId.member}`);
-      fs.writeFileSync(
-        `${__dirname}/data/memberCodesSubmitted.json`,
-        JSON.stringify(currentParsedIds)
-      );
-      const memberNames = fs.readFileSync(
-        `${__dirname}/data/memberCodesSubmitted.json`,
-        'utf-8'
-      );
-      const parsedNames = [...JSON.parse(memberNames)];
-      console.log('succcccessss');
-      result = true;
+      console.log('no match');
+      return {
+        result: false,
+      };
     }
+    const currentIds = fs.readFileSync(
+      `${__dirname}/data/memberCodesSubmitted.json`,
+      'utf-8'
+    );
+    const currentParsedIds = [...JSON.parse(currentIds)];
+    currentParsedIds.push(`${matchId.member}`);
+    fs.writeFileSync(
+      `${__dirname}/data/memberCodesSubmitted.json`,
+      JSON.stringify(currentParsedIds)
+    );
     return {
-      result: result,
-      firstName: matchId.member.split('-')[0],
-      lastName: matchId.member.split('-')[1],
-      id: matchId.id,
+      result: true,
+      firstName: matchId?.member.split('-')[0],
+      lastName: matchId?.member.split('-')[1],
+      id: matchId?.id,
     };
   }
 };
