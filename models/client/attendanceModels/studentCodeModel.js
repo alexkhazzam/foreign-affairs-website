@@ -56,10 +56,10 @@ exports.SubmitCode = class {
     );
     return {
       result: true,
-      firstName: matchId?.member.split('-')[0],
-      lastName: matchId?.member.split('-')[1],
-      id: matchId?.id,
-      email: matchId?.email,
+      firstName: matchId ? matchId.member.split('-')[0] : null,
+      lastName: matchId ? matchId.member.split('-')[1] : null,
+      id: matchId ? matchId.id : null,
+      email: matchId ? matchId.email : null,
     };
   }
 };

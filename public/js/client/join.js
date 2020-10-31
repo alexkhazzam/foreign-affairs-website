@@ -63,11 +63,7 @@ let text =
   'Stay up to date with the latest scoop on world policies by joining our Google Classroom!';
 
 const printTxt = () => {
-  setTimeout(() => {
-    joinTitle.textContent += text.charAt(i);
-    i++;
-    printTxt();
-  }, 40);
+  joinTitle.textContent = text;
 };
 
 printTxt();

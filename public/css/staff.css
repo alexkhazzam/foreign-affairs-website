@@ -34,12 +34,19 @@ body {
 .staff-title__section {
   width: 80% !important;
   margin: auto !important;
-  margin-bottom: 5px !important;
+  margin-bottom: 0px !important;
   letter-spacing: 1px !important;
 }
 
 .club-advisor {
   margin-top: 10% !important;
+  border-bottom-right-radius: 0px !important;
+  border-bottom-left-radius: 0px !important;
+}
+
+.founder {
+  border-top-right-radius: 0px !important;
+  border-top-left-radius: 0px !important;
 }
 
 .staff-title__span {
@@ -49,7 +56,7 @@ body {
 .staff-page__writeable-text {
   margin-left: 10%;
   margin-top: 10%;
-  color: rgb(36, 36, 36);
+  color: white;
   font-size: 1.5rem;
   letter-spacing: 3px;
 }
