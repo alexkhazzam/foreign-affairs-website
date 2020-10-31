@@ -59,6 +59,7 @@ exports.SubmitCode = class {
       firstName: matchId?.member.split('-')[0],
       lastName: matchId?.member.split('-')[1],
       id: matchId?.id,
+      email: matchId?.email,
     };
   }
 };

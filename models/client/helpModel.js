@@ -24,7 +24,6 @@ exports.helpModel = class {
         this.matchedRefs.push(ref);
       }
     });
-
     const chars = [];
     for (let i = 0; i <= this.searchedValue.length; i++) {
       this.matchedRefs.forEach((ref) => {

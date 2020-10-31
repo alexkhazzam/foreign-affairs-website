@@ -15,37 +15,59 @@
         <div class="card-header" id="headingOne">
           <h5 class="mb-0">
             <button
-              class="btn btn-link"
+              onClick="extendPage()"
+              class="btn btn-link collapsed"
               data-toggle="collapse"
               data-target="#collapseOne"
-              aria-expanded="true"
+              aria-expanded="false"
               aria-controls="collapseOne"
             >
-              [ Attendance ] Meeting #3
+              Meeting #1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <span style="color: black"
+                >[ <%= attendanceArr[0].length %> ]</span
+              >
             </button>
           </h5>
         </div>
-
         <div
           id="collapseOne"
           class="collapse"
           aria-labelledby="headingOne"
           data-parent="#accordion"
         >
-          <div class="card-body"></div>
+          <div class="card-body">
+            <div class="card-body">
+              <ul class="people">
+                <% for (let i = 0; i <= ([...attendanceArr[0].sort()].length -
+                1); i++) { %>
+                <li class="card-body__person">
+                  <span class="number"><%= (i + 1) %>)</span>
+                  <% let ref = attendanceArr[0][i] %>
+                  <a class="card-body__link" href="/members/:<%= ref %>"
+                    ><%= `${ref.split("-")[0]} ${ref.split("-")[1]}` %></a
+                  >
+                </li>
+                <% } %>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
       <div class="card">
         <div class="card-header" id="headingTwo">
           <h5 class="mb-0">
             <button
+              onClick="extendPage()"
               class="btn btn-link collapsed"
               data-toggle="collapse"
               data-target="#collapseTwo"
               aria-expanded="false"
               aria-controls="collapseTwo"
             >
-              [ Attendance ] Meeting #2
+              Meeting #2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <span style="color: black"
+                >[ <%= attendanceArr[1].length %> ]</span
+              >
             </button>
           </h5>
         </div>
@@ -55,20 +77,39 @@
           aria-labelledby="headingTwo"
           data-parent="#accordion"
         >
-          <div class="card-body"></div>
+          <div class="card-body">
+            <div class="card-body">
+              <ul class="people">
+                <% for (let i = 0; i <= ([...attendanceArr[1].sort()].length -
+                1); i++) { %>
+                <li class="card-body__person">
+                  <span class="number"><%= (i + 1) %>)</span>
+                  <% let ref = attendanceArr[1][i] %>
+                  <a class="card-body__link" href="/members/:<%= ref %>"
+                    ><%= `${ref.split("-")[0]} ${ref.split("-")[1]}` %></a
+                  >
+                </li>
+                <% } %>
+              </ul>
+            </div>
+          </div>
         </div>
       </div>
       <div class="card">
         <div class="card-header" id="headingThree">
           <h5 class="mb-0">
             <button
+              onClick="extendPage()"
               class="btn btn-link collapsed"
               data-toggle="collapse"
               data-target="#collapseThree"
               aria-expanded="false"
               aria-controls="collapseThree"
             >
-              [ Attendance ] Meeting #1
+              Meeting #3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <span style="color: black"
+                >[ <%= attendanceArr[2].length %> ]</span
+              >
             </button>
           </h5>
         </div>
@@ -78,9 +119,203 @@
           aria-labelledby="headingThree"
           data-parent="#accordion"
         >
-          <div class="card-body"></div>
+          <div class="card-body">
+            <div class="card-body">
+              <ul class="people">
+                <% for (let i = 0; i <= ([...attendanceArr[2].sort()].length -
+                1); i++) { %>
+                <li class="card-body__person">
+                  <span class="number"><%= (i + 1) %>)</span>
+                  <% let ref = attendanceArr[2][i] %>
+                  <a class="card-body__link" href="/members/:<%= ref %>"
+                    ><%= `${ref.split("-")[0]} ${ref.split("-")[1]}` %></a
+                  >
+                </li>
+                <% } %>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingFour">
+          <h5 class="mb-0">
+            <button
+              onClick="extendPage()"
+              class="btn btn-link collapsed"
+              data-toggle="collapse"
+              data-target="#collapseFour"
+              aria-expanded="false"
+              aria-controls="collapseFour"
+            >
+              Meeting #4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <span style="color: black"
+                >[ <%= attendanceArr[3].length %> ]</span
+              >
+            </button>
+          </h5>
+        </div>
+        <div
+          id="collapseFour"
+          class="collapse"
+          aria-labelledby="headingFour"
+          data-parent="#accordion"
+        >
+          <div class="card-body">
+            <div class="card-body">
+              <ul class="people">
+                <% for (let i = 0; i <= ([...attendanceArr[2].sort()].length -
+                1); i++) { %>
+                <li class="card-body__person">
+                  <span class="number"><%= (i + 1) %>)</span>
+                  <% let ref = attendanceArr[2][i] %>
+                  <a class="card-body__link" href="/members/:<%= ref %>"
+                    ><%= `${ref.split("-")[0]} ${ref.split("-")[1]}` %></a
+                  >
+                </li>
+                <% } %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingFive">
+          <h5 class="mb-0">
+            <button
+              onClick="extendPage()"
+              class="btn btn-link collapsed"
+              data-toggle="collapse"
+              data-target="#collapseFive"
+              aria-expanded="false"
+              aria-controls="collapseFive"
+            >
+              Meeting #5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              <span style="color: black"
+                >[ <%= attendanceArr[4].length %> ]</span
+              >
+            </button>
+          </h5>
+        </div>
+        <div
+          id="collapseFive"
+          class="collapse"
+          aria-labelledby="headingFive"
+          data-parent="#accordion"
+        >
+          <div class="card-body">
+            <div class="card-body">
+              <ul class="people">
+                <% for (let i = 0; i <= ([...attendanceArr[4].sort()].length -
+                1); i++) { %>
+                <li class="card-body__person">
+                  <span class="number"><%= (i + 1) %>)</span>
+                  <% let ref = attendanceArr[4][i] %>
+                  <a class="card-body__link" href="/members/:<%= ref %>"
+                    ><%= `${ref.split("-")[0]} ${ref.split("-")[1]}` %></a
+                  >
+                </li>
+                <% } %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button
+        type="button"
+        class="btn btn-info show-meetings"
+        style="
+          width: 80% !important;
+          margin-left: 10% !important;
+          border-top-left-radius: 0px !important;
+          border-top-right-radius: 0px !important;
+        "
+      >
+        View All Meetings
+        <img
+          class="next-meetings__btn"
+          src="https://img.icons8.com/ios/50/000000/low-importance.png"
+          width="40"
+          height="40"
+        />
+      </button>
+      <div class="hidden-meetings">
+        <div class="card">
+          <div class="card-header" id="headingSix">
+            <h5 class="mb-0">
+              <button
+                onClick="extendPage()"
+                class="btn btn-link collapsed"
+                data-toggle="collapse"
+                data-target="#collapseSix"
+                aria-expanded="false"
+                aria-controls="collapseSix"
+              >
+                Meeting #6&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="color: black"
+                  >[ <%= attendanceArr[5].length %> ]</span
+                >
+              </button>
+            </h5>
+          </div>
+          <div
+            id="collapseSix"
+            class="collapse"
+            aria-labelledby="headingSix"
+            data-parent="#accordion"
+          >
+            <div class="card-body">
+              <div class="card-body">
+                <ul class="people">
+                  <% for (let i = 0; i <= ([...attendanceArr[5].sort()].length -
+                  1); i++) { %>
+                  <li class="card-body__person">
+                    <span class="number"><%= (i + 1) %>)</span>
+                    <% let ref = attendanceArr[5][i] %>
+                    <a class="card-body__link" href="/members/:<%= ref %>"
+                      ><%= `${ref.split("-")[0]} ${ref.split("-")[1]}` %></a
+                    >
+                  </li>
+                  <% } %>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button
+          type="button"
+          class="btn btn-info show-less"
+          style="
+            width: 80% !important;
+            margin-left: 10% !important;
+            border-top-left-radius: 0px !important;
+            border-top-right-radius: 0px !important;
+          "
+        >
+          Show Less
+          <img
+            src="https://img.icons8.com/pastel-glyph/64/000000/circled-up.png"
+            height="40"
+            width="40"
+          />
+        </button>
       </div>
     </div>
   </body>
+  <script>
+    //   let clicked = 0;
+    //   const html = document.querySelector('html');
+    //   function extendPage() {
+    //     if (Number.isInteger(clicked / 2)) {
+    //       html.style.height = 'fit-content';
+    //       clicked = clicked + 1;
+    //       console.log(clicked);
+    //     } else {
+    //       html.style.height = '100%';
+    //       clicked = clicked + 1;
+    //       console.log(clicked);
+    //     }
+    //   }
+    //
+  </script>
 </html>

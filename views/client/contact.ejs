@@ -6,13 +6,19 @@
     <script src="/js/client/contact.js" defer></script> 
     <script src="/js/client/navbar.js" defer></script>
     <%- include("../includes/bootstrap.ejs") %>
+    <script type='text/javascript'>
+      function showLoadingSpinner() {
+        document.querySelector("#submit-button").style.display = "none"
+        document.querySelector("#loading-spinner").style.display = "inline-block"
+      }
+    </script>
   </head>
   <body>
     <%- include("../includes/navbar.ejs") %>
     <div class="form-wrapper">
       <h3 class="contact-form__writeable-text"></h3>
       <main class="contact-form">
-        <form action="/contact" method="POST">
+        <form action="/contact" method="POST" onsubmit="showLoadingSpinner()" >
           <div class="form-group contact-form__section">
             <label for="exampleInputPassword1" class="contact-form__label email-input" >Email Address</label>
             <input type="email" class="form-control contact-form__input" id="exampleInputPassword1" name="email" required/>
@@ -39,6 +45,9 @@
             </div>
             <% } else { %>
               <button type="btn" class="btn btn-info contact-form__submit">Submit</button>
+              <div id="loading-spinner" style="display: none;" class="spinner-border text-primary" role="status">
+                <span class="sr-only">Loading...</span>
+              </div>
               <% } %>
         </form>
       </main>

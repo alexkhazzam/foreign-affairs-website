@@ -1,5 +1,4 @@
 const staffHeader = document.querySelector('.homepage-opening-text');
-
 let i = 0;
 let text = 'Great Neck North High is Proud to Present...';
 

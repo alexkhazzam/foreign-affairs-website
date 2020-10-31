@@ -13,8 +13,10 @@ exports.postContactPage = (req, res, next) => {
     req.body.email,
     req.body.firstName,
     req.body.lastName,
-    req.body.message
+    req.body.message,
+    'contact'
   );
+  console.log(req.body.email);
   handleForm
     .sendEmail()
     .then((data) => {

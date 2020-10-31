@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="/css/authentication.css" />
     <link rel="stylesheet" href="/css/bylawDropbox.css" />
     <%- include("../../includes/bootstrap.ejs") %>
-
     <script type='text/javascript'>
       function showLoadingSpinner() {
         document.querySelector("#submit-button").style.display = "none"
@@ -28,6 +27,8 @@
         ><img src="/assets/icons/navbar/school-logo.png" height="75" width="75"
       /></a>
     </div>
+    <script>
+    </script>
     <form onsubmit="showLoadingSpinner()" class="register-form" method="POST" action="/attendance-submission">
       <input
         required

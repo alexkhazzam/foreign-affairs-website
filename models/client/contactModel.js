@@ -1,11 +1,12 @@
 const nodemailer = require('nodemailer');
 
 exports.contactModel = class HandleForm {
-  constructor(email, firstname, lastname, message) {
+  constructor(email, firstname, lastname, message, purpose) {
     this.email = email;
     this.firstname = firstname;
     this.lastname = lastname;
     this.message = message;
+    this.purpose = purpose;
   }
   async wrappedSendMail(mailOptions) {
     const promise = new Promise((resolve, reject) => {
@@ -32,14 +33,23 @@ exports.contactModel = class HandleForm {
     return promise;
   }
   async sendEmail() {
-    let mailOptions = {
-      from: `${this.firstname} ${this.lastname}`,
-      to: 'nhsforeignaffairs@gmail.com',
-      subject: `${this.email} sent an email from the website!`,
-      text: `Code: ${this.message} | User: ${this.firstname}${this.lastname}`,
-    };
+    let mailOptions;
+    if (this.purpose === 'attendance') {
+      mailOptions = {
+        from: `${this.firstname} ${this.lastname}`,
+        to: 'nhsforeignaffairs@gmail.com',
+        subject: `${this.firstname} ${this.lastname} submitted their attendance code!`,
+        text: `Code: ${this.message}. Respond? You can reach them at ${this.email}.`,
+      };
+    } else if (this.purpose === 'contact') {
+      mailOptions = {
+        from: `${this.email}`,
+        to: 'nhsforeignaffairs@gmail.com',
+        subject: `${this.email} sent an email from the website!`,
+        text: `${this.firstname} ${this.lastname} wrote: ${this.message}.`,
+      };
+    }
     let response = await this.wrappedSendMail(mailOptions);
-    console.log(response, 'sdGFHWOGWEGWE');
     return response;
   }
   async sendGenerateCode() {

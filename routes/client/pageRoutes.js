@@ -10,6 +10,7 @@ const memberController = require('../../controllers/client/MemberController');
 const bylawController = require('../../controllers/client/bylawController');
 const joinController = require('../../controllers/client/joinController');
 const websiteController = require('../../controllers/client/websiteController');
+const privateHomeController = require('../../controllers/private/homepageController');
 
 Router.get('/home', homepageController.getHomepage);
 Router.get('/contact', contactController.getContactPage);
@@ -27,6 +28,8 @@ Router.get(
   '/attendance-submission/generate-code',
   attendanceController.getGenerateCode
 );
+Router.get('/private-home', privateHomeController.getHomepage);
+Router.get('/settings', homepageController.getSettings);
 
 Router.post('/contact', contactController.postContactPage);
 Router.post('/help', helpController.postHelpPage);

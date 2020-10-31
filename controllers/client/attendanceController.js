@@ -100,16 +100,16 @@ exports.getSubmissionPage = (req, res, next) => {
 exports.postSubmissionPage = (req, res, next) => {
   const attendanceId = req.body.attendanceId;
   const submitCode = studentCodeModel.SubmitCode.submitId(attendanceId);
+  console.log(submitCode);
   if (submitCode.result === true) {
     const sendEmail = new contactModel.contactModel(
-      'nhsforeignaffairs@gmail.com',
+      submitCode.email,
       submitCode.firstName,
       submitCode.lastName,
-      submitCode.id
+      submitCode.id,
+      'attendance'
     );
-    console.log('about to send email');
     sendEmail.sendEmail().then((emailResponse) => {
-      console.log('sending email'); // this statement does not get printed
       if (emailResponse) {
         res.redirect('/attendance-submission/?submitted=success');
       }
