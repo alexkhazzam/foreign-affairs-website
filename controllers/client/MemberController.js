@@ -11,7 +11,6 @@ exports.getMemberPage = (req, res, next) => {
 exports.getMemberInformationPage = (req, res, next) => {
   res.render('client/memberInformation', {
     members: req.query.membersFound === 'success' ? memberList : false,
-    bob: 5,
   });
 };
 

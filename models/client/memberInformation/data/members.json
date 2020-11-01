@@ -1,7 +1,46 @@
 [
   {
     "member": "Alexander-Khazzam",
-    "titles": ["Club President [ Fall 2019 - Spring 2022 ]"],
+    "titles": ["President [ Fall 2019 - Spring 2022 ]"],
+    "hobbies": [
+      "Computer science",
+      "soccer",
+      "tennis",
+      "weight-lifting",
+      "poker"
+    ],
+    "achievements": ["ate cake"],
+    "about": "Very passionate about foreign affairs (obviously) and computer science. Lover of golden retrievers. "
+  },
+  {
+    "member": "Alexander-Khazzam",
+    "titles": ["President [ Fall 2019 - Spring 2022 ]"],
+    "hobbies": [
+      "Computer science",
+      "soccer",
+      "tennis",
+      "weight-lifting",
+      "poker"
+    ],
+    "achievements": ["ate cake"],
+    "about": "Very passionate about foreign affairs (obviously) and computer science. Lover of golden retrievers. "
+  },
+  {
+    "member": "Alexander-Khazzam",
+    "titles": ["President [ Fall 2019 - Spring 2022 ]"],
+    "hobbies": [
+      "Computer science",
+      "soccer",
+      "tennis",
+      "weight-lifting",
+      "poker"
+    ],
+    "achievements": ["ate cake"],
+    "about": "Very passionate about foreign affairs (obviously) and computer science. Lover of golden retrievers. "
+  },
+  {
+    "member": "Alexander-Khazzam",
+    "titles": ["President [ Fall 2019 - Spring 2022 ]"],
     "hobbies": [
       "Computer science",
       "soccer",

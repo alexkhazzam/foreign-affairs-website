@@ -5,44 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <%- include("../includes/bootstrap.ejs") %>
+    <link rel="stylesheet" href="/css/memberInformation.css" />
     <script>
       function submitted() {
         const loadingSpinner = document.querySelector('.loading-spinner');
         loadingSpinner.style.display = 'inline-block !important';
       }
+      function scrollUp() {
+        const searchWrapper = document.querySelector('.scroll-to');
+        searchWrapper.scrollIntoView({ behavior: 'smooth' });
+      }
+      function scrollDown() {
+        const member = document.querySelector('.member:last-of-type');
+        member.scrollIntoView({ behavior: 'smooth' });
+      }
     </script>
   </head>
   <body>
+    <span class="scroll-to"></span>
     <%- include("../includes/navbar.ejs") %>
     <form onsubmit="submitted()" method="POST" action="/member-information">
-      <div class="form-group">
-        <input
-          required
-          class="form-control"
-          id="exampleFormControlInput1"
-          placeholder="Member Name"
-          name="memberName"
-        />
+      <div class="search-wrapper">
+        <div class="form-group member-search">
+          <input
+            required
+            class="form-control member-name"
+            id="exampleFormControlInput1"
+            placeholder="Member Name"
+            name="memberName"
+          />
+        </div>
+        <button type="submit" class="btn btn-info search">Search</button>
       </div>
-      <button type="submit" class="btn btn-info">Search</button>
     </form>
     <div class="loading-spinner" style="display: none !important">
       <div class="spinner-border text-info" role="status">
         <span class="sr-only">Loading...</span>
       </div>
     </div>
+    <div class="members-wrapper"></div>
     <% if (members) { %> <% for (const memberInfo of members) { %>
-    <h1><%= memberInfo.member%></h1>
-    <% if (memberInfo.titles) { %> <% for (let i = 0; i <=
-    memberInfo.titles.length - 1; i++) { %> <% console.log(memberInfo.titles[i])
-    %> <% } %> <% } %> <% if (memberInfo.hobbies) { %> <% for (let i = 0; i <=
-    memberInfo.hobbies.length - 1; i++) { %> <%
-    console.log(memberInfo.hobbies[i]) %> <% } %> <% } %> <% if
-    (memberInfo.achievements) { %> <% for (let i = 0; i <=
-    memberInfo.achievements.length - 1; i++) { %> <%
-    console.log(memberInfo.achievements[i]) %> <% } %> <% } %> <% if
-    (memberInfo.about !== "") { %>
-    <p><%= memberInfo.about %></p>
-    <% } %> <% } %> <% } %>
+    <div class="member shadow-lg p-3 mb-5 bg-white rounded">
+      <h1 class="member-name">
+        <%= `${memberInfo.member.split("-")[0] + " " +
+        memberInfo.member.split("-")[1]}` %>
+      </h1>
+      <% if (memberInfo.titles) { %>
+      <h3 class="member-section">Club Titles</h3>
+      <ul class="titles">
+        <% for (let i = 0; i <= memberInfo.titles.length - 1; i++) { %>
+        <li class="title">- <%= memberInfo.titles[i] %></li>
+        <% } %>
+      </ul>
+      <% } %> <% if (memberInfo.hobbies) { %>
+      <h3 class="member-section">Hobbies</h3>
+      <ul class="hobbies">
+        <% for (let i = 0; i <= memberInfo.hobbies.length - 1; i++) { %>
+        <li class="hobby">- <%= memberInfo.hobbies[i] %></li>
+        <% } %>
+      </ul>
+      <% } %> <% if (memberInfo.achievements) { %>
+      <h3 class="member-achievements">Achievements</h3>
+      <ul class="achievements">
+        <% for (let i = 0; i <= memberInfo.achievements.length - 1; i++) { %>
+        <li class="achievement">- <%= memberInfo.achievements[i] %></li>
+        <% } %>
+      </ul>
+      <% } %> <% if (memberInfo.about !== "") { %>
+      <h3 class="member-section">About</h3>
+      <p class="about"><%= memberInfo.about %></p>
+      <% } %>
+    </div>
+    <% if (members.length >= 2) { %>
+    <button onClick="scrollDown()" type="btn" class="btn btn-light scroll">
+      <img src="https://img.icons8.com/nolan/64/long-arrow-down--v2.png" />
+    </button>
+    <button onClick="scrollUp()" type="btn" class="btn btn-light scroll">
+      <img src="https://img.icons8.com/nolan/64/long-arrow-up--v1.png" />
+    </button>
+    <% } %> <% } %> <% } else { %>
+    <h3 style="color: white; text-align: center; margin-top: 10%">
+      No Members Found!
+    </h3>
+    <% } %>
   </body>
 </html>
