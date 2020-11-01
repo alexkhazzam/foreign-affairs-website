@@ -29,6 +29,7 @@ Router.get(
   '/attendance-submission/generate-code',
   attendanceController.getGenerateCode
 );
+Router.get('/member-information', memberController.getMemberInformationPage);
 Router.get('/private-home', privateHomeController.getHomepage);
 Router.get('/settings', homepageController.getSettings);
 Router.get('/construction', constructionController.getConstructionPage);
@@ -42,5 +43,6 @@ Router.post(
   '/attendance-submission/generate-code',
   attendanceController.postGenerateCode
 );
+Router.post('/member-information', memberController.postMemberInformationPage);
 
 module.exports = Router;
