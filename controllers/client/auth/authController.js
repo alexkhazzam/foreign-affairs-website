@@ -70,5 +70,6 @@ exports.postLogin = (req, res, next) => {
   if (email.split('@')[1] !== 'student.gn.k12.ny.us') {
     res.redirect('/secure/login/?login=fail');
   } else {
+    res.redirect('/construction');
   }
 };
