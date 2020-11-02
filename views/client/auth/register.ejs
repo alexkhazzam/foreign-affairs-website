@@ -6,6 +6,11 @@
     <title>Register</title>
     <link rel="stylesheet" href="/css/authentication.css" />
     <%- include("../../includes/bootstrap.ejs") %>
+    <script type="text/javascript">
+      function showLoadingSpinner() {
+        document.querySelector('.spinner-wrapper').style.display = 'block';
+      }
+    </script>
   </head>
   <body>
     <div class="back-arrow-wrapper">
@@ -19,7 +24,12 @@
         ><img src="/assets/icons/navbar/school-logo.png" height="75" width="75"
       /></a>
     </div>
-    <form class="register-form" method="POST" action="/secure/register">
+    <form
+      class="register-form"
+      onsubmit="showLoadingSpinner()"
+      method="POST"
+      action="/secure/register"
+    >
       <input
         required
         type="email"
@@ -69,9 +79,22 @@
         </p>
       </div>
       <% } else { %>
-      <button type="submit" class="btn btn-info register-form__submit">
+      <button
+        type="submit"
+        class="btn btn-info register-form__submit"
+        id="submit-button"
+      >
         Register
       </button>
+      <div class="spinner-wrapper" style="text-align: center; display: none">
+        <div
+          id="loading-spinner"
+          class="spinner-border text-primary"
+          role="status"
+        >
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
       <% } %>
       <p class="register-form__form-caption">
         Already have an account? Click

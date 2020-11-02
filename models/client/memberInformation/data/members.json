@@ -1,9 +1,16 @@
 [
   {
+    "member": "Abigail-Levy",
+    "titles": ["member [ fall 2019 - present ]"],
+    "hobbies": ["swimming", "skateboarding"],
+    "achievements": [],
+    "about": "Wants to major in political science in college"
+  },
+  {
     "member": "Alexander-Khazzam",
     "titles": ["President [ Fall 2019 - Spring 2022 ]"],
     "hobbies": [
-      "Computer science",
+      "computer science",
       "soccer",
       "tennis",
       "weight-lifting",
@@ -13,42 +20,127 @@
     "about": "Very passionate about foreign affairs (obviously) and computer science. Lover of golden retrievers. "
   },
   {
-    "member": "Alexander-Khazzam",
-    "titles": ["President [ Fall 2019 - Spring 2022 ]"],
-    "hobbies": [
-      "Computer science",
-      "soccer",
-      "tennis",
-      "weight-lifting",
-      "poker"
-    ],
-    "achievements": ["ate cake"],
-    "about": "Very passionate about foreign affairs (obviously) and computer science. Lover of golden retrievers. "
+    "member": "Andrew-Suh",
+    "titles": [],
+    "hobbies": ["Ping-Pong", "tennis", "video games", "basketball"],
+    "achievements": ["placed top 3 in multiple ping-pong tournaments"],
+    "about": null
   },
   {
-    "member": "Alexander-Khazzam",
-    "titles": ["President [ Fall 2019 - Spring 2022 ]"],
-    "hobbies": [
-      "Computer science",
-      "soccer",
-      "tennis",
-      "weight-lifting",
-      "poker"
-    ],
-    "achievements": ["ate cake"],
-    "about": "Very passionate about foreign affairs (obviously) and computer science. Lover of golden retrievers. "
+    "member": "Brandon-Torkian",
+    "titles": [],
+    "hobbies": ["tennis", "cycling", "volleyball"],
+    "achievements": [],
+    "about": "I love politics!"
   },
   {
-    "member": "Alexander-Khazzam",
-    "titles": ["President [ Fall 2019 - Spring 2022 ]"],
-    "hobbies": [
-      "Computer science",
-      "soccer",
-      "tennis",
-      "weight-lifting",
-      "poker"
+    "member": "Eden-Reznik",
+    "titles": ["member [ fall-2019 - present ]"],
+    "hobbies": ["figure skating", "cross-country", "track"],
+    "achievements": [],
+    "about": null
+  },
+  {
+    "member": "Ilan-Rastegar",
+    "titles": [
+      "secretary [ spring 2020 - present ]",
+      "member [ fall 2019 - spring 2020 ]"
     ],
-    "achievements": ["ate cake"],
-    "about": "Very passionate about foreign affairs (obviously) and computer science. Lover of golden retrievers. "
+    "hobbies": ["tennis"],
+    "achievements": [],
+    "about": "Loves learning about current events"
+  },
+  {
+    "member": "Jared-Ohebshalom",
+    "titles": [],
+    "hobbies": ["soccer", "lacrosse", "tennis", "basketball"],
+    "achievements": [
+      "4x varsity lacrosse",
+      "3x varsity basketball",
+      "2x varsity soccer"
+    ],
+    "about": "likes to have fun"
+  },
+  {
+    "member": "Jinchen-Yang",
+    "titles": [],
+    "hobbies": ["running", "playing cards &  RPG games", " watching anime"],
+    "achievements": [
+      "watched over 400 seasons of anime",
+      "can run a kilometer in 3:20 minutes"
+    ],
+    "about": "I like to use a fountain pen."
+  },
+  {
+    "member": "Jonah-Nouriyelian",
+    "titles": [],
+    "hobbies": [
+      "'chilling with the boys'",
+      "playing fortnite",
+      "watching movies",
+      "wrestling"
+    ],
+    "achievements": [
+      "varsity wrestling captain",
+      "invited to UPEN's magic club",
+      "being a \"senior for 4 years in a row\""
+    ],
+    "about": "Passionate about current events"
+  },
+  {
+    "member": "Joseph-Edelmen",
+    "titles": [],
+    "hobbies": ["basketball", "volleyball"],
+    "achievements": ["recieved 4 sport awards"],
+    "about": "I am a hard worker!"
+  },
+  {
+    "member": "Leo-Korman",
+    "titles": ["member [ fall 2019 - present ]"],
+    "hobbies": [
+      "video games",
+      "football",
+      "soccer",
+      "spending time with friends"
+    ],
+    "achievements": [],
+    "about": "Excited to be a part of the foreign affairs club!"
+  },
+  {
+    "member": "Michael-Chan",
+    "titles": ["member [ fall 2019 - present ]"],
+    "hobbies": [
+      "video games",
+      "Playing violin",
+      "listening to music",
+      "spending time with friends"
+    ],
+    "achievements": [],
+    "about": null
+  },
+  {
+    "member": "Natasha-Khazzam",
+    "titles": [],
+    "hobbies": ["running", "writing", "playing the piano"],
+    "achievements": [],
+    "about": "I am passionate about current events because I feel that informing oneself about the world is a great way to become a more active and impactful global citizen."
+  },
+  {
+    "member": "Qining-Yang(Alice)",
+    "titles": [],
+    "hobbies": ["listening to music", "drawing", "dancing"],
+    "achievements": [
+      "taking geomatry in just ninth grade",
+      "getting a part in one of my dream auditions",
+      "2x varsity soccer"
+    ],
+    "about": "low key a psychopath :)"
+  },
+  {
+    "member": "Ryan-Rokshar",
+    "titles": ["member [ fall 2019 - present ]"],
+    "hobbies": [],
+    "achievements": [],
+    "about": null
   }
 ]

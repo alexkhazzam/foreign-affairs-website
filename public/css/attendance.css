@@ -6,7 +6,8 @@
 }
 
 html {
-  height: 100%;
+  min-height: 100%;
+  max-width: fit-content;
 }
 
 body {
@@ -136,7 +137,7 @@ body {
 
 .attendance__header {
   width: 80%;
-  margin: 15% auto 20px auto;
+  margin: 10% auto 20px auto;
   color: white;
   font-size: 1.5rem;
   letter-spacing: 3px;
