@@ -164,6 +164,18 @@ body {
   }
 }
 
+@media (max-width: 1050px) and (orientation: landscape) {
+  .attendance__header {
+    margin-top: 10%;
+  }
+  html {
+    height: fit-content;
+  }
+  body {
+    padding-bottom: 20px;
+  }
+}
+
 @media (max-width: 400px) and (orientation: portrait) {
   .form-group-attendance-2 {
     width: 53.5% !important;

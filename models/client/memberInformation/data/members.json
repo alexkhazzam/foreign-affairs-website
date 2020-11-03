@@ -8,16 +8,25 @@
   },
   {
     "member": "Alexander-Khazzam",
-    "titles": ["President [ Fall 2019 - Spring 2022 ]"],
-    "hobbies": [
-      "computer science",
-      "soccer",
-      "tennis",
-      "weight-lifting",
-      "poker"
+    "titles": ["President [ Fall 2019 - Spring 2022 ]", "founder (fall 2019)"],
+    "hobbies": ["computer science", "soccer", "tennis", "piano", "poker"],
+    "achievements": [
+      "fluent in 4 programming languages",
+      "created this website"
     ],
-    "achievements": ["ate cake"],
-    "about": "Very passionate about foreign affairs (obviously) and computer science. Lover of golden retrievers. "
+    "about": "Very passionate about foreign affairs (obviously) and computer science. Lover of golden retrievers and JavaScript (backend programming)"
+  },
+  {
+    "member": "Alexander-Taberoki",
+    "titles": [],
+    "hobbies": [
+      "playing sports",
+      "spending time with friends",
+      "spending time with family",
+      "working out"
+    ],
+    "achievements": [],
+    "about": null
   },
   {
     "member": "Andrew-Suh",
@@ -27,6 +36,13 @@
     "about": null
   },
   {
+    "member": "Brandon-Tehrani",
+    "titles": [],
+    "hobbies": ["Relaxing", "being outside", "working"],
+    "achievements": ["proud of getting a 90 on his physics test"],
+    "about": "one of the youngest in his grade!"
+  },
+  {
     "member": "Brandon-Torkian",
     "titles": [],
     "hobbies": ["tennis", "cycling", "volleyball"],
@@ -34,8 +50,28 @@
     "about": "I love politics!"
   },
   {
+    "member": "Brian-Asnadi",
+    "titles": [],
+    "hobbies": ["playing sports"],
+    "achievements": [],
+    "about": "Looking forward to being a part of this club!"
+  },
+  {
+    "member": "Dylan-Yaghoutiel",
+    "titles": [],
+    "hobbies": [
+      "playing football",
+      "playing piano",
+      "following the stock market",
+      "following politics",
+      "watching the Jets get killed every Sunday"
+    ],
+    "achievements": [],
+    "about": null
+  },
+  {
     "member": "Eden-Reznik",
-    "titles": ["member [ fall-2019 - present ]"],
+    "titles": ["member [ fall 2019 - present ]"],
     "hobbies": ["figure skating", "cross-country", "track"],
     "achievements": [],
     "about": null
@@ -49,6 +85,13 @@
     "hobbies": ["tennis"],
     "achievements": [],
     "about": "Loves learning about current events"
+  },
+  {
+    "member": "Jared-Kimiabash",
+    "titles": ["member [ fall 2019 - present ]"],
+    "hobbies": ["soccer", "swimming", "video games"],
+    "achievements": [],
+    "about": null
   },
   {
     "member": "Jared-Ohebshalom",
@@ -95,6 +138,13 @@
     "about": "I am a hard worker!"
   },
   {
+    "member": "Josh-Yaghoubian",
+    "titles": [],
+    "hobbies": ["playing sports"],
+    "achievements": [],
+    "about": null
+  },
+  {
     "member": "Leo-Korman",
     "titles": ["member [ fall 2019 - present ]"],
     "hobbies": [
@@ -105,6 +155,16 @@
     ],
     "achievements": [],
     "about": "Excited to be a part of the foreign affairs club!"
+  },
+  {
+    "member": "Liam-Klebanov",
+    "titles": [],
+    "hobbies": ["soccer", "piano", "Xbox"],
+    "achievements": [
+      "attended NYSSMA for 5 years playing piano",
+      "passionately played soccer for 9 years"
+    ],
+    "about": null
   },
   {
     "member": "Michael-Chan",
@@ -140,6 +200,22 @@
     "member": "Ryan-Rokshar",
     "titles": ["member [ fall 2019 - present ]"],
     "hobbies": [],
+    "achievements": [],
+    "about": null
+  },
+  {
+    "member": "Zachary-Astrof",
+    "titles": ["member [ fall 2019 - present ] "],
+    "hobbies": ["soccer", "football", "drawing", "skiing", "shopping"],
+    "achievements": [
+      "funded the training of service dogs for veterans with PTSD"
+    ],
+    "about": "likes sneakers"
+  },
+  {
+    "member": "Zachary-Zieglar",
+    "titles": [],
+    "hobbies": ["golf", "skiing", "hanging out with friends"],
     "achievements": [],
     "about": null
   }
