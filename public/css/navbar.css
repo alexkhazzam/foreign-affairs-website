@@ -137,3 +137,12 @@ body {
     margin-right: 15px !important;
   }
 }
+
+@media (max-width: 400px) and (orientation: portrait) {
+  .settings {
+    margin-left: 10% !important;
+  }
+  .main-nav__search-bar {
+    margin-bottom: 20px !important;
+  }
+}

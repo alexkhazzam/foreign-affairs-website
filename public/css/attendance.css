@@ -6,8 +6,7 @@
 }
 
 html {
-  min-height: 100%;
-  max-width: fit-content;
+  height: 100%;
 }
 
 body {
@@ -137,7 +136,7 @@ body {
 
 .attendance__header {
   width: 80%;
-  margin: 10% auto 20px auto;
+  margin: 15% auto 20px auto;
   color: white;
   font-size: 1.5rem;
   letter-spacing: 3px;
@@ -162,5 +161,24 @@ body {
 
   to {
     margin-top: 0px;
+  }
+}
+
+@media (max-width: 400px) and (orientation: portrait) {
+  .form-group-attendance-2 {
+    width: 53.5% !important;
+    margin-left: 10% !important;
+    border-top: none !important;
+  }
+  .toggle-years {
+    margin-left: 20% !important;
+    margin-bottom: 15% !important;
+    width: 100% !important;
+  }
+  html {
+    height: fit-content;
+  }
+  body {
+    padding-bottom: 30px;
   }
 }

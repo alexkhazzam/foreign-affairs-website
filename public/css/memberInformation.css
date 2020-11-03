@@ -27,6 +27,7 @@ body {
 }
 
 .member {
+  word-wrap: break-word;
   animation: 2s slide-up-member;
   width: 70%;
   margin: auto;
@@ -140,5 +141,11 @@ body {
   .scroll,
   .scroll:last-of-type {
     display: none !important;
+  }
+}
+
+@media (max-width: 400px) and (orientation: portrait) {
+  .member {
+    width: 80% !important;
   }
 }

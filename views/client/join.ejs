@@ -7,6 +7,13 @@
     <link rel="stylesheet" href="/css/join.css" />
     <script src="/js/client/join.js" defer></script>
     <%- include("../includes/bootstrap.ejs") %>
+    <script>
+      function searchedLocation() {
+        const searchBtn = document.querySelector('.search-location-btn');
+        searchBtn.scrollIntoView({ behavior: 'smooth' });
+        alert('hi');
+      }
+    </script>
   </head>
   <body>
     <%- include("../includes/navbar.ejs") %>
@@ -53,7 +60,7 @@
       ></iframe>
     </div>
     <div class="map-keys-wrapper">
-      <form action="/join" method="POST">
+      <form action="/join" method="POST" onSubmit="searchedLocation()">
         <input
           type="text"
           class="form-control contact-form__input map-input-field"
@@ -65,7 +72,11 @@
           Search
         </button>
       </form>
-      <button type="submit" class="btn btn-danger get-location-btn">
+      <button
+        type="submit"
+        class="btn btn-danger get-location-btn"
+        style="display: none"
+      >
         Get My Coordinates
       </button>
       <div class="loading-spinner-wrapper">

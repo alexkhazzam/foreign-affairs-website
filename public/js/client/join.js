@@ -2,6 +2,7 @@ const getLocationBtn = document.querySelector('.get-location-btn');
 const loadingSpinner = document.querySelector('.loading-spinner-wrapper');
 const classCodeBtn = document.querySelector('.copy-class-code');
 const joinTitle = document.querySelector('.join__title');
+const searchLocationBtn = document.querySelector('.search-location-btn');
 
 let lat;
 let long;
