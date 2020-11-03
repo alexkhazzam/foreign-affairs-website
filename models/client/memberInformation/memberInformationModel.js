@@ -42,4 +42,28 @@ exports.MemberInformationModel = class {
     });
     return matchedMembers;
   }
+
+  fetchSingularMember() {
+    const name = `${this.memberName.substring(1)}`;
+    const members = fs.readFileSync(
+      path.join(__dirname, './', 'data', 'members.json'),
+      'utf-8'
+    );
+    const names = [...JSON.parse(members)].find(
+      (member) => member.member.toUpperCase() === name.toUpperCase()
+    );
+    if (names === undefined) {
+      return undefined;
+    } else {
+      const informationObj = {
+        member: names.member,
+        titles: names.titles.length !== 0 ? names.titles : null,
+        hobbies: names.hobbies.length !== 0 ? names.hobbies : null,
+        achievements:
+          names.achievements.length !== 0 ? names.achievements : null,
+        about: names.about !== '' ? names.about : null,
+      };
+      return informationObj;
+    }
+  }
 };

@@ -5,8 +5,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <%- include("../includes/bootstrap.ejs") %>
+    <link rel="stylesheet" href="/css/memberInformation.css" />
   </head>
   <body>
     <%- include("../includes/navbar.ejs") %>
+    <div class="back-arrow-wrapper" style="margin-top: 10px; margin-left: 10px">
+      <a href="/attendance" style="color: black">
+        <img src="https://img.icons8.com/cotton/64/000000/circled-left--v2.png"/
+        width="45" height="45" />Go back to attendance
+      </a>
+    </div>
+    <% if (member === "error") { %>
+    <h1 style="color: white; text-align: center; margin-top: 15%">
+      Member Not Found!
+    </h1>
+    <% } else { %>
+    <div class="member shadow-lg p-3 mb-5 bg-white rounded">
+      <h1 class="member-name">
+        <%= `${member.member.split("-")[0] + " " + member.member.split("-")[1]}`
+        %> <% if (member.titles) { %>
+        <h3 class="member-section">Club Position</h3>
+        <ul class="titles">
+          <% for (let i = 0; i <= member.titles.length - 1; i++) { %>
+          <li class="title">- <%= member.titles[i] %></li>
+          <% } %>
+        </ul>
+        <% } %> <% if (member.hobbies) { %>
+        <h3 class="member-section">Hobbies</h3>
+        <ul class="hobbies">
+          <% for (let i = 0; i <= member.hobbies.length - 1; i++) { %>
+          <li class="hobby">- <%= member.hobbies[i] %></li>
+          <% } %>
+        </ul>
+        <% } %> <% if (member.achievements) { %>
+        <h3 class="member-achievements">Achievements</h3>
+        <ul class="achievements">
+          <% for (let i = 0; i <= member.achievements.length - 1; i++) { %>
+          <li class="achievement">- <%= member.achievements[i] %></li>
+          <% } %>
+        </ul>
+        <% } %> <% if (member.about !== null) { %>
+        <h3 class="member-section">About</h3>
+        <p class="about"><%= member.about %></p>
+        <% } %>
+      </h1>
+    </div>
+    <% } %>
   </body>
+  <link rel="stylesheet" href="/css/singleMember.css" />
 </html>

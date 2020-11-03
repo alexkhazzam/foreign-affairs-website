@@ -1,0 +1,13 @@
+.member {
+  margin-top: 15%;
+}
+
+@keyframes slide-up-member {
+  from {
+    margin-top: 100%;
+  }
+
+  to {
+    margin-top: 15%;
+  }
+}

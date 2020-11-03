@@ -20,8 +20,9 @@
         <% if (links[i] !== undefined) { %> <% if (links[i].charAt(0) === "#") {
         %><% let newRef = `${links[i].substring(1).split(" ")[0] + "-" +
         links[i].split(" ")[1]}` %>
-        <a class="help-page__link-link" href="<%= `${newRef.split("-")[0].charAt(0).toLowerCase() + newRef.split("-")[0].substring(1) + "-" + newRef.split("-")[1].charAt(0).toLowerCase() + newRef.split("-")[1].substring(1)}` %>"><%= `${newRef.split("-")[0] + " " + newRef.split("-")[1]}` %></a>
+        <a class="help-page__link-link" href="<%= `/members/:${newRef.split("-")[0].charAt(0).toLowerCase() + newRef.split("-")[0].substring(1) + "-" + newRef.split("-")[1].charAt(0).toLowerCase() + newRef.split("-")[1].substring(1)}` %>"><%= `${newRef.split("-")[0] + " " + newRef.split("-")[1]}` %></a>
         <% } else { %>
+          <% console.log(`/members/:${links[i]}`)%>
         <a class="help-page__link-link" href="<%= links[i] %>"
           ><%= links[i] %></a
         >

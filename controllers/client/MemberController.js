@@ -4,9 +4,13 @@ let memberList;
 let submitted;
 
 exports.getMemberPage = (req, res, next) => {
-  const name = req.params.member;
-  console.log(name);
-  res.render('client/member', {});
+  const memberInfo = new memberInformationModel.MemberInformationModel(
+    req.params.member
+  );
+  const member = memberInfo.fetchSingularMember();
+  res.render('client/member', {
+    member: member === undefined ? 'error' : member,
+  });
 };
 
 exports.getMemberInformationPage = (req, res, next) => {
