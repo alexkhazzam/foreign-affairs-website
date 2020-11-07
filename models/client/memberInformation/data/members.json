@@ -29,11 +29,47 @@
     "about": null
   },
   {
+    "member": "Addison-Klebanov",
+    "titles": ["member [ fall 2019 - present ]"],
+    "hobbies": [
+      "soccer",
+      "netlflix",
+      "video games",
+      "watching tiktok",
+      "basketball"
+    ],
+    "achievements": [
+      "started his own sports cards online store and business",
+      "graduated GNNMS",
+      "90+ average in every 9th grade course"
+    ],
+    "about": "interested in starting a GNNHS Ski Club"
+  },
+  {
     "member": "Andrew-Suh",
     "titles": [],
     "hobbies": ["Ping-Pong", "tennis", "video games", "basketball"],
     "achievements": ["placed top 3 in multiple ping-pong tournaments"],
     "about": null
+  },
+  {
+    "member": "Avishai-Aghelian",
+    "titles": [],
+    "hobbies": [
+      "studying",
+      "playing chess",
+      "learning new languages",
+      "playing video games"
+    ],
+    "achievements": [],
+    "about": "loves to learn about foreign affairs"
+  },
+  {
+    "member": "Benjamim-Ghassabian",
+    "titles": [],
+    "hobbies": ["playing sports", "helping others"],
+    "achievements": ["making the tennis team", "getting straight A's"],
+    "about": "likes to have fun and not stress about school, help people in need, debate, and play sports with his friends after school"
   },
   {
     "member": "Brandon-Tehrani",
@@ -57,6 +93,20 @@
     "about": "Looking forward to being a part of this club!"
   },
   {
+    "member": "Chloe-Zhou",
+    "titles": [],
+    "hobbies": ["coding", "reading", "playing violin", "rock climbing"],
+    "achievements": [],
+    "about": "interested in computer science and quantum mechanics!"
+  },
+  {
+    "member": "Debra-Davidson",
+    "titles": [],
+    "hobbies": ["reading"],
+    "achievements": [],
+    "about": null
+  },
+  {
     "member": "Dylan-Yaghoutiel",
     "titles": [],
     "hobbies": [
@@ -77,6 +127,13 @@
     "about": null
   },
   {
+    "member": "Evan-Lip",
+    "titles": [],
+    "hobbies": ["Xbox", "sports", "reading", "cooking", "lacrosse"],
+    "achievements": [],
+    "about": null
+  },
+  {
     "member": "Ilan-Rastegar",
     "titles": [
       "secretary [ spring 2020 - present ]",
@@ -85,6 +142,16 @@
     "hobbies": ["tennis"],
     "achievements": [],
     "about": "Loves learning about current events"
+  },
+  {
+    "member": "Ivan-Zheng",
+    "titles": [
+      "secretary [ spring 2020 - present ]",
+      "member [ fall 2019 - spring 2020 ]"
+    ],
+    "hobbies": ["Lacrosse"],
+    "achievements": [],
+    "about": null
   },
   {
     "member": "Jared-Kimiabash",
@@ -105,6 +172,13 @@
     "about": "likes to have fun"
   },
   {
+    "member": "Jarett-Yousefzadeh",
+    "titles": [],
+    "hobbies": ["playing sports"],
+    "achievements": ["likes to invest money and is successfull in doing so"],
+    "about": "likes to learn about new things"
+  },
+  {
     "member": "Jinchen-Yang",
     "titles": [],
     "hobbies": ["running", "playing cards &  RPG games", " watching anime"],
@@ -113,6 +187,13 @@
       "can run a kilometer in 3:20 minutes"
     ],
     "about": "I like to use a fountain pen."
+  },
+  {
+    "member": "Jonah-Fishman",
+    "titles": [],
+    "hobbies": ["basketball", "following the stock market", "tennis"],
+    "achievements": [],
+    "about": []
   },
   {
     "member": "Jonah-Nouriyelian",
@@ -131,11 +212,31 @@
     "about": "Passionate about current events"
   },
   {
-    "member": "Joseph-Edelmen",
+    "member": "Joseph-Edelman",
     "titles": [],
-    "hobbies": ["basketball", "volleyball"],
-    "achievements": ["recieved 4 sport awards"],
-    "about": "I am a hard worker!"
+    "hobbies": ["basketball", "volleyball", "investing"],
+    "achievements": [
+      "recieved 4 sport awards",
+      "athlete of the year",
+      "award for leadership"
+    ],
+    "about": "hardworking and determined to achieve great things"
+  },
+  {
+    "member": "Joshua-Ostad",
+    "titles": [],
+    "hobbies": [
+      "likes to play sports",
+      "likes to cook delicious foods",
+      "likes to go to the gym",
+      "enjoys being with his friends"
+    ],
+    "achievements": [
+      "completed a few college courses during the summer of 2020",
+      "improved his desire to succeed",
+      "motivated to be the best person he can be"
+    ],
+    "about": "is an excellent person!"
   },
   {
     "member": "Josh-Yaghoubian",
@@ -179,11 +280,25 @@
     "about": null
   },
   {
+    "member": "Moshe-Saghirnejad",
+    "titles": [],
+    "hobbies": ["basketball", "football"],
+    "achievements": [],
+    "about": "does well in school, studies a lot, and enjoys playing sports"
+  },
+  {
     "member": "Natasha-Khazzam",
     "titles": [],
     "hobbies": ["running", "writing", "playing the piano"],
     "achievements": [],
     "about": "I am passionate about current events because I feel that informing oneself about the world is a great way to become a more active and impactful global citizen."
+  },
+  {
+    "member": "Omer-Chanoch",
+    "titles": [],
+    "hobbies": ["guitar", "reading", "MMA"],
+    "achievements": [],
+    "about": "currently interested in politics"
   },
   {
     "member": "Qining-Yang",
@@ -200,6 +315,13 @@
     "member": "Ryan-Rokshar",
     "titles": ["member [ fall 2019 - present ]"],
     "hobbies": [],
+    "achievements": [],
+    "about": null
+  },
+  {
+    "member": "Yona-Hassid",
+    "titles": [],
+    "hobbies": ["soccer", "running", "playing sports with friends"],
     "achievements": [],
     "about": null
   },

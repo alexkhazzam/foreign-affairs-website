@@ -40,15 +40,15 @@ exports.helpModel = class {
       }
     });
     const chars = [];
-    // for (let i = 0; i <= this.searchedValue.length; i++) {
-    //   this.matchedRefs.forEach((ref) => {
-    //     for (let k = 0; k <= ref.length; k++) {
-    //       if (this.searchedValue.split('')[i] === ref.charAt(k)) {
-    //         chars.push(ref.charAt(k));
-    //       }
-    //     }
-    //   });
-    // }
+    for (let i = 0; i <= this.searchedValue.length; i++) {
+      this.matchedRefs.forEach((ref) => {
+        for (let k = 0; k <= ref.length; k++) {
+          if (this.searchedValue.split('')[i] === ref.charAt(k)) {
+            chars.push(ref.charAt(k));
+          }
+        }
+      });
+    }
     return { matchedRefs: this.matchedRefs, chars: chars };
   }
 };
