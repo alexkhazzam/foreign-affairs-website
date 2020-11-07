@@ -52,7 +52,7 @@ exports.confirmationEmail = class SendEmail {
           <h3 style="color: white; text-align: center; width: 80%; margin: auto">You are recieving this notication because someone used your email to create an account on our website. If it was not you, then ignore this email; otherwise, follow the steps below to finish creating your account!</h3>
           <ul style="text-align: center; background-color: rgb(243, 243, 243); border: 2px solid white; width: fit-content; margin: auto; padding: 20px; box-shadow: 1px 1px 5px rgba(32, 32, 32, 0.87); margin-top: 30px">
             <li style="list-style: none; text-align: left; color: black">
-              1) Open <a href="nhsforeignaffairs.org/construction">This Link</a> in your local browser
+              1) Open <a href="foreign-affairs-server.herokuapp.com/construction">this link</a> in your local browser
             </li>
             <li style="list-style: none; text-align: left; color: black">
               2) <a href="#">Log In</a> with your newly-created account

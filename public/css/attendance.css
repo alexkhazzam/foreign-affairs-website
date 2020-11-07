@@ -176,15 +176,27 @@ body {
   }
 }
 
-@media (max-width: 400px) and (orientation: portrait) {
+@media (max-width: 450px) and (orientation: portrait) {
+  .attendance-header-wrapper {
+    position: relative;
+    margin-left: 10%;
+    margin-bottom: 10%;
+  }
   .form-group-attendance-2 {
-    width: 53.5% !important;
-    margin-left: 10% !important;
+    display: block !important;
     border-top: none !important;
+    margin-left: 0px !important;
+    margin-top: 12px !important;
+    width: 63% !important;
+  }
+  .year-readonly {
+    position: absolute !important;
+    width: 63% !important;
+    top: 0px !important;
+    left: 0px !important;
   }
   .toggle-years {
-    margin-left: 20% !important;
-    margin-bottom: 15% !important;
+    margin: 0px !important;
     width: 100% !important;
   }
   html {
@@ -192,5 +204,6 @@ body {
   }
   body {
     padding-bottom: 30px;
+    background-color: red;
   }
 }

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <%- include("../../includes/bootstrap.ejs") %>
+    <link rel="stylesheet" href="/css/entertainment/home.css">
+</head>
+<body>
+    <%- include("../../includes/navbar.ejs") %>
+    <nav class="home-nav">
+      <ul class="nav nav-tabs">
+          <li class="nav-item">
+            <a class="nav-link active" style="background-color: transparent !important; color: white !important;" href="/entertainment">Entertainment Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" style="color: white !important;"href="/entertainment/movie-searcher">Movie Searcher</a>
+          </li>
+        </ul>
+    </nav>
+    <div style="text-align: center; width: 80%; margin: auto; height: 100%">
+      <iframe frameborder="0" width="100%" height="60%" 
+        src="https://www.dailymotion.com/embed/video/x7tgad0" 
+        allowfullscreen 
+        allow="autoplay; fullscreen">
+      </iframe> 
+    </div>
+</body>
+</html>

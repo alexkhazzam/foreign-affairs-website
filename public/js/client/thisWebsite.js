@@ -9,7 +9,7 @@ const printTxt = () => {
     mainHeader.textContent += text.charAt(i);
     i++;
     printTxt();
-  }, 40);
+  }, 0);
 };
 
 printTxt();

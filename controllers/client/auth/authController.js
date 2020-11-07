@@ -3,8 +3,12 @@ const confirmationEmail = require('../../../models/auth/confirmationEmail');
 
 exports.getRegister = (req, res, next) => {
   res.render('client/auth/register', {
+    queryUrl: req.url === '/secure/register' ? true : false,
     accountCreated: req.query.accountCreated === 'success' ? true : false,
     emailSent: req.query.emailSent === 'success' ? true : false,
+    queryFullName: req.query.fullName === 'fail' ? true : false,
+    queryLastName: req.query.lastName === 'fail' ? true : false,
+    queryFirstName: req.query.firstName === 'fail' ? true : false,
     queryEmail: req.query.queryEmail === 'fail' ? true : false,
     queryMaxLimit: req.query.queryMaxLimit === 'fail' ? true : false,
     querySymbol: req.query.querySymbol === 'fail' ? true : false,
@@ -22,6 +26,32 @@ exports.getLogin = (req, res, next) => {
 };
 
 exports.postRegister = (req, res, next) => {
+  let firstUserName;
+  let invalidName = true;
+  let lastUserName;
+  let splitUser = req.body.createUsername.split(' ');
+  if (splitUser.length !== 1) {
+    const firstChar = req.body.email.charAt(0).toUpperCase();
+    const lastName = req.body.email.substring(1).split('@')[0].toUpperCase();
+    if (
+      req.body.createUsername.split(' ')[0].charAt(0).toUpperCase() !==
+      firstChar
+    ) {
+      firstUserName = null;
+    }
+    if (
+      lastName.substring(0, lastName.length - 1).toUpperCase() !==
+      req.body.createUsername.split(' ')[1].toUpperCase()
+    ) {
+      lastUserName = null;
+    }
+  } else if (splitUser.length === 1) {
+    invalidName = null;
+  }
+  console.log(invalidName);
+  console.log(splitUser);
+  console.log(splitUser.length);
+
   const checkForm = new registerModel.checkForm(
     req.body.email,
     req.body.username,
@@ -33,6 +63,10 @@ exports.postRegister = (req, res, next) => {
 
   if (studentEmail.email === null) {
     res.redirect('/secure/register/?queryEmail=fail');
+  } else if (firstUserName === null) {
+    res.redirect('/secure/register/?queryFirstName=fail');
+  } else if (lastUserName === null) {
+    res.redirect('/secure/register/?queryLastName=fail');
   } else if (errMsg.subject === 'match') {
     res.redirect('/secure/register/?queryMatch=fail');
   } else if (errMsg.subject === '30') {

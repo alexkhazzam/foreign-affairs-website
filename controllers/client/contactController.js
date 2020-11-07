@@ -1,4 +1,5 @@
 const contactModel = require('../../models/client/contactModel');
+const superagent = require('superagent');
 
 let emailSentMsg = false;
 

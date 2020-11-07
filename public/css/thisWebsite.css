@@ -54,3 +54,15 @@ body {
   margin-right: 10%;
   display: inline-block;
 }
+
+@media (max-width: 850px) {
+  html {
+    height: fit-content;
+  }
+}
+
+@media (min-height: 1000px) {
+  html {
+    height: 100%;
+  }
+}

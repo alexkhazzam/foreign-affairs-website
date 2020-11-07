@@ -12,7 +12,13 @@ const joinController = require('../../controllers/client/joinController');
 const websiteController = require('../../controllers/client/websiteController');
 const privateHomeController = require('../../controllers/private/homepageController');
 const constructionController = require('../../controllers/client/constructionController');
+const entertainmentController = require('../../controllers/client/entertainmentController');
 
+Router.get('/entertainment', entertainmentController.getEntertainmentPage);
+Router.get(
+  '/entertainment/movie-searcher',
+  entertainmentController.getMoviePage
+);
 Router.get('/home', homepageController.getHomepage);
 Router.get('/contact', contactController.getContactPage);
 Router.get('/staff', staffController.getStaffPage);
@@ -44,5 +50,9 @@ Router.post(
   attendanceController.postGenerateCode
 );
 Router.post('/member-information', memberController.postMemberInformationPage);
+Router.post(
+  '/entertainment/movie-searcher',
+  entertainmentController.postMoviePage
+);
 
 module.exports = Router;
