@@ -91,7 +91,6 @@ exports.getAttendanceYear = (req, res, next) => {
 };
 
 exports.getSubmissionPage = (req, res, next) => {
-  console.log('helo');
   res.render('client/attendance/submission', {
     emailSent: req.query.submitted === 'success' ? true : false,
   });
@@ -100,7 +99,6 @@ exports.getSubmissionPage = (req, res, next) => {
 exports.postSubmissionPage = (req, res, next) => {
   const attendanceId = req.body.attendanceId;
   const submitCode = studentCodeModel.SubmitCode.submitId(attendanceId);
-  console.log(submitCode);
   if (submitCode.result === true) {
     const sendEmail = new contactModel.contactModel(
       submitCode.email,

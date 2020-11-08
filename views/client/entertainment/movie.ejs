@@ -48,14 +48,16 @@
     <% } else { %>
       <div class="movie-information" style="text-align: left; width: 80%; word-wrap: break-word; margin: auto; margin-top: 5%;">
         <% let undefinedCount = 0 %>
+        <% let imgUrl; %>
         <% for (const item in movieFound) { %>
           <% if (movieFound[item] === undefined) { %>
             <% undefinedCount++ %>
           <% } else { %>
-            <p style="color: white;"><span style="color: red"><%= item %>:&nbsp; </span><%= `${movieFound[item]}` %></p>
+              <p style="color: white; background-color: #17b84d; border-radius: 0.25rem; padding: 10px;"><span style="color: black; font-weight: bold;"><%= item %>:&nbsp; </span><%= `${movieFound[item]}` %></p>
           <% } %>
         <% } %>
         <% if (undefinedCount === 20) { %>
+          <p style="color: white; font-weight: 1.5rem;">Results for "<%= searched %>": 0</p>
           <p style="color: red; text-align: center; margin-top: 10%;">Movie Not Found :(</p>
           <div style="margin: auto; width: 80%; text-align: center; margin-top: 10%;">
             <img src="https://img.icons8.com/doodle/96/000000/popcorn.png" width="185" height="185"/>
