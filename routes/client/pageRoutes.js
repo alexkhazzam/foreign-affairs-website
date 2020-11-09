@@ -39,9 +39,14 @@ Router.get('/member-information', memberController.getMemberInformationPage);
 Router.get('/private-home', privateHomeController.getHomepage);
 Router.get('/settings', homepageController.getSettings);
 Router.get('/construction', constructionController.getConstructionPage);
+Router.get('/entertainment/countries', entertainmentController.getCountryPage);
 
 Router.post('/contact', contactController.postContactPage);
 Router.post('/help', helpController.postHelpPage);
+Router.post(
+  '/entertainment/countries',
+  entertainmentController.postCountryPage
+);
 Router.post('/join', joinController.postJoinPage);
 Router.post('/bylaw-dropbox', bylawController.postBylawDropbox);
 Router.post('/attendance-submission', attendanceController.postSubmissionPage);
