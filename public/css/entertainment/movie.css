@@ -50,3 +50,9 @@ body {
   display: inline-block !important;
   vertical-align: middle !important;
 }
+
+@media (max-width: 450px) and (orientation: portrait) {
+  .input-movie {
+    width: 75% !important;
+  }
+}

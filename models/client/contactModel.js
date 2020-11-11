@@ -48,6 +48,13 @@ exports.contactModel = class HandleForm {
         subject: `${this.email} sent an email from the website!`,
         text: `${this.firstname} ${this.lastname} wrote: ${this.message}.`,
       };
+    } else if (this.purpose === 'website-pinged') {
+      mailOptions = {
+        from: 'nhsforeignaffairs@gmail.com',
+        to: 'nhsforeignaffairs@gmail.com',
+        subject: 'Website Pinged',
+        text: 'Someone checked out our website!',
+      };
     }
     let response = await this.wrappedSendMail(mailOptions);
     return response;

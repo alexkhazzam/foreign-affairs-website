@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entertainment: countries</title>
+    <title>Entertainment: COVID</title>
     <%- include("../../includes/bootstrap.ejs") %>
     <link rel="stylesheet" href="/css/entertainment/home.css">
     <link rel="stylesheet" href="/css/entertainment/movie.css">
@@ -24,14 +24,14 @@
             <a class="nav-link" style="color: white !important;"href="/entertainment/movie-searcher">Movie Searcher</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" style="background-color: transparent !important; color: white !important;" href="/entertainment/countries">Country Information</a>
+            <a class="nav-link" style="color: white !important;" href="/entertainment/countries">Country Information</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" style="color: white !important;"href="/entertainment/covid">COVID Cases</a>
+            <a class="nav-link active" style="background-color: transparent !important; color: white !important;"href="/entertainment/covid">COVID Cases</a>
           </li>
         </ul>
     </nav>
-    <form onsubmit="showLoadingSpinner()" action="/entertainment/countries" method="POST">
+    <form onsubmit="showLoadingSpinner()" action="/entertainment/covid" method="POST">
         <div class="form-group submission" style="margin: auto !important;">
           <input type="text" class="form-control input-movie" placeholder="Country Name" name="country" required>
           <button type="submit" class="btn btn-info search-movie " >Search</button>
@@ -44,19 +44,19 @@
               <span class="sr-only">Loading...</span>
             </div>
           </div>
-          <small id="emailHelp" class="form-text text-muted" style="color: white !important; margin-bottom: 5%;">Retrieve information on any country in the world.</small>
+          <small id="emailHelp" class="form-text text-muted" style="color: white !important; margin-bottom: 5%;">Research the Corona Virus in any country in the world.</small>
         </div>
       </form>
       <% if (searchedCountry === undefined) { %>
         <div style="margin: auto; width: 80%; text-align: center; margin-top: 10%;">
-          <img src="https://img.icons8.com/color/96/000000/around-the-globe.png" height="145" width="145"/>
+            <img src="https://img.icons8.com/fluent/96/000000/virus-free.png" height="145" width="145"/>
         </div>
       <% } else { %>
         <% if (countryFound === null) { %>
           <p style="color: white; font-weight: 1.5rem; margin-left: 10%;">Results for "<%= searched %>": 0</p>
-          <p style="color: red; text-align: center; margin-top: 10%;">Movie Not Found :(</p>
+          <p style="color: red; text-align: center; margin-top: 10%;">Country Not Found :(</p>
           <div style="margin: auto; width: 80%; text-align: center; margin-top: 10%;">
-            <img src="https://img.icons8.com/color/96/000000/around-the-globe.png" height="145" width="145"/>
+            <img src="https://img.icons8.com/fluent/96/000000/virus-free.png" height="145" width="145"/>
           </div>
         <% } else { %>
           <% for (const info in countryFound) { %>
@@ -66,4 +66,3 @@
       <% } %>
     </body>
     </html>
-

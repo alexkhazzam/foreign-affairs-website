@@ -19,7 +19,7 @@ Router.get(
   '/entertainment/movie-searcher',
   entertainmentController.getMoviePage
 );
-Router.get('/home', homepageController.getHomepage);
+Router.get('/homepage', homepageController.getHomepage);
 Router.get('/contact', contactController.getContactPage);
 Router.get('/staff', staffController.getStaffPage);
 Router.get('/attendance', attendanceController.getAttendancePage);
@@ -40,6 +40,7 @@ Router.get('/private-home', privateHomeController.getHomepage);
 Router.get('/settings', homepageController.getSettings);
 Router.get('/construction', constructionController.getConstructionPage);
 Router.get('/entertainment/countries', entertainmentController.getCountryPage);
+Router.get('/entertainment/covid', entertainmentController.getCovidPage);
 
 Router.post('/contact', contactController.postContactPage);
 Router.post('/help', helpController.postHelpPage);
@@ -59,5 +60,6 @@ Router.post(
   '/entertainment/movie-searcher',
   entertainmentController.postMoviePage
 );
+Router.post('/entertainment/covid', entertainmentController.postCovidPage);
 
 module.exports = Router;

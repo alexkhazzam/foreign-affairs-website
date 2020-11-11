@@ -4,7 +4,8 @@ var unirest = require('unirest');
 let movieData;
 let searched;
 let countryData;
-let searchedCountry;
+let countryCovidData;
+let covidSearched;
 
 exports.getEntertainmentPage = (req, res, next) => {
   res.render('client/entertainment/home', {});
@@ -38,7 +39,6 @@ exports.postMoviePage = (req, res, next) => {
         country: parsedObj.Country,
         awards: parsedObj.Awards,
         poster: parsedObj.Poster,
-        ratings: parsedObj.Ratings,
         metascore: parsedObj.Metascore,
         imdbRating: parsedObj.imdbRating,
         type: parsedObj.Type,
@@ -57,7 +57,6 @@ exports.getCountryPage = (req, res, next) => {
     searchedCountry: req.query.countryFound,
   });
 };
-
 exports.postCountryPage = (req, res, next) => {
   searchedCountry = req.body.country;
 
@@ -96,7 +95,6 @@ exports.postCountryPage = (req, res, next) => {
           numericCode: item.numericCode,
           currencies: item.currencies,
           languages: item.languages,
-          translations: item.translations,
         };
         countryData = countryObj;
         return res.redirect('/entertainment/countries/?countryFound=success');
@@ -104,6 +102,47 @@ exports.postCountryPage = (req, res, next) => {
     });
     if (countryCount === 0) {
       res.redirect('/entertainment/countries/?countryFound=error');
+    }
+  });
+};
+
+exports.getCovidPage = (req, res, next) => {
+  res.render('client/entertainment/covid', {
+    countryFound:
+      req.query.countryFound === 'success' ? countryCovidData : null,
+    searched: covidSearched,
+    searchedCountry: req.query.countryFound,
+  });
+};
+
+exports.postCovidPage = (req, res, next) => {
+  let countryCount = 0;
+  covidSearched = req.body.country;
+  superagent.get('https://api.covid19api.com/summary').then((data) => {
+    const parsedData = JSON.parse(data.text);
+    const countries = parsedData.Countries;
+    countries.forEach((country) => {
+      console.log(country);
+      if (country.Country.toUpperCase() === req.body.country.toUpperCase()) {
+        countryCount++;
+        const countryObj = {
+          Country: country.Country,
+          CountryCode: country.CountryCode,
+          Slug: country.Slug,
+          NewConfirmed: country.NewConfirmed,
+          TotalConfirmed: country.TotalConfirmed,
+          NewDeaths: country.NewDeaths,
+          TotalDeaths: country.TotalDeaths,
+          NewRecovered: country.NewRecovered,
+          TotalRecovered: country.TotalRecovered,
+          RecentlyUpdated: country.Date,
+        };
+        countryCovidData = countryObj;
+        res.redirect('/entertainment/covid/?countryFound=success');
+      }
+    });
+    if (countryCount === 0) {
+      res.redirect('/entertainment/covid/?countryFound=error');
     }
   });
 };

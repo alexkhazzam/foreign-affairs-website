@@ -2,13 +2,16 @@ const registerModel = require('../../../models/auth/registerModel');
 const confirmationEmail = require('../../../models/auth/confirmationEmail');
 
 exports.getRegister = (req, res, next) => {
+  const queryObj = [
+    req.query.queryFirstName === 'fail' ? true : false,
+    req.query.queryLastName === 'fail' ? true : false,
+    req.query.queryFullName === 'fail' ? true : false,
+  ];
   res.render('client/auth/register', {
+    queryObj: queryObj,
     queryUrl: req.url === '/secure/register' ? true : false,
     accountCreated: req.query.accountCreated === 'success' ? true : false,
     emailSent: req.query.emailSent === 'success' ? true : false,
-    queryFullName: req.query.fullName === 'fail' ? true : false,
-    queryLastName: req.query.lastName === 'fail' ? true : false,
-    queryFirstName: req.query.firstName === 'fail' ? true : false,
     queryEmail: req.query.queryEmail === 'fail' ? true : false,
     queryMaxLimit: req.query.queryMaxLimit === 'fail' ? true : false,
     querySymbol: req.query.querySymbol === 'fail' ? true : false,

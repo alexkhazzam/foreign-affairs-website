@@ -39,7 +39,8 @@
       />
       <p class="register-form__error-message">
         <% if (queryEmail) { %> Must have a Great Neck Public School email
-        address. <% } %>
+        address. 
+        <% } %>
       </p>
       <input
         required
@@ -48,7 +49,15 @@
         placeholder="Full Name"
         name="createUsername"
       />
-      <p class="register-form__error-message"></p>
+      <p class="register-form__error-message">
+        <% if (queryObj[3]) { %>
+          Please enter your first and last name separated by a space.
+        <% } else if (queryObj[2]) { %>
+          Please enter your real lastname.
+        <% } else if (queryObj[1]) { %>
+          Please enter your real firstname.
+        <% } %>
+      </p>
       <input
         required
         type="password"
