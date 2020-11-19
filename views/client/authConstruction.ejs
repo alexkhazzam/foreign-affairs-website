@@ -106,3 +106,18 @@
   </body>
   <script src="/js/client/construction.js" defer></script>
 </html>
+
+
+<% for (let i = 0; i <= speakerFound.length - 1; i++) { %>
+  <div class="guest-speaker leonor shadow-lg p-3 mb-5 bg-white rounded" style=" margin: auto; text-align: right; width: 80%; position: relative; padding: 30px !important; height: fit-content;">
+    <h1 style="color: white; text-align: center; margin-bottom: 40px;" class="writeable-guest-1"><%= `${speakerFound[i].speaker.split("-")[0] + " " + speakerFound[i].speaker.split("-")[1]}` %></h1>
+    <div class="guest-img" style="margin: auto; text-align: center;">
+        <img src="/assets/images/speakers-trips/leonor.jpg" width="200" height="250" style="box-shadow: 7px 7px 10px rgba(53, 50, 50, 0.87); border-radius: 50%;"/>
+    </div>
+    <h4 style="text-align: center; color: black; text-decoration: underline; margin-bottom: 0px; margin-top: 50px;">About</h4>
+    <p style="color: white; text-align: center; margin-top: 20px;">
+     <%= speakerFound[i].about %>
+    </p>
+    <h4 style="text-align: center; color: black; text-decoration: underline; margin-bottom: 0px; margin-top: 50px;">What They Talked About</h4>
+  </div>
+<% } %>

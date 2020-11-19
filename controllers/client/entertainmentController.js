@@ -1,5 +1,6 @@
 const superagent = require('superagent');
 var unirest = require('unirest');
+const contactModel = require('../../models/client/contactModel');
 
 let movieData;
 let searched;
@@ -145,4 +146,28 @@ exports.postCovidPage = (req, res, next) => {
       res.redirect('/entertainment/covid/?countryFound=error');
     }
   });
+};
+
+exports.postEntertainmentPage = (req, res, next) => {
+  const email = req.body.email;
+  console.log(email);
+  const handleForm = new contactModel.contactModel(
+    email,
+    null,
+    null,
+    null,
+    'entertainment'
+  );
+  handleForm
+    .sendEmail()
+    .then((data) => {
+      if (data) {
+        emailSentMsg = true;
+        return res.redirect('/entertainment');
+      }
+    })
+    .catch((err) => {
+      console.log(err);
+      throw err;
+    });
 };

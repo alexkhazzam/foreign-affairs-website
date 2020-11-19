@@ -6,7 +6,10 @@
     <title>Entertainment: home</title>
     <%- include("../../includes/bootstrap.ejs") %>
     <link rel="stylesheet" href="/css/entertainment/home.css">
-    <script>
+    <script type="text/javascript">
+      function showLoadingSpinner() {
+        document.querySelector('.spinner-wrapper').style.display = 'block';
+      }
     </script>
 </head>
 <body>
@@ -28,26 +31,29 @@
         </ul>
     </nav>
     <div style="text-align: center; width: 80%; margin: auto; height: 100%">
-      <iframe frameborder="0" width="100%" height="20%" 
+      <iframe frameborder="0" width="100%" height="25%" 
       src="https://www.dailymotion.com/embed/video/x7tgad0" 
       allowfullscreen 
       allow="autoplay; fullscreen">
-    </iframe> 
-      <div class="progress" style="height: 30px;  margin-top: 20px;  width: 100%; position: relative;">
-          <div class="progress-bar progress-bar-striped progress-bar-animated movie-searcher-task-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" style="width: 0.5%;" aria-valuemax="100">1</div>
-        <p style="margin-top: 5px; position: absolute; right: 50px;">Movie Searcher</p>
-          <button style="position: absolute; right: 0px; border: none;"><img src="https://img.icons8.com/nolan/64/thumb-up.png" width="30px" height="30px" type="submit"/></button>
+    </iframe>
+    <form action="/entertainment" method="POST" onsubmit="showLoadingSpinner()">
+      <div class="form-group">
+        <div style="position: relative;">
+          <input type="search" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Suggestions..." style="font-size: 15px !important; color: black !important; margin-top: 30px; display: inline-block !important; width: 70% !important; border-top-right-radius: 0px !important; border-bottom-right-radius: 0px !important;" required name="email">
+          <button type="submit" class="btn btn-info" style="display: inline-block !important; border-bottom-left-radius: 0px !important; border-top-left-radius: 0px !important; margin-left: -5px !important;  margin-bottom: 3px !important;">Send</button>
+          <div class="spinner-wrapper" style="text-align: center; display: none; position: absolute; top: 30px; right: 15px;">
+            <div
+              id="loading-spinner"
+              class="spinner-border text-primary"
+              role="status"
+            >
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+        </div>
+        <small id="emailHelp" class="form-text text-muted" style="color: white !important;">Is there anything else we should add to the entertainment page?</small>
       </div>
-      <div class="progress" style="height: 30px;  margin-top: 20px;  width: 100%; position: relative;">
-        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="25" aria-valuemin="0" style="width: 0.5%;" aria-valuemax="100">1</div>
-        <p style="margin-top: 5px; position: absolute; right: 50px;">Country Information</p>
-        <button style="position: absolute; right: 0px; border: none;"><img src="https://img.icons8.com/nolan/64/thumb-up.png" width="30px" height="30px"/></button>
-      </div>
-      <div class="progress" style="height: 30px; margin-top: 20px; width: 100%; position: relative;">
-        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="25" aria-valuemin="0" style="width: 0.5%;" aria-valuemax="100">1</div>
-        <p style="margin-top: 5px; position: absolute; right: 50px;">COVID Cases</p>
-        <button style="position: absolute; right: 0px; border: none;"><img src="https://img.icons8.com/nolan/64/thumb-up.png" width="30px" height="30px"/></button>
-      </div>
+    </form> 
   </div>
 </body>
 </html>

@@ -4,6 +4,7 @@ const Router = Express.Router();
 const homepageController = require('../../controllers/client/homepageController');
 const contactController = require('../../controllers/client/contactController');
 const staffController = require('../../controllers/client/staffController');
+const speakerTripController = require('../../controllers/client/speakerTripController');
 const attendanceController = require('../../controllers/client/attendanceController');
 const helpController = require('../../controllers/client/helpController');
 const memberController = require('../../controllers/client/MemberController');
@@ -35,13 +36,14 @@ Router.get(
   '/attendance-submission/generate-code',
   attendanceController.getGenerateCode
 );
+Router.get('/speakers-trips', speakerTripController.getHomePage);
 Router.get('/member-information', memberController.getMemberInformationPage);
 Router.get('/private-home', privateHomeController.getHomepage);
 Router.get('/settings', homepageController.getSettings);
 Router.get('/construction', constructionController.getConstructionPage);
 Router.get('/entertainment/countries', entertainmentController.getCountryPage);
 Router.get('/entertainment/covid', entertainmentController.getCovidPage);
-
+Router.post('/entertainment', entertainmentController.postEntertainmentPage);
 Router.post('/contact', contactController.postContactPage);
 Router.post('/help', helpController.postHelpPage);
 Router.post(
@@ -61,5 +63,6 @@ Router.post(
   entertainmentController.postMoviePage
 );
 Router.post('/entertainment/covid', entertainmentController.postCovidPage);
+Router.post('/speakers-trips', speakerTripController.postSpeakerPage);
 
 module.exports = Router;

@@ -7,6 +7,7 @@ exports.contactModel = class HandleForm {
     this.lastname = lastname;
     this.message = message;
     this.purpose = purpose;
+    this.curse = 'non';
   }
   async wrappedSendMail(mailOptions) {
     const promise = new Promise((resolve, reject) => {
@@ -25,7 +26,6 @@ exports.contactModel = class HandleForm {
           console.log(error);
           reject(false);
         } else {
-          console.log(info);
           resolve(true);
         }
       });
@@ -33,28 +33,102 @@ exports.contactModel = class HandleForm {
     return promise;
   }
   async sendEmail() {
+    // const curseWords = [
+    //   'SHIT',
+    //   'BITCH',
+    //   'MOTHER',
+    //   'FUCKER',
+    //   'DICK',
+    //   'ASSHOLE',
+    //   'BASTARD',
+    //   'CUNT',
+    //   'ASS',
+    //   'BOB',
+    //   'LICKER',
+    //   'COCK',
+    //   'PENIS',
+    //   'PUSSY',
+    // ];
+
+    // curseWords.forEach((word) => {
+    //   if (
+    //     this.message.toUpperCase().includes(word) ||
+    //     this.email.toUpperCase().includes(word) ||
+    //     this.lastname.toUpperCase().includes(word) ||
+    //     this.firstname.toUpperCase().includes(word)
+    //   ) {
+    //     console.log('curse');
+    //     this.curse = 'curse';
+    //   } else {
+    //     this.curse = 'non';
+    //   }
+    // });
+
     let mailOptions;
     if (this.purpose === 'attendance') {
-      mailOptions = {
-        from: `${this.firstname} ${this.lastname}`,
-        to: 'nhsforeignaffairs@gmail.com',
-        subject: `${this.firstname} ${this.lastname} submitted their attendance code!`,
-        text: `Code: ${this.message}. Respond? You can reach them at ${this.email}.`,
-      };
+      if (this.curse === 'curse') {
+        mailOptions = {
+          from: `null`,
+          to: 'nhsforeignaffairs@gmail.com',
+          subject: `Email Not Shown`,
+          text: `This email is not shown because it contained innapropriate language.`,
+        };
+      } else {
+        mailOptions = {
+          from: `${this.firstname} ${this.lastname}`,
+          to: 'nhsforeignaffairs@gmail.com',
+          subject: `${this.firstname} ${this.lastname} submitted their attendance code!`,
+          text: `Code: ${this.message}. Respond? You can reach them at ${this.email}.`,
+        };
+      }
     } else if (this.purpose === 'contact') {
-      mailOptions = {
-        from: `${this.email}`,
-        to: 'nhsforeignaffairs@gmail.com',
-        subject: `${this.email} sent an email from the website!`,
-        text: `${this.firstname} ${this.lastname} wrote: ${this.message}.`,
-      };
+      if (this.curse === 'curse') {
+        mailOptions = {
+          from: `null`,
+          to: 'nhsforeignaffairs@gmail.com',
+          subject: `Email Not Shown`,
+          text: `This email is not shown because it contained innapropriate language.`,
+        };
+      } else {
+        mailOptions = {
+          from: `${this.email}`,
+          to: 'nhsforeignaffairs@gmail.com',
+          subject: `${this.email} sent an email from the website!`,
+          text: `${this.firstname} ${this.lastname} wrote: ${this.message}.`,
+        };
+      }
     } else if (this.purpose === 'website-pinged') {
-      mailOptions = {
-        from: 'nhsforeignaffairs@gmail.com',
-        to: 'nhsforeignaffairs@gmail.com',
-        subject: 'Website Pinged',
-        text: 'Someone checked out our website!',
-      };
+      if (this.curse === 'curse') {
+        mailOptions = {
+          from: `null`,
+          to: 'nhsforeignaffairs@gmail.com',
+          subject: `Email Not Shown`,
+          text: `This email is not shown because it contained innapropriate language.`,
+        };
+      } else {
+        mailOptions = {
+          from: 'nhsforeignaffairs@gmail.com',
+          to: 'nhsforeignaffairs@gmail.com',
+          subject: 'Website Pinged',
+          text: 'Someone checked out our website!',
+        };
+      }
+    } else if (this.purpose === 'entertainment') {
+      if (this.curse === 'curse') {
+        mailOptions = {
+          from: `null`,
+          to: 'nhsforeignaffairs@gmail.com',
+          subject: `Email Not Shown`,
+          text: `This email is not shown because it contained innapropriate language.`,
+        };
+      } else {
+        mailOptions = {
+          from: 'unknown',
+          to: 'nhsforeignaffairs@gmail.com',
+          subject: 'Entertainment Page Suggestion',
+          text: this.email,
+        };
+      }
     }
     let response = await this.wrappedSendMail(mailOptions);
     return response;
