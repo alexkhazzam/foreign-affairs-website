@@ -85,6 +85,7 @@
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0" action="/help" method="POST">
+      <div class="input-form" style="position: relative;">
         <input
           class="form-control mr-sm-2 main-nav__search-bar"
           type="search"
@@ -94,28 +95,29 @@
           name="searchValue"
           required
         />
-        <button type="submit" class="search-btn" style="border: 1px solid black; border-radius: 0.25rem; margin-right: 15px; background-color: white; border-top-left-radius: 0px; border-bottom-left-radius: 0px; border-left-width: 0px; outline: none;"><img src="https://img.icons8.com/nolan/64/search.png" width="35" height="35"/></button>
-      <li class="nav-item auth-li main-nav__auth-li-signin">
-        <a
-          class="nav-link main-nav__link main-nav__auth"
-          href="/secure/login"
-          target="_blank"
-        >
-          <button type="button" class="btn btn-outline-dark">Log In</button></a
-        >
-      </li>
-      <li class="nav-item auth-li main-nav__auth-li-login">
-        <a
-          class="nav-link main-nav__link main-nav__auth"
-          href="/secure/register"
-          target="_blank"
-        >
-          <button type="button" class="btn btn-outline-success">
-            Sign Up
-          </button></a
-        >
-      </li>
-    </form>
+        <button type="submit" class="search-btn" style="border: 1px solid black; border-radius: 0.25rem; margin-right: 15px; background-color: white; border-top-left-radius: 0px; border-bottom-left-radius: 0px; border-left-width: 0px; outline: none; "><img src="https://img.icons8.com/nolan/64/search.png" width="35" height="35"/></button>
+      </div>
+      </form>
+        <li class="nav-item auth-li main-nav__auth-li-signin">
+          <a
+            class="nav-link main-nav__link main-nav__auth"
+            href="/secure/login"
+            target="_blank"
+          >
+            <button type="button" class="btn btn-outline-dark">Log In</button></a
+          >
+        </li>
+        <li class="nav-item auth-li main-nav__auth-li-login">
+          <a
+            class="nav-link main-nav__link main-nav__auth"
+            href="/secure/register"
+            target="_blank"
+          >
+            <button type="button" class="btn btn-outline-success">
+              Sign Up
+            </button></a
+          >
+        </li>
   </div>
 </nav>
 <script type="text/javascript">
