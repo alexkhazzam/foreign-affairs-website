@@ -84,15 +84,6 @@
   margin-right: 0px !important;
 }
 
-.input-form {
-  margin-right: 200px;
-}
-
-.search-btn {
-  position: absolute;
-  top: 0px;
-}
-
 @media (max-width: 1000px) {
   .nav-li__contact,
   .nav-li__join,
@@ -142,6 +133,12 @@
   }
 }
 
+@media (max-width: 800px) and (orientation: portrait) {
+  .btn-search-wrapper {
+    margin-bottom: 20px;
+  }
+}
+
 @media (max-width: 500px) and (orientation: portrait) {
   .settings {
     margin-left: 10% !important;
@@ -149,8 +146,5 @@
   .main-nav__search-bar {
     margin-bottom: 20px !important;
     margin-right: 0px;
-  }
-  .search-btn {
-    right: 13px;
   }
 }

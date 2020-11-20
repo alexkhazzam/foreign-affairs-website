@@ -84,8 +84,7 @@
         >
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0" action="/help" method="POST">
-      <div class="input-form" style="position: relative;">
+    <form class="form-inline my-2 my-lg-0" action="/help" method="POST" style="position: relative;">
         <input
           class="form-control mr-sm-2 main-nav__search-bar"
           type="search"
@@ -94,9 +93,10 @@
           style="margin-right: 0px !important; border-top-right-radius: 0px !important; border-bottom-right-radius: 0px !important; border: 1px solid black !important; border-right-width: 0px;"
           name="searchValue"
           required
-        />
-        <button type="submit" class="search-btn" style="border: 1px solid black; border-radius: 0.25rem; margin-right: 15px; background-color: white; border-top-left-radius: 0px; border-bottom-left-radius: 0px; border-left-width: 0px; outline: none; "><img src="https://img.icons8.com/nolan/64/search.png" width="35" height="35"/></button>
-      </div>
+          />
+          <div class="btn-search-wrapper">
+            <button type="submit" class="search-btn" style="border: 1px solid black; border-radius: 0.25rem; margin-right: 15px; background-color: white; border-top-left-radius: 0px; border-bottom-left-radius: 0px; border-left-width: 0px; outline: none; "><img src="https://img.icons8.com/nolan/64/search.png" width="35" height="35"/></button>
+          </div>
       </form>
         <li class="nav-item auth-li main-nav__auth-li-signin">
           <a
