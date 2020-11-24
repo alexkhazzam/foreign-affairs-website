@@ -324,6 +324,48 @@
             </div>
           </div>
         </div>
+        <div class="card">
+          <div class="card-header" id="headingEight">
+            <h5 class="mb-0">
+              <button
+                onClick="extendPage()"
+                class="btn btn-link collapsed"
+                data-toggle="collapse"
+                data-target="#collapseEight"
+                aria-expanded="false"
+                aria-controls="collapseEight"
+              >
+                Meeting #8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <span style="color: black"
+                  >[ <%= attendanceArr[7].length %> ]</span
+                >
+              </button>
+            </h5>
+          </div>
+          <div
+            id="collapseEight"
+            class="collapse"
+            aria-labelledby="headingEight"
+            data-parent="#accordion"
+          >
+            <div class="card-body">
+              <div class="card-body">
+                <ul class="people">
+                  <% for (let i = 0; i <= ([...attendanceArr[7].sort()].length -
+                  1); i++) { %>
+                  <li class="card-body__person">
+                    <span class="number"><%= (i + 1) %>)</span>
+                    <% let ref = attendanceArr[7][i] %>
+                    <a class="card-body__link" href="/members/:<%= ref %>"
+                      ><%= `${ref.split("-")[0]} ${ref.split("-")[1]}` %></a
+                    >
+                  </li>
+                  <% } %>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
         <button
           type="button"
           class="btn btn-info show-less"
