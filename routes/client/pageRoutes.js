@@ -14,6 +14,7 @@ const websiteController = require('../../controllers/client/websiteController');
 const privateHomeController = require('../../controllers/private/homepageController');
 const constructionController = require('../../controllers/client/constructionController');
 const entertainmentController = require('../../controllers/client/entertainmentController');
+const chatController = require('../../controllers/client/chatController');
 
 Router.get('/entertainment', entertainmentController.getEntertainmentPage);
 Router.get(
@@ -36,6 +37,7 @@ Router.get(
   '/attendance-submission/generate-code',
   attendanceController.getGenerateCode
 );
+Router.get('/chat', chatController.getChatPage);
 Router.get('/speakers-trips', speakerTripController.getHomePage);
 Router.get('/member-information', memberController.getMemberInformationPage);
 Router.get('/private-home', privateHomeController.getHomepage);

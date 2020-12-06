@@ -84,6 +84,10 @@
   margin-right: 0px !important;
 }
 
+.contact-ref {
+  margin-right: 0px !important;
+}
+
 @media (max-width: 1000px) {
   .nav-li__contact,
   .nav-li__join,

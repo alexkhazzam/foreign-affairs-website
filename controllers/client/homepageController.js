@@ -1,5 +1,4 @@
 const email = require('../../models/client/contactModel');
-
 exports.getHomepage = (req, res, next) => {
   res.render('client/homepage', {});
   // const Email = new email.contactModel(

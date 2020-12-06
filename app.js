@@ -1,6 +1,6 @@
-const Express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const Express = require('express');
 
 const app = Express();
 
@@ -9,6 +9,7 @@ app.use(Express.static(path.join(__dirname, 'public')));
 
 const clientRoutes = require('./routes/client/pageRoutes');
 const authRoutes = require('./routes/client/auth/authRoutes');
+const { Router } = require('express');
 
 app.set('view engine', 'ejs');
 app.set('views', 'views');

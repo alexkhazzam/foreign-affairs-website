@@ -4,7 +4,7 @@
   "description": "foreign affairs website server",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "start": "server",
     "start:dev": "nodemon --ignore '**/data/**/*' server.js"
   },
   "repository": {
@@ -27,6 +27,7 @@
     "jquery": "^3.5.1",
     "mongodb": "^3.6.2",
     "nodemailer": "^6.4.13",
+    "socket.io": "^3.0.3",
     "superagent": "^6.1.0",
     "unirest": "^0.6.0"
   },
