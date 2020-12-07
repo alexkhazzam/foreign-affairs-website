@@ -17,4 +17,3 @@ exports.getSettings = (req, res, next) => {
   res.render('client/settings', {});
   console.log('hi');
 };
-// test

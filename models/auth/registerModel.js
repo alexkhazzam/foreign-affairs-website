@@ -18,7 +18,8 @@ exports.checkForm = class {
     );
     if (
       parsedString !== 'student.gn.k12.ny.us' ||
-      this.email === 'aohebshalom2@student.gn.k12.ny.us'
+      this.email === 'aohebshalom2@student.gn.k12.ny.us' ||
+      parsedString !== 'greatneck.k12.ny.us'
     ) {
       return {
         email: null,
