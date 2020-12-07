@@ -11,25 +11,61 @@
   </head>
   <body>
     <%- include("../includes/navbar.ejs") %>
-    <div class="homepage-main__background-image"></div>
-    <h1 class="homepage-opening-text"></h1>
-    <h1 class="writeable-club-text">The Foreign Affairs Club</h1>
-    <div class="main-buttons-wrapper">
-      <a href="/join">
-        <button type="button" class="btn btn-primary homepage-btn--cta">
-          Join
-        </button>
-      </a>
-      <a href="/who">
-        <button type="button" class="btn btn-outline-primary homepage-btn--cta">
-          Learn More
-        </button>
-      </a>
+    <!-- <div class="homepage-main__background-image"></div>
+    <h1 class="homepage-opening-text"></h1> -->
+    <div style="position: absolute; z-index: 5000;">
+      <h1 class="writeable-club-text">The Foreign Affairs Club</h1>
+      <div class="main-buttons-wrapper">
+        <a href="/join">
+          <button type="button" class="btn btn-primary homepage-btn--cta">
+            Join
+          </button>
+        </a>
+        <a href="/who">
+          <button type="button" class="btn btn-outline-primary homepage-btn--cta">
+            Learn More
+          </button>
+        </a>
+      </div>
+      <div style="width: 100%; text-align: center; margin-top: calc(10% + 30px)">
+        <a
+          style="font-size: 28px; font-family: OpenSans, arial, 'sans-serif'"
+        ></a>
+      </div> 
     </div>
-    <div style="width: 100%; text-align: center; margin-top: calc(10% + 30px)">
-      <a
-        style="font-size: 28px; font-family: OpenSans, arial, 'sans-serif'"
-      ></a>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+      <ol class="carousel-indicators">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+            <a href="/join">
+            </a>
+         
+        </div>
+        <div class="carousel-item">
+          <div style="width: 100%; margin: auto; text-align: center; margin-top: 25%; position: absolute;">
+
+          </div>
+          <img class="d-block w-100" src="/assets/images/homepage/nyc.jpg" alt="First slide">
+        </div>
+        <div class="carousel-item">
+          <div style="width: 100%; margin: auto; text-align: center; margin-top: 25%; position: absolute;">
+
+          </div>
+          <img class="d-block w-100" src="/assets/images/homepage/nyc.jpg" alt="First slide">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
   </body>
   <script src="/js/client/settings.js" defer></script>

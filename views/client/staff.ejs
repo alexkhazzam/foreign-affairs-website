@@ -9,7 +9,7 @@
   </head>
   <body>
     <%- include("../includes/navbar.ejs") %>
-    <div class="alert alert-primary" role="alert" style="width: 80% !important; margin: auto !important; border-bottom-left-radius: 0px !important; border-bottom-right-radius: 0px !important; margin-top: 10% !important;">
+    <div class="alert alert-primary advisor" role="alert" style="width: 80% !important; margin: auto !important; border-bottom-left-radius: 0px !important; border-bottom-right-radius: 0px !important; margin-top: 5% !important">
       <span style="font-weight: bold;">Club Advisor: </span>Dr. Libra Lane
     </div>
     <div class="alert alert-primary" style="width: 80% !important; margin: auto !important; border-top-left-radius: 0px !important; border-top-right-radius: 0px !important; margin-bottom: 20px !important;" role="alert">
@@ -28,11 +28,24 @@
         </div>
         <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body">
-            <ul class="people">
-              <% for (let i = 0; i <= members.length
-               - 1; i++) { %>
-                <% console.log(members[i]) %>
+            <ul class="officers" style="display: inline-block; text-align: center;">
+              <% for (const years in members) { %>
+                <% if (members[years].year === 2019) { %>
+                  <% for (let i = 0; i <= [...members[years].officers].length - 1; i++) { %>
+                  <li style="list-style: none; text-align: left"><span style="color: #bd2130;letter-spacing: 2px; font-size: 1rem;"><%= `${members[years].officers[i].split(":")[0]}:` %>&nbsp;</span><a style="color: black;" class="card-body__link" href=<%= `members/:${members[years].officers[i].split(":")[1]}` %>><%= `${members[years].officers[i].split(":")[1].split("-")[0]} ${members[years].officers[i].split(":")[1].split("-")[1]}` %></a></li>
+                  <% } %>
+                <% } %>
               <% } %>
+            </ul>
+            <ul class="members" style="display: inline-block; text-align: left;">
+              <% for (const years in members) { %>
+                <% if (members[years].year === 2019) { %>
+                  <% for (let i = 0; i <= [...members[years].members.sort()].length - 1; i++) { %>
+                  <li style="list-style: none; display: inline-block;"><span style="color: #bd2130;letter-spacing: 2px; font-size: 1rem;"><%=`${i + 1})`%>&nbsp;</span><a class="card-body__link" href=<%=`/members/:${members[years].members[i]}`%>><%=`${members[years].members[i].split("-")[0]} ${members[years].members[i].split("-")[1]}`%></a></li>
+                  <% } %>
+                <% } %>
+              <% } %>
+            </ul>
           </div>
         </div>
       </div>
