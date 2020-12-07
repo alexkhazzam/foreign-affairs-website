@@ -15,12 +15,14 @@ const privateHomeController = require('../../controllers/private/homepageControl
 const constructionController = require('../../controllers/client/constructionController');
 const entertainmentController = require('../../controllers/client/entertainmentController');
 const chatController = require('../../controllers/client/chatController');
+const whoController = require('../../controllers/client/whoController');
 
 Router.get('/entertainment', entertainmentController.getEntertainmentPage);
 Router.get(
   '/entertainment/movie-searcher',
   entertainmentController.getMoviePage
 );
+Router.get('/who', whoController.getWhoPage);
 Router.get('/homepage', homepageController.getHomepage);
 Router.get('/contact', contactController.getContactPage);
 Router.get('/staff', staffController.getStaffPage);

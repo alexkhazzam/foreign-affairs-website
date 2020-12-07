@@ -16,19 +16,74 @@ body {
 }
 
 .homepage-main__background-image {
-  position: absolute;
-  width: 100%;
+  position: absolute !important;
+  width: 100% !important;
   background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
-    url('../assets/images/homepage/nyc.jpg');
-  background-size: cover;
-  background-attachment: fixed;
-  background-position: center;
-  height: 94.1%;
-  border: none;
-  top: 5rem;
-  left: 0px;
-  -webkit-user-select: none;
-  z-index: -2;
+    url('../assets/images/homepage/nyc.jpg') !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+  background-position: center !important;
+  height: 94.1% !important;
+  border: none !important;
+  top: 0px !important;
+  left: 0px !important;
+  -webkit-user-select: none !important;
+  z-index: -2 !important;
+}
+
+.homepage-main__background-image-2 {
+  position: absolute !important;
+  width: 100% !important;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('../assets/images/homepage/North-High.png') !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+  background-position: center !important;
+  height: 94.1% !important;
+  border: none !important;
+  top: 0px !important;
+  left: 0px !important;
+  -webkit-user-select: none !important;
+  z-index: -2 !important;
+}
+
+.homepage-main__background-image-3 {
+  position: absolute !important;
+  width: 100% !important;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('../assets/images/homepage/white-house.png') !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+  background-position: center !important;
+  height: 94.1% !important;
+  border: none !important;
+  top: 0px !important;
+  left: 0px !important;
+  -webkit-user-select: none !important;
+  z-index: -2 !important;
+}
+
+.homepage-main__background-image-4 {
+  position: absolute !important;
+  width: 100% !important;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('../assets/images/homepage/monument.jpg') !important;
+  background-size: cover !important;
+  background-attachment: fixed !important;
+  background-position: center !important;
+  height: 94.1% !important;
+  border: none !important;
+  top: 0px !important;
+  left: 0px !important;
+  -webkit-user-select: none !important;
+  z-index: -2 !important;
+}
+
+#carouselExampleIndicators {
+  height: 108%;
+  width: 100%;
+  position: absolute !important;
+  top: 0px !important;
 }
 
 .homepage-opening-text {
@@ -37,7 +92,9 @@ body {
   font-size: 1.3rem;
   text-align: center;
   margin-top: 20%;
+  width: 100%;
   animation: 1s slide-up-opening-text;
+  z-index: 500;
 }
 
 .writeable-club-text {
@@ -46,6 +103,7 @@ body {
   font-size: 2rem;
   text-align: center;
   margin-top: 20%;
+  width: 100%;
   display: none;
   animation: 2s slide-up-opening-text;
 }
@@ -55,7 +113,8 @@ body {
   text-align: center;
   padding: 30px;
   display: none;
-  margin-top: 50px;
+  margin-top: 5%;
+  width: 100%;
 }
 
 .homepage-btn--cta {
