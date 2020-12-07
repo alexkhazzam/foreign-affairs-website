@@ -28,3 +28,7 @@ exports.postSpeakerPage = (req, res, next) => {
     res.redirect('/speakers-trips/?speakerFound=fail');
   }
 };
+
+exports.getTripPage = (req, res, next) => {
+  res.render('client/speakers-trips/trips', {});
+};

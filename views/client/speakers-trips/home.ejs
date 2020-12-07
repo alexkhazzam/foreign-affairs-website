@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Entertainment: home</title>
+    <title>Guest Speakers & Field Trips</title>
     <%- include("../../includes/bootstrap.ejs") %>
     <link rel="stylesheet" href="/css/entertainment/home.css">
     <link rel="stylesheet" href="/css/memberInformation.css" />
@@ -18,10 +18,10 @@
     <nav class="home-nav">
         <ul class="nav nav-tabs">
             <li class="nav-item">
-              <a class="nav-link active" style="background-color: transparent !important; color: white !important;" href="/entertainment">Guest Speakers</a>
+              <a class="nav-link active" style="background-color: transparent !important; color: white !important;" href="/speakers-trips">Guest Speakers</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" style="color: white !important;"href="/entertainment/movie-searcher">Field Trips</a>
+              <a class="nav-link" style="color: white !important;"href="/speakers-trips/trips">Field Trips</a>
             </li>
           </ul>
       </nav>
@@ -36,10 +36,6 @@
           <p style="color: white; text-align: center; margin-top: 20px;">
            <%= speakerFound[i].about %>
           </p>
-          <h4 style="text-align: center; color: black; text-decoration: underline; margin-bottom: 0px; margin-top: 50px;">What They Talked About</h4>
-          <p style="color: white; text-align: center; margin-top: 20px;">
-            <%= speakerFound[i].talked %>
-           </p>
         </div>
       <% } %>
 </body>

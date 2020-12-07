@@ -1,4 +1,4 @@
-const staffHeader = document.querySelector('.staff-page__writeable-text');
+const staffHeader = document.querySelector('.writeable-staff');
 
 let i = 0;
 let text = 'Look at all of our dedicated members!';

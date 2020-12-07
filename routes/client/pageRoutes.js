@@ -37,6 +37,7 @@ Router.get(
   '/attendance-submission/generate-code',
   attendanceController.getGenerateCode
 );
+Router.get('/speakers-trips/trips', speakerTripController.getTripPage);
 Router.get('/chat', chatController.getChatPage);
 Router.get('/speakers-trips', speakerTripController.getHomePage);
 Router.get('/member-information', memberController.getMemberInformationPage);
