@@ -33,37 +33,6 @@ exports.contactModel = class HandleForm {
     return promise;
   }
   async sendEmail() {
-    // const curseWords = [
-    //   'SHIT',
-    //   'BITCH',
-    //   'MOTHER',
-    //   'FUCKER',
-    //   'DICK',
-    //   'ASSHOLE',
-    //   'BASTARD',
-    //   'CUNT',
-    //   'ASS',
-    //   'BOB',
-    //   'LICKER',
-    //   'COCK',
-    //   'PENIS',
-    //   'PUSSY',
-    // ];
-
-    // curseWords.forEach((word) => {
-    //   if (
-    //     this.message.toUpperCase().includes(word) ||
-    //     this.email.toUpperCase().includes(word) ||
-    //     this.lastname.toUpperCase().includes(word) ||
-    //     this.firstname.toUpperCase().includes(word)
-    //   ) {
-    //     console.log('curse');
-    //     this.curse = 'curse';
-    //   } else {
-    //     this.curse = 'non';
-    //   }
-    // });
-
     let mailOptions;
     if (this.purpose === 'attendance') {
       if (this.curse === 'curse') {
