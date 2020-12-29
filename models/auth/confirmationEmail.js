@@ -13,7 +13,7 @@ exports.confirmationEmail = class SendEmail {
         requireTLS: true,
         auth: {
           user: 'nhsforeignaffairs@gmail.com',
-          pass: 'foreignaffairs232',
+          pass: '...',
         },
       });
 
