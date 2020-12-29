@@ -18,7 +18,7 @@ exports.contactModel = class HandleForm {
         requireTLS: true,
         auth: {
           user: 'nhsforeignaffairs@gmail.com',
-          pass: 'foreignaffairs232',
+          pass: '...',
         },
       });
       transporter.sendMail(mailOptions, (error, info) => {
