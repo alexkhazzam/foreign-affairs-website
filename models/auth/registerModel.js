@@ -17,6 +17,7 @@ exports.checkForm = class {
       this.emailBody.length
     );
     if (
+      //hi
       parsedString !== 'student.gn.k12.ny.us' ||
       this.email === 'aohebshalom2@student.gn.k12.ny.us' ||
       parsedString !== 'greatneck.k12.ny.us'
