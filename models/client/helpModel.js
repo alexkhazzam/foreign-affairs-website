@@ -27,6 +27,7 @@ exports.helpModel = class {
       'Attendance',
       'Who',
       'Bylaws',
+      'Entertainment',
     ];
     this.refs = this.preMadeRefs.concat(parsedMemberNames);
     console.log(this.refs);
