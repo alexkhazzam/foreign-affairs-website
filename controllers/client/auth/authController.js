@@ -12,7 +12,7 @@ exports.getRegister = (req, res, next) => {
     queryUrl: req.url === '/secure/register' ? true : false,
     accountCreated: req.query.accountCreated === 'success' ? true : false,
     emailSent: req.query.emailSent === 'success' ? true : false,
-    queryEmail: req.query.queryEmail === 'fail' ? true : false,
+    // queryEmail: req.query.queryEmail === 'fail' ? true : false,
     queryMaxLimit: req.query.queryMaxLimit === 'fail' ? true : false,
     querySymbol: req.query.querySymbol === 'fail' ? true : false,
     queryLength: req.query.queryLength === 'fail' ? true : false,
@@ -29,6 +29,7 @@ exports.getLogin = (req, res, next) => {
 };
 
 exports.postRegister = (req, res, next) => {
+  console.log(req.body);
   let firstUserName;
   let invalidName = true;
   let lastUserName;
@@ -54,7 +55,6 @@ exports.postRegister = (req, res, next) => {
   console.log(invalidName);
   console.log(splitUser);
   console.log(splitUser.length);
-
   const checkForm = new registerModel.checkForm(
     req.body.email,
     req.body.username,
@@ -64,9 +64,11 @@ exports.postRegister = (req, res, next) => {
   errMsg = checkForm.credentialsMatch();
   let studentEmail = checkForm.checkStudentEmail();
 
-  if (studentEmail.email === null) {
-    res.redirect('/secure/register/?queryEmail=fail');
-  } else if (firstUserName === null) {
+  // if (studentEmail.email === null) {
+  //   res.redirect('/secure/register/?queryEmail=fail');
+  // }
+
+  if (firstUserName === null) {
     res.redirect('/secure/register/?queryFirstName=fail');
   } else if (lastUserName === null) {
     res.redirect('/secure/register/?queryLastName=fail');

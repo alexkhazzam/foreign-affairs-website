@@ -18,7 +18,7 @@ exports.contactModel = class HandleForm {
         requireTLS: true,
         auth: {
           user: 'nhsforeignaffairs@gmail.com',
-          pass: 'foreignaffairs22',
+          pass: '...',
         },
       });
       transporter.sendMail(mailOptions, (error, info) => {
@@ -34,23 +34,7 @@ exports.contactModel = class HandleForm {
   }
   async sendEmail() {
     let mailOptions;
-    if (this.purpose === 'attendance') {
-      if (this.curse === 'curse') {
-        mailOptions = {
-          from: `null`,
-          to: 'nhsforeignaffairs@gmail.com',
-          subject: `Email Not Shown`,
-          text: `This email is not shown because it contained innapropriate language.`,
-        };
-      } else {
-        mailOptions = {
-          from: `${this.firstname} ${this.lastname}`,
-          to: 'nhsforeignaffairs@gmail.com',
-          subject: `${this.firstname} ${this.lastname} submitted their attendance code!`,
-          text: `Code: ${this.message}. Respond? You can reach them at ${this.email}.`,
-        };
-      }
-    } else if (this.purpose === 'contact') {
+    if (this.purpose === 'contact') {
       if (this.curse === 'curse') {
         mailOptions = {
           from: `null`,
