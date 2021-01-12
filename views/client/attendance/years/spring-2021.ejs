@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fall 2020 - Attendance</title>
+    <%- include("../../../includes/bootstrap.ejs") %>
+    <link rel="stylesheet" href="/css/attendance.css" />
+  </head>
+  <body style="padding-bottom: 120px">
+    <%- include("../../../includes/navbar.ejs") %> <%-
+    include("../../../includes/attendanceHeader.ejs") %>
+   <div id="accordion">
+    <div class="card">
+      <div class="card-header" id="headingOne">
+        <h5 class="mb-0">
+          <button
+            onClick="extendPage()"
+            class="btn btn-link collapsed"
+            data-toggle="collapse"
+            data-target="#collapseOne"
+            aria-expanded="false"
+            aria-controls="collapseOne"
+          >
+            Meeting #1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <span style="color: black"
+              >[ <%= attendanceArr[0].length %> ]</span
+            >
+          </button>
+        </h5>
+      </div>
+      <div
+        id="collapseOne"
+        class="collapse"
+        aria-labelledby="headingOne"
+        data-parent="#accordion"
+      >
+        <div class="card-body">
+          <div class="card-body">
+            <ul class="people">
+              <% for (let i = 0; i <= ([...attendanceArr[0].sort()].length -
+              1); i++) { %>
+              <li class="card-body__person">
+                <span class="number"><%= (i + 1) %>)</span>
+                <% let ref = attendanceArr[0][i] %>
+                <a class="card-body__link" href="/members/:<%= ref %>"
+                  ><%= `${ref.split("-")[0]} ${ref.split("-")[1]}` %></a
+                >
+              </li>
+              <% } %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+   </div>
+  </body>
+</html>
