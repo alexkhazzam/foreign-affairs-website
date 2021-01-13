@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif !important;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(12, 206, 206, 0.85),
+    rgba(133, 10, 204, 0.85)
+  );
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+.loading-spinner-wrapper {
+  width: fit-content;
+  margin-top: 20px;
+  margin-left: 5px;
+  display: none;
+}
+
+.latitude,
+.longitude {
+  display: none;
+}
+
+.map-input-field {
+  margin-top: 20px !important;
+  width: 55% !important;
+  float: left !important;
+}
+
+.search-location-btn {
+  margin-top: 20px !important;
+  margin-left: 5px !important;
+  float: left !important;
+}
+
+.email-warning-alert {
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  margin-bottom: 0px !important;
+  width: 60% !important;
+  margin: auto !important;
+  text-align: center !important;
+}
+
+.classroom-link-wrapper {
+  word-wrap: break-word !important;
+  text-align: center !important;
+  width: 60% !important;
+  margin: auto !important;
+  border-top-right-radius: 0px !important;
+  border-top-left-radius: 0px !important;
+}
+
+.copy-class-code {
+  cursor: pointer;
+}
+
+.classroom-link-wrapper a {
+  text-decoration: underline;
+}
+
+.get-location-btn {
+  margin-top: 20px !important;
+  margin-left: 5px !important;
+  float: left !important;
+}
+
+.map-keys-wrapper {
+  position: relative;
+  width: 60%;
+  margin-left: 20%;
+  margin-bottom: 15%;
+}
+
+.map-alert {
+  width: 60% !important;
+  margin-left: 20% !important;
+  border-bottom-left-radius: 0px !important;
+  border-bottom-right-radius: 0px !important;
+  margin-bottom: 0px !important;
+  margin-top: 45px !important;
+}
+
+.join__title {
+  color: white;
+  width: 80%;
+  margin: 10% auto 20px auto;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.separators {
+  text-align: center;
+  margin-bottom: 8%;
+}
+
+.separator {
+  margin: 5px;
+  display: inline-block;
+}
+
+.map-container {
+  width: 60% !important;
+  margin-left: 20% !important;
+  text-align: center;
+  border-radius: 0.25rem !important;
+  animation: 2s contact-form;
+  height: 400px !important;
+}
+
+@media (max-width: 1050px) and (orientation: landscape) {
+  html {
+    height: fit-content;
+  }
+}
+
+@media (max-height: 1050px) and (orientation: portrait) {
+  html {
+    height: fit-content;
+  }
+}

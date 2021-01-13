@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="/css/attendance.css" />
+<script src="/js/client/attendance.js" defer></script>
+<div
+  style="
+    width: 80%;
+    margin: auto;
+    text-align: right;
+    margin-top: 50px;
+    display: none !important;
+  "
+>
+  <a href="/attendance-submission/?submitted=fail">
+    <button type="submit" class="btn btn-info">
+      Submit Attendance Code For 12/2/20
+      <img
+        src="https://img.icons8.com/ios/50/000000/circled-chevron-right.png"
+        height="35"
+        width="35"
+      />
+    </button>
+  </a>
+</div>
+<h1 class="attendance__header"></h1>
+<div class="attendance-header-wrapper">
+  <div class="form-group-attendance form-group-attendance-1">
+    <input
+      type="password"
+      readonly
+      class="form-control year-readonly"
+      id="exampleInputPassword1"
+      placeholder="Year: <%= currYear %>"
+    />
+  </div>
+  <div class="form-group-attendance form-group-attendance-2">
+    <input
+      type="password"
+      readonly
+      class="form-control meetings-readonly"
+      id="exampleInputPassword1"
+      placeholder="Total Meetings: <%= meetingLength %>"
+    />
+  </div>
+  <div class="navigation-wrapper-attendance">
+    <div class="dropdown show">
+      <a
+        class="btn btn-info dropdown-toggle toggle-years"
+        href="#"
+        role="button"
+        id="dropdownMenuLink"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Choose a Year
+      </a>
+      <div
+        class="dropdown-menu main-dropdown"
+        aria-labelledby="dropdownMenuLink"
+      >
+        <a class="dropdown-item" href="/attendance/:fall-2020">Fall 2020</a>
+        <a class="dropdown-item" href="/attendance/:spring-2020">Spring 2020</a>
+        <a class="dropdown-item" href="/attendance/:fall-2019">Fall 2019</a>
+      </div>
+    </div>
+  </div>
+</div>

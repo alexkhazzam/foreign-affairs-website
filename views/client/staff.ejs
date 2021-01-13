@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Staff</title>
+    <script src="/js/client/staff.js" defer></script>
+    <%- include("../includes/bootstrap.ejs") %>
+  </head>
+  <body>
+    <%- include("../includes/navbar.ejs") %>
+    <div class="alert alert-primary advisor" role="alert" style="width: 80% !important; margin: auto !important; border-bottom-left-radius: 0px !important; border-bottom-right-radius: 0px !important; margin-top: 5% !important">
+      <span style="font-weight: bold;">Club Advisor: </span>Dr. Libra Lane
+    </div>
+    <div class="alert alert-primary" style="width: 80% !important; margin: auto !important; border-top-left-radius: 0px !important; border-top-right-radius: 0px !important; margin-bottom: 20px !important;" role="alert">
+      <span style="font-weight: bold;">Club Founder: </span> Alexander Khazzam
+    </div>
+    <h4 class="writeable-staff" style="color: white; width: 80%; margin: auto; margin-bottom: 2%; margin-top: 45px; letter-spacing: 3px;"></h4>
+    <div id="accordion" style="width: 100% !important; margin:
+    auto">
+      <div class="card" style="border-bottom-left-radius: 0px !important; border-bottom-right-radius: 0px !important; border: 1px solid white;">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="color: navy !important; border-bottom-left-radius: 0px !important; border-bottom-right-radius: 0px !important; ">
+              Officers & Members [ September 2019 - September 2020 ]
+            </button>
+          </h5>
+        </div>
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+          <div class="card-body">
+            <ul class="officers" style="display: inline-block; text-align: center;">
+              <% for (const years in members) { %>
+                <% if (members[years].year === 2019) { %>
+                  <% for (let i = 0; i <= [...members[years].officers].length - 1; i++) { %>
+                  <li style="list-style: none; text-align: left"><span style="color: #bd2130;letter-spacing: 2px; font-size: 1rem;"><%= `${members[years].officers[i].split(":")[0]}:` %>&nbsp;</span><a style="color: black;" class="card-body__link" href=<%= `members/:${members[years].officers[i].split(":")[1]}` %>><%= `${members[years].officers[i].split(":")[1].split("-")[0]} ${members[years].officers[i].split(":")[1].split("-")[1]}` %></a></li>
+                  <% } %>
+                <% } %>
+              <% } %>
+            </ul>
+            <ul class="members" style="display: inline-block; text-align: left;">
+              <% for (const years in members) { %>
+                <% if (members[years].year === 2019) { %>
+                  <% for (let i = 0; i <= [...members[years].members.sort()].length - 1; i++) { %>
+                  <li style="list-style: none; display: inline-block;"><span style="color: #bd2130;letter-spacing: 2px; font-size: 1rem;"><%=`${i + 1})`%>&nbsp;</span><a class="card-body__link" href=<%=`/members/:${members[years].members[i]}`%>><%=`${members[years].members[i].split("-")[0]} ${members[years].members[i].split("-")[1]}`%></a></li>
+                  <% } %>
+                <% } %>
+              <% } %>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="card" style="border-top-left-radius: 0px !important; border-top-right-radius: 0px !important; border: 1px solid white !important">
+        <div class="card-header" id="headingTwo" style="border-top-left-radius: 0px !important; border-top-right-radius: 0px !important;">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="color: navy !important; border-top-right-radius: 0px !important; border-top-left-radius: 0px !important;">
+              Officers & Members [ September 2020 - September 2021 ]
+            </button>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+          <div class="card-body">
+           
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <link rel="stylesheet" href="/css/attendance.css" />
+  <link rel="stylesheet" href="/css/staff.css" />
+</html>

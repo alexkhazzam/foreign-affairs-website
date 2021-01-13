@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="/css/homepage.css" />
+    <script src="/js/client/homepage.js" defer></script>
+    <link rel="icon" href="/assets/images/homepage/gnps-logo.jpg">
+    <link rel="stylesheet" type="text/css" href="/css/purecookie.css" />
+    <%- include("../includes/bootstrap.ejs") %>
+    <script>
+      $('.carousel').carousel({ interval: 500 });
+    </script>
+  </head>
+  <body>
+    <%- include("../includes/navbar.ejs") %>
+    <!-- <div class="homepage-main__background-image"></div>  -->
+    <!-- <div style="position: absolute;"> -->
+      <h1 style="color: white; font-size: 20px; z-index: 1000000000;"><%= ip %></h1>
+      <h1 class="homepage-opening-text" style="position: absolute;"></h1>
+      <div style="position: absolute; width: 100%; z-index: 100;">
+        <h1 class="writeable-club-text">The Foreign Affairs Club</h1>
+        <div class="main-buttons-wrapper">
+          <a href="/join">
+            <button type="button" class="btn btn-primary homepage-btn--cta">
+              Join there
+            </button>
+          </a>
+          <a href="/who">
+            <button type="button" class="btn btn-outline-primary homepage-btn--cta">
+              Learn More
+            </button>
+          </a>
+        </div>
+      </div>
+      <div style="width: 100%; text-align: center; margin-top: calc(10% + 30px)">
+        <a
+          style="font-size: 28px; font-family: OpenSans, arial, 'sans-serif'"
+        ></a>
+      </div>
+    
+    <!-- </div> -->
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" style="z-index: -100;">
+      <ol class="carousel-indicators" style="margin: 0px !important;position: absolute !important; top: 85% !important;">
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+        <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner" style="height: 100%;">
+        <div class="carousel-item active homepage-main__background-image-3"></div>
+        <div class="carousel-item homepage-main__background-image-2"></div>
+        <div  class="carousel-item homepage-main__background-image-4"></div>
+        <div  class="carousel-item homepage-main__background-image"></div>
+      </div>
+      </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev" style="z-index: 100000000;">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next" style="z-index: 10000000"> 
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+
+
+
+
+
+
+
+
+  </body>
+  <script src="/js/client/settings.js" defer></script>
+  <!-- <script src="/js/client/purecookie.js" async></script> -->
+</html>

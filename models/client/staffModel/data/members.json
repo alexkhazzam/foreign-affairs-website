@@ -1,0 +1,47 @@
+[
+    {
+        "year": 2019,
+        "officers": [
+            "President:Alexander-Khazzam",
+            "Treasurer:Ilan-Rastegar",
+            "Vice President:Leon-Asnadi",
+            "Secretary:Ethan-Kane",
+            "Vice President:Jonathan-Moalemi"
+        ],
+        "members": [
+            "Alexander-Khazzam",
+            "Alexander-Khazzam",
+            "Ilan-Rastegar",
+            "Leon-Asnadi",
+            "Alexander-Khazzam",
+            "Ethan-Kane",
+            "Jonathan-Moalemi",
+            "Alexander-Khazzam",
+            "Ilan-Rastegar",
+            "Leon-Asnadi"
+        ]
+    },
+    {
+        "year": 2020,
+        "officers": [
+            "Alexander-Khazzam",
+            "Ilan-Rastegar",
+            "Leon-Asnadi",
+            "Ethan-Kane",
+            "Jonathan-Moalemi"
+        ],
+        "members": [
+            "Alexander-Khazzam",
+            "Alexander-Khazzam",
+            "Ilan-Rastegar",
+            "Leon-Asnadi",
+            "Ethan-Kane",
+            "Jonathan-Moalemi",
+            "Alexander-Khazzam",
+            "Ilan-Rastegar",
+            "Leon-Asnadi",
+            "Ethan-Kane",
+            "Jonathan-Moalemi"
+        ]
+    }
+]

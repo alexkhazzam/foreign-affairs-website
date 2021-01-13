@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Join</title>
+    <link rel="stylesheet" href="/css/join.css" />
+    <script src="/js/client/join.js" defer></script>
+    <%- include("../includes/bootstrap.ejs") %>
+    <script>
+      function searchedLocation() {
+        const searchBtn = document.querySelector('.search-location-btn');
+        searchBtn.scrollIntoView({ behavior: 'smooth' });
+        alert('hi');
+      }
+    </script>
+  </head>
+  <body>
+    <%- include("../includes/navbar.ejs") %>
+    <h1 class="join__title"></h1>
+    <ul class="separators">
+      <li class="separator">__________</li>
+      <li class="separator">__________</li>
+      <li class="separator">_________</li>
+    </ul>
+    <div class="alert alert-primary email-warning-alert" role="alert">
+      Google Classroom Code (must have a GNPS email address)
+      <img
+        src="https://img.icons8.com/nolan/64/long-arrow-down--v2.png"
+        height="25"
+        width="35"
+      />
+    </div>
+    <div class="alert alert-primary classroom-link-wrapper" role="alert">
+      <a
+        class="class-link"
+        href="https://classroom.google.com/c/MjM5ODU1NjczNzla?cjc=b2uxkqs"
+        >https://classroom.google.com/c/MjM5ODU1NjczNzla?cjc=b2uxkqs</a
+      >
+      <img
+        src="https://img.icons8.com/material-sharp/24/000000/copy.png"
+        class="copy-class-code"
+      />
+    </div>
+    <div class="alert alert-primary map-alert" role="alert">
+      Just a map for your entertainment!
+    </div>
+    <div
+      id="map-container-google-1"
+      class="z-depth-1-half map-container"
+      height="800"
+    >
+      <iframe
+        src="https://maps.google.com/maps?q=<%= location %>&t=&z=13&ie=UTF8&iwloc=&output=embed"
+        frameborder="0"
+        style="border: 0"
+        allowfullscreen
+        width="100%"
+        height="100%"
+      ></iframe>
+    </div>
+    <div class="map-keys-wrapper">
+      <form action="/join" method="POST" onSubmit="searchedLocation()">
+        <input
+          type="text"
+          class="form-control contact-form__input map-input-field"
+          name="searchedLocation"
+          required
+          placeholder="Enter a location"
+        />
+        <button type="submit" class="btn btn-danger search-location-btn">
+          Search
+        </button>
+      </form>
+      <button
+        type="submit"
+        class="btn btn-danger get-location-btn"
+        style="display: none"
+      >
+        Get My Coordinates
+      </button>
+      <div class="loading-spinner-wrapper">
+        <div class="spinner-border text-danger location-loading" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+      <p class="latitude"></p>
+      <p class="longitude"></p>
+    </div>
+  </body>
+</html>

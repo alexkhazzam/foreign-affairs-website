@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Member Information</title>
+    <%- include("../includes/bootstrap.ejs") %>
+    <link rel="stylesheet" href="/css/memberInformation.css" />
+    <script type="text/javascript">
+      function showLoadingSpinner() {
+        document.querySelector('.spinner-wrapper').style.display = 'block';
+      }
+    </script>
+    <script>
+      function scrollUp() {
+        const searchWrapper = document.querySelector('.scroll-to');
+        searchWrapper.scrollIntoView({ behavior: 'smooth' });
+      }
+      function scrollDown() {
+        const member = document.querySelector('.member:last-of-type');
+        member.scrollIntoView({ behavior: 'smooth' });
+      }
+    </script>
+  </head>
+  <body>
+    <span class="scroll-to"></span>
+    <%- include("../includes/navbar.ejs") %>
+    <form
+      onsubmit="showLoadingSpinner()"
+      method="POST"
+      action="/member-information"
+    >
+      <div class="search-wrapper">
+        <div class="form-group member-search">
+          <input
+            required
+            class="form-control member-name"
+            id="exampleFormControlInput1"
+            placeholder="Member Name"
+            type="search"
+            name="memberName"
+          />
+        </div>
+        <span style="position: relative">
+          <button type="submit" class="btn btn-info search">Search</button>
+          <div
+            class="spinner-wrapper"
+            style="
+              text-align: center;
+              position: absolute;
+              top: -6px;
+              left: 90px;
+              display: none;
+            "
+          >
+            <div
+              id="loading-spinner"
+              class="spinner-border text-primary"
+              role="status"
+            >
+              <span class="sr-only">Loading...</span>
+            </div>
+          </div>
+        </span>
+      </div>
+      <div
+        id="loading-spinner"
+        style="display: none"
+        class="spinner-border text-primary"
+        role="status"
+      >
+        <span class="sr-only">Loading...</span>
+      </div>
+    </form>
+    <div class="loading-spinner" style="display: none !important">
+      <div class="spinner-border text-info" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+    </div>
+    <div class="members-wrapper">
+      <% if (members) { %>
+      <p style="margin-bottom: 5%; color: black; text-align: center">
+        <span style="font-weight: bold"><%= members.length%>&nbsp;</span>results
+        found for "<%= submitted %>"
+      </p>
+      <% for (const memberInfo of members) { %>
+      <div class="member shadow-lg p-3 mb-5 bg-white rounded">
+        <h1 class="member-name">
+          <%= `${memberInfo.member.split("-")[0] + " " +
+          memberInfo.member.split("-")[1]}` %>
+        </h1>
+        <% if (memberInfo.titles) { %>
+        <h3 class="member-section">Club Position</h3>
+        <ul class="titles">
+          <% for (let i = 0; i <= memberInfo.titles.length - 1; i++) { %>
+          <li class="title">- <%= memberInfo.titles[i] %></li>
+          <% } %>
+        </ul>
+        <% } %> <% if (memberInfo.hobbies) { %>
+        <h3 class="member-section">Hobbies</h3>
+        <ul class="hobbies">
+          <% for (let i = 0; i <= memberInfo.hobbies.length - 1; i++) { %>
+          <li class="hobby">- <%= memberInfo.hobbies[i] %></li>
+          <% } %>
+        </ul>
+        <% } %> <% if (memberInfo.achievements) { %>
+        <h3 class="member-achievements">Achievements</h3>
+        <ul class="achievements">
+          <% for (let i = 0; i <= memberInfo.achievements.length - 1; i++) { %>
+          <li class="achievement">- <%= memberInfo.achievements[i] %></li>
+          <% } %>
+        </ul>
+        <% } %> <% if (memberInfo.about !== null) { %>
+        <h3 class="member-section">About</h3>
+        <p class="about"><%= memberInfo.about %></p>
+        <% } %>
+      </div>
+      <% if (members.length >= 2) { %>
+      <button onClick="scrollDown()" type="btn" class="btn btn-light scroll">
+        <img src="https://img.icons8.com/nolan/64/long-arrow-down--v2.png" />
+      </button>
+      <button onClick="scrollUp()" type="btn" class="btn btn-light scroll">
+        <img src="https://img.icons8.com/nolan/64/long-arrow-up--v1.png" />
+      </button>
+      <% } %> <% } %> <% } else { %>
+      <h3 style="color: white; text-align: center; margin-top: 10%">
+        No Members Found!
+      </h3>
+      <% } %>
+    </div>
+  </body>
+  <script>
+    let membCount = 0;
+    const members = document.querySelectorAll('.member');
+    members.forEach((member) => {
+      membCount++;
+    });
+    if (membCount >= 2) {
+      const html = document.querySelector('html');
+      html.style.height = 'fit-content';
+    }
+  </script>
+</html>

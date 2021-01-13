@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Settings</title>
+    <%- include("../includes/bootstrap.ejs") %>
+  </head>
+  <body>
+    <div class="back-arrow-wrapper">
+      <a href="/homepage">
+        <img src="https://img.icons8.com/cotton/64/000000/circled-left--v2.png"/
+        width="45" height="45" />
+      </a>
+    </div>
+    <div
+      class="form-group"
+      style="
+        margin: 10% auto 50px auto !important;
+        text-align: center !important;
+      "
+    >
+      <input
+        style="
+          border-top-right-radius: 0px !important;
+          border-bottom-right-radius: 0px !important;
+          display: inline-block !important;
+          vertical-align: middle !important;
+          color: #e8eaed !important;
+          font-size: 1rem !important;
+          width: 60% !important;
+        "
+        type="text"
+        id="exampleFormControlInput1"
+        placeholder="Color Scheme: Coral Reef (Default)"
+        class="form-control color-scheme"
+        readonly
+      />
+      <div
+        class="dropdown show"
+        style="
+          display: inline-block !important;
+          margin-left: -5px !important;
+          vertical-align: middle !important;
+        "
+      >
+        <a
+          class="btn btn-secondary dropdown-toggle"
+          style="
+            border: 1px solid #ced4da;
+            border-bottom-left-radius: 0px !important;
+            /* border-left: none !important; */
+            border-top-left-radius: 0px !important;
+          "
+          href="#"
+          role="button"
+          id="dropdownMenuLink"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Pick Theme
+        </a>
+        <div class="dropdown-menu" style="padding: 0px !important"
+        dropdownMenuLink">
+        <button class="dropdown-item coral-reef">Coral Reef (Default)</button>
+        <a class="dropdown-item red-sunset">Red Sunset</a>
+        <a class="dropdown-item purple-sunset">Purple Sunset</a>
+        <a class="dropdown-item northern-lights">Northern Lights</a>
+      </div>
+    </div>
+  </body>
+  <link rel="stylesheet" href="/css/settings.css" />
+  <script src="/js/client/settings.js" defer></script>
+</html>

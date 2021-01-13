@@ -1,0 +1,69 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact</title>
+    <script src="/js/client/contact.js" defer></script> 
+    <script src="/js/client/navbar.js" defer></script>
+    <%- include("../includes/bootstrap.ejs") %>
+    <script type="text/javascript">
+      function showLoadingSpinner() {
+        document.querySelector('.spinner-wrapper').style.display = 'block';
+      }
+    </script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script>
+      var socket = io();
+    </script>
+  </head>
+  <body>
+    <%- include("../includes/navbar.ejs") %>
+    <div class="form-wrapper">
+      <h3 class="contact-form__writeable-text"></h3>
+      <main class="contact-form">
+        <form action="/contact" method="POST" onsubmit="showLoadingSpinner()">
+          <div class="form-group contact-form__section">
+            <label for="exampleInputPassword1" class="contact-form__label email-input" >Email Address</label>
+            <input type="email" class="form-control contact-form__input" id="exampleInputPassword1" name="email" required/>
+          </div>
+          <div class="form-group contact-form__section"">
+            <label for="exampleInputPassword1" class="contact-form__label">First Name</label>
+            <input type="text" class="form-control contact-form__input" id="exampleInputPassword1" name="firstName" required/>
+          </div>
+          <div class="form-group contact-form__section"">
+            <label for="exampleInputPassword1" class="contact-form__label">Last Name</label>
+            <input type="text" class="form-control contact-form__input" id="exampleInputPassword1" name="lastName" required/>
+          </div>
+          <div class="form-group contact-form__section"">
+            <label for="exampleFormControlTextarea1" class="contact-form__label">Message</label>
+            <textarea
+              class="form-control contact-form__input"
+              id="exampleFormControlTextarea1"
+              rows="3" name="message" required
+            ></textarea>
+          </div>
+          <% if (emailMsg) { %>
+            <div class="alert alert-info contact-form__email-sent" role="alert" style="margin-top: 20px !important;">
+              Email was sent! You should hear back from us soon.
+            </div>
+            <% } else { %>
+              <span style="position: relative;">
+                <button type="btn" class="btn btn-info contact-form__submit"> <img style="margin-right: 5px;" src="https://img.icons8.com/material-sharp/24/000000/filled-sent.png"/>Send</button>
+                <div class="spinner-wrapper" style="position: absolute; top: 0px; left: 120px; display: none;">
+                  <div
+                    id="loading-spinner"
+                    class="spinner-border text-primary"
+                    role="status"
+                  >
+                    <span class="sr-only">Loading...</span>
+                  </div>
+                </div>
+              </span>
+              <% } %>
+        </form>
+      </main>
+    </div>
+  </body>
+  <link rel="stylesheet" href="/css/contact.css">
+</html>
+

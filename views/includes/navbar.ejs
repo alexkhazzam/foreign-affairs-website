@@ -1,0 +1,127 @@
+<script>
+  function disabledSearch() {}
+  const searchbar = document.querySelector(".main-nav__search-bar");
+  if (searchbar.textContent === "") {
+    return;
+  } else {
+    const searchBtn = document.querySelector(".search-btn");
+    searchBtn.disabled = "false"
+  }
+</script>
+<link rel="stylesheet" href="/css/navbar.css" />
+<nav class="navbar navbar-expand-lg navbar-light bg-light main-nav">
+  <a class="main-nav__logo" href="/homepage"
+    ><img src="/assets/icons/navbar/school-logo.png" height="75" width="75"
+  /></a>
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto" >
+      <li class="nav-item dropdown nav-li__about">
+        <a
+          class="nav-link dropdown-toggle main-nav__link about"
+          id="navbarDropdown"
+          role="button"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          About
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown" style="z-index: 10000000 !important;">
+          <a class="dropdown-item main-nav__link link-dropdown" href="/staff"
+            >Officers & Members<span><img src="https://img.icons8.com/material-rounded/24/000000/conference-call.png" width="15" height="15"/></span></a
+          >
+          <a
+            class="dropdown-item main-nav__link link-dropdown"
+            href="/member-information/?membersFound=fail"
+            >Member Information<span><img src="https://img.icons8.com/pastel-glyph/64/000000/information--v1.png" width="15" height="15"/></span></a
+          >
+          <a
+          class="dropdown-item main-nav__link link-dropdown"
+          href="/speakers-trips"
+          >Guest Speakers / Field Trips<span><img src="https://img.icons8.com/ios-filled/50/000000/speaker-notes.png" width="15" height="15"/></span></a
+        >
+          <a
+            class="dropdown-item main-nav__link link-dropdown"
+            href="/attendance"
+            >Attendance<span><img src="https://img.icons8.com/fluent-systems-filled/24/000000/attendance-mark.png" width="15" height="15"/></span></a
+          >
+          <a class="dropdown-item main-nav__link link-dropdown" href="/who">Who<span><img src="https://img.icons8.com/ios-filled/50/000000/world-health-organization.png" width="15" height="15"/></span></a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item main-nav__link link-dropdown" href="/bylaws"
+            >Bylaws<span"><img src="https://img.icons8.com/cotton/64/000000/courthouse.png" width="15" height="15"/></span></a>
+            <a
+            class="dropdown-item main-nav__link link-dropdown"
+            href="/this-website"
+            >This Website<span><img src="https://img.icons8.com/wired/64/000000/domain.png" width="15" height="15"/></span></a
+          >
+          <a
+          class="dropdown-item main-nav__link link-dropdown"
+          href="/entertainment"
+          >Entertainment<span><img src="https://img.icons8.com/ios-filled/50/000000/nintendo-with-card.png" width="15" height="15"/></span></a
+        >
+        </div>
+      </li>
+      <li class="nav-item active nav-li__join">
+        <a class="nav-link main-nav__link" href="/join/?locationSearched=false"
+          >Join<span><img src="https://img.icons8.com/dotty/80/000000/add-user-group-woman-woman.png" width="15" height="15"></span></a
+        >
+      </li>
+      <li class="nav-item nav-li__contact">
+        <a class="nav-link main-nav__link contact-ref" href="/contact/?submitted=fail"
+          >Contact<span><img src="https://img.icons8.com/wired/64/000000/email.png" width="15" height="15"/></span></a
+        >
+      </li>
+    </ul>
+    <form class="form-inline my-2 my-lg-0" action="/help" method="POST" style="position: relative; margin-right: 0px !important; ">
+        <input
+          class="form-control mr-sm-2 main-nav__search-bar"
+          type="search"
+          placeholder="Search..."
+          aria-label="Search"
+          style="margin-right: 20px !important; border: 1px solid black !important;"
+          name="searchValue"
+          required
+          />
+      </form>
+        <li class="nav-item auth-li main-nav__auth-li-signin">
+          <a
+            class="nav-link main-nav__link main-nav__auth"
+            href="/secure/login"
+          >
+            <button type="button" class="btn btn-outline-dark">Log In</button></a
+          >
+        </li>
+        <li class="nav-item auth-li main-nav__auth-li-login">
+          <a
+            class="nav-link main-nav__link main-nav__auth"
+            href="/secure/register"
+          
+          >
+            <button type="button" class="btn btn-outline-success">
+              Sign Up
+            </button></a
+          >
+        </li>
+  </div>
+</nav>
+<script type="text/javascript">
+  window.__be = window.__be || {};
+  window.__be.id = "5fa771082b25cb0007da94f2";
+  (function() {
+      var be = document.createElement('script'); be.type = 'text/javascript'; be.async = true;
+      be.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'cdn.chatbot.com/widget/plugin.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(be, s);
+  })();
+</script>

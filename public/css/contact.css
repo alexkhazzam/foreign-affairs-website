@@ -1,0 +1,122 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Montserrat&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif !important;
+  background-image: linear-gradient(
+    to bottom right,
+    rgba(12, 206, 206, 0.85),
+    rgba(133, 10, 204, 0.85)
+  );
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+  -webkit-touch-callout: none !important;
+  -webkit-user-select: none !important;
+  -khtml-user-select: none !important;
+  -moz-user-select: none !important;
+  -ms-user-select: none !important;
+  user-select: none !important;
+}
+
+.contact-form {
+  border-radius: 0.25rem;
+  width: 60%;
+  padding: 20px;
+  margin-top: 2%;
+  margin-left: 20%;
+  margin-bottom: 100px;
+  background-color: rgb(255, 255, 255);
+  box-shadow: 1px 1px 5px rgba(32, 32, 32, 0.87);
+  animation: 2s contact-form;
+}
+
+.contact-form__section {
+  margin: auto;
+  width: 90%;
+}
+
+.contact-form__label {
+  color: #495057 !important;
+}
+
+.contact-form__section input,
+.contact-form__section textarea {
+  border-radius: 0px !important;
+  background-color: transparent !important;
+}
+
+.contact-form__email-sent {
+  width: 90% !important;
+  margin: auto !important;
+}
+
+.contact-form__submit {
+  margin-left: 5% !important;
+  margin-top: 15px !important;
+}
+
+.contact-form__spinner-wrapper {
+  display: none !important;
+  position: absolute !important;
+  top: 88.5%;
+  margin-left: 5% !important;
+}
+
+.contact-form__writeable-text {
+  margin-left: 20%;
+  margin-top: 20%;
+  color: white;
+  font-size: 1.5rem;
+  letter-spacing: 3px;
+}
+
+@keyframes contact-form {
+  from {
+    margin-top: 100%;
+  }
+
+  to {
+    margin-top: 2%;
+  }
+}
+
+@media (max-width: 1200px) and (orientation: landscape) {
+  .contact-form__writeable-text {
+    margin-top: 6%;
+  }
+}
+
+@media (max-width: 700px) and (orientation: portrait) {
+  .contact-form {
+    width: 80% !important;
+    margin-left: 10% !important;
+    margin-top: 2%;
+  }
+  .contact-form__writeable-text {
+    margin-left: 10% !important;
+    margin-top: 8%;
+  }
+  @keyframes contact-form {
+    from {
+      margin-top: 100%;
+    }
+
+    to {
+      margin-top: 2%;
+    }
+  }
+}
+
+@media (max-width: 400px) and (orientation: portrait) {
+  html {
+    height: fit-content;
+  }
+}

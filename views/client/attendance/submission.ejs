@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bylaw DropBox</title>
+    <link rel="stylesheet" href="/css/register.css" />
+    <link rel="stylesheet" href="/css/authentication.css" />
+    <link rel="stylesheet" href="/css/bylawDropbox.css" />
+    <%- include("../../includes/bootstrap.ejs") %>
+    <script type='text/javascript'>
+      function showLoadingSpinner() {
+        document.querySelector("#submit-button").style.display = "none"
+        document.querySelector("#loading-spinner").style.display = "inline-block"
+      }
+    </script>
+  </head>
+  <body>
+    <div class="back-arrow-wrapper">
+      <a href="/attendance">
+        <img src="https://img.icons8.com/cotton/64/000000/circled-left--v2.png"/
+        width="45" height="45" />
+      </a>
+    </div>
+    <div class="logo-wrapper">
+      <a class="main-nav__logo" href="/homepage"
+        ><img src="/assets/icons/navbar/school-logo.png" height="75" width="75"
+      /></a>
+    </div>
+    <script>
+    </script>
+    <form onsubmit="showLoadingSpinner()" class="register-form" method="POST" action="/attendance-submission">
+      <input
+        required
+        type="text"
+        class="form-control bylaw__input"
+        placeholder="ZHe72k"
+        name="attendanceId"
+      />
+      </div>
+      <% if (!emailSent ) { %>
+      <button type="submit" id="submit-button" class="btn btn-info register-form__submit">
+        Submit Code
+      </button>
+      <div id="loading-spinner" style="display: none;" class="spinner-border text-primary" role="status">
+        <span class="sr-only">Loading...</span>
+      </div>
+      <p style="width: 80%; text-align: center;">Don't Have a Code? Click <a style="text-decoration: underline;" href="/attendance-submission/generate-code/?generateCode=null">Here</a></p>
+      <% } else { %>
+        <div class="alert alert-success register-form__email-sent" role="alert" style="margin-top: 15px;">
+          <p class="register-form__form-caption">
+            Token was recieved! Attendance should be updated in the next few hours.
+        </div>
+      </p>
+      <% } %>
+    </form>
+  </body>
+</html>
