@@ -17,7 +17,7 @@ exports.contactModel = class HandleForm {
         secure: false,
         requireTLS: true,
         auth: {
-          user: 'nhsforeignaffairs@gmail.com',
+          user: '...@gmail.com',
           pass: '...',
         },
       });
