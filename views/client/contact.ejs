@@ -48,16 +48,12 @@
             </div>
             <% } else { %>
               <span style="position: relative;">
-                <button type="btn" class="btn btn-info contact-form__submit"> <img style="margin-right: 5px;" src="https://img.icons8.com/material-sharp/24/000000/filled-sent.png"/>Send</button>
-                <div class="spinner-wrapper" style="position: absolute; top: 0px; left: 120px; display: none;">
-                  <div
-                    id="loading-spinner"
-                    class="spinner-border text-primary"
-                    role="status"
-                  >
+                <span style="position: relative;">
+                  <button type="btn" class="btn btn-info contact-form__submit"> <img style="margin-right: 5px;" src="https://img.icons8.com/material-sharp/24/000000/filled-sent.png"/>Send</button>
+                  <div class="spinner-border text-primary spinner-wrapper" role="status" style="display: none; position: absolute; right: -40px; top: 0px;">
                     <span class="sr-only">Loading...</span>
                   </div>
-                </div>
+                </span>
               </span>
               <% } %>
         </form>
