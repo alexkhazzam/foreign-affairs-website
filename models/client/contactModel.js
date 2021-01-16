@@ -1,13 +1,42 @@
 const nodemailer = require('nodemailer');
 
 exports.contactModel = class HandleForm {
-  constructor(email, firstname, lastname, message, purpose) {
+  constructor(email, firstname, lastname, message, purpose, ipInfo = null) {
     this.email = email;
     this.firstname = firstname;
     this.lastname = lastname;
     this.message = message;
     this.purpose = purpose;
-    this.curse = 'non';
+    this.ipInfo = ipInfo;
+    this.curses = false;
+  }
+  filterCurse() {
+    if (this.email === null) {
+      return;
+    } else {
+      const words = [...this.message.split(' ')];
+      const curseWords = [
+        'fuck',
+        'bitch',
+        'ass',
+        'dick',
+        'sucker',
+        'cock',
+        'pussy',
+        'fatass',
+        'nigger',
+        'spic',
+        'shit',
+        'shreds',
+      ];
+      curseWords.forEach((word) => {
+        words.forEach((wrd) => {
+          if (word === wrd) {
+            this.curses = true;
+          }
+        });
+      });
+    }
   }
   async wrappedSendMail(mailOptions) {
     const promise = new Promise((resolve, reject) => {
@@ -35,7 +64,8 @@ exports.contactModel = class HandleForm {
   async sendEmail() {
     let mailOptions;
     if (this.purpose === 'attendance') {
-      if (this.curse === 'curse') {
+      this.filterCurse();
+      if (this.curses) {
         mailOptions = {
           from: `null`,
           to: 'nhsforeignaffairs@gmail.com',
@@ -51,7 +81,9 @@ exports.contactModel = class HandleForm {
         };
       }
     } else if (this.purpose === 'contact') {
-      if (this.curse === 'curse') {
+      this.filterCurse();
+
+      if (this.curses) {
         mailOptions = {
           from: `null`,
           to: 'nhsforeignaffairs@gmail.com',
@@ -67,7 +99,7 @@ exports.contactModel = class HandleForm {
         };
       }
     } else if (this.purpose === 'website-pinged') {
-      if (this.curse === 'curse') {
+      if (this.curses) {
         mailOptions = {
           from: `null`,
           to: 'nhsforeignaffairs@gmail.com',
@@ -79,11 +111,16 @@ exports.contactModel = class HandleForm {
           from: 'nhsforeignaffairs@gmail.com',
           to: 'nhsforeignaffairs@gmail.com',
           subject: 'Website Pinged',
-          text: 'Someone checked out our website!',
+          text: `
+          Someone checked out our website at the following location:
+
+          ${this.ipInfo}
+          `,
         };
       }
     } else if (this.purpose === 'entertainment') {
-      if (this.curse === 'curse') {
+      this.filterCurse();
+      if (this.curses) {
         mailOptions = {
           from: `null`,
           to: 'nhsforeignaffairs@gmail.com',
@@ -92,7 +129,7 @@ exports.contactModel = class HandleForm {
         };
       } else {
         mailOptions = {
-          from: 'unknown',
+          from: this.email,
           to: 'nhsforeignaffairs@gmail.com',
           subject: 'Entertainment Page Suggestion',
           text: this.email,

@@ -18,7 +18,6 @@ exports.helpModel = class {
     );
 
     this.preMadeRefs = [
-      'Homepage',
       'Contact',
       'Staff',
       'Register',
