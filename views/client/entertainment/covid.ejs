@@ -49,14 +49,14 @@
       </form>
       <% if (searchedCountry === undefined) { %>
         <div style="margin: auto; width: 80%; text-align: center; margin-top: 10%;">
-            <img src="https://img.icons8.com/fluent/96/000000/virus-free.png" height="145" width="145"/>
+            <img src="/assets/icons/viruss.png" height="100" width="100"/>
         </div>
       <% } else { %>
         <% if (countryFound === null) { %>
           <p style="color: white; font-weight: 1.5rem; margin-left: 10%;">Results for "<%= searched %>": 0</p>
           <p style="color: red; text-align: center; margin-top: 10%;">Country Not Found :(</p>
           <div style="margin: auto; width: 80%; text-align: center; margin-top: 10%;">
-            <img src="https://img.icons8.com/fluent/96/000000/virus-free.png" height="145" width="145"/>
+            <img src="/assets/icons/viruss.png" height="100" width="100"/>
           </div>
         <% } else { %>
           <% for (const info in countryFound) { %>

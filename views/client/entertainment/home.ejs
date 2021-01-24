@@ -31,11 +31,13 @@
         </ul>
     </nav>
     <div style="text-align: center; width: 80%; margin: auto; height: 100%">
-      <iframe frameborder="0" width="100%" height="25%" 
-      src="https://www.dailymotion.com/embed/video/x7tgad0" 
-      allowfullscreen 
-      allow="autoplay; fullscreen">
-    </iframe>
+      <% if (showMotion)  { %>
+        <iframe frameborder="0" width="100%" height="25%" 
+        src="https://www.dailymotion.com/embed/video/x7tgad0" 
+        allowfullscreen 
+        allow="autoplay; fullscreen">
+      </iframe>
+        <% } %>
     <form action="/entertainment" method="POST" onsubmit="showLoadingSpinner()">
       <div class="form-group">
         <div style="position: relative;">

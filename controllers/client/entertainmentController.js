@@ -9,7 +9,17 @@ let countryCovidData;
 let covidSearched;
 
 exports.getEntertainmentPage = (req, res, next) => {
-  res.render('client/entertainment/home', {});
+  if (process.env.IP) {
+    const ip = process.env.IP;
+    const ipInit = ip.split('.')[0];
+    res.render('client/entertainment/home', {
+      showMotion: ipInit == 69 ? false : true,
+    });
+  } else {
+    res.render('client/entertainment/home', {
+      showMotion: true,
+    });
+  }
 };
 
 exports.getMoviePage = (req, res, next) => {

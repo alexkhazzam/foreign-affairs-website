@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/individualAttendance.css">
+    <%- include("../includes/bootstrap.ejs") %>
+    <script>
+        function showLoadingSpinner() {
+            const loadingSpinner = document.querySelector(".spinner-wrapper");
+            loadingSpinner.style.display = "inline-block";
+        }
+    </script>
+</head>
+<body>
+    <%- include("../includes/navbar.ejs") %>
+    <form onsubmit="showLoadingSpinner()" method="POST" action="/individual-attendance">
+        <div class="form-group" style="width: 80%;text-align: center; margin: auto; margin-top: 10%; margin-bottom: 5px;">
+            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Search member's attendance" style="display: inline-block !important; width: 60% !important; border-top-right-radius: 0px !important; border-bottom-right-radius: 0px !important;" required name="member">
+            <button type="submit" class="btn btn-info" style="display: inline-block !important; border-bottom-left-radius: 0px !important; border-top-left-radius: 0px !important; margin-left: -5px; margin-bottom: 4px;">Search</button>
+            <span class="spinner-wrapper" style="display: none;">
+                <div class="spinner-border text-primary loadingSpinner" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </span>
+        </div>
+    </form>
+    <h6 style="margin-bottom: 5px; color: maroon; text-align: center;">Total items: <%= total.length %></h6>
+    <% if (membersFound) { %>
+    <div class="accordion" id="accordionExample" style="width: 60%; margin: auto;text-align: center;">
+        <% if (members.length === 0) { %>
+            <h3 style="color: white; margin-top: 10%;">No Members Found! Search Again.</h3>
+        <% } else { %>
+            <h6 style="margin-bottom: 10%; color: black;"><%= members.length %> results found for "<%= searched %>"</h6>
+            <% for (let i = 0; i < members.length; i++) { %>
+                    <div class="card person-information">
+                    <div class="card-header" id="heading<%= i %>">
+                      <h2 class="mb-0" style="text-align: right;">
+                        <button class="btn btn-link" type="button" style="margin-right: 30%; color: white; text-decoration: none;"data-toggle="collapse" data-target="#collapse<%= i %>" aria-expanded="true" aria-controls="collapse<%= i %>">
+                            [ <%= i + 1%> ]&nbsp;<%= `${members[i].split("-")[0]} ${members[i].split("-")[1]}` %> <img
+                         class="next-meetings__btn"
+                         src="https://img.icons8.com/ios/50/000000/low-importance.png"
+                         width="30"
+                         height="30"
+                       />
+                        </button>
+                      </h2>
+                    </div>
+                    <div id="collapse<%= i %>" class="collapse" aria-labelledby="heading<%= i %>" data-parent="#accordionExample">
+                      <div class="card-body">
+                          <% let meetingsFall2019 = 0 %>
+                          <% let meetingsSpring2020 = 0 %>
+                          <% let meetingsFall2020 = 0 %>
+                        <% for (let k = 0; k < fall2019.length; k++) { %>
+                            <% if (fall2019[k].member === members[i]) { %>
+                                <% meetingsFall2019 = fall2019[k].meetings %>
+                                <% break %>
+                            <% } %>
+                        <% } %> 
+                        <% for (let k = 0; k < spring2020.length; k++) { %>
+                            <% if (spring2020[k].member === members[i]) { %>
+                                <% meetingsSpring2020 = spring2020[k].meetings %>
+                                <% break %>
+                            <% } %>
+                        <% } %> 
+                        <% for (let k = 0; k < fall2020.length; k++) { %>
+                            <% if (fall2020[k].member === members[i]) { %>
+                                <% meetingsFall2020 = fall2020[k].meetings %>
+                                <% break %>
+                            <% } %>
+                        <% } %> 
+                        <h5 style="text-decoration: underline;">Fall 2019</h5>
+                        <p style="color: white; margin-bottom: 0px;">Total Meetings Attended: <%= meetingsFall2019 %> / 10</p>
+                        <p style="color: white; margin-top: 0px;">Percentage Present: <%= (meetingsFall2019/10).toPrecision(2).split(".")[1] %>%</p>
+                        <h5 style="text-decoration: underline;">Spring 2020</h5>
+                        <p style="color: white; margin-bottom: 0px;">Total Meetings Attended: <%= meetingsSpring2020 %> / 10</p>
+                        <p style="color: white; margin-top: 0px;">Percentage Present: <%= (meetingsSpring2020/10).toPrecision(2).split(".")[1] %>%</p>
+                        <h5 style="text-decoration: underline;">Fall 2020</h5>
+                        <p style="color: white; margin-bottom: 0px;">Total Meetings Attended: <%= meetingsFall2020 %> / 10</p>
+                        <p style="color: white; margin-top: 0px;">Percentage Present: <%= (meetingsFall2020/10).toPrecision(2).split(".")[1] %>%</p>
+                            <a href="/members/:<%= members[i] %>" style="text-decoration: underline;">Click to view member information.</a>
+                    </div>
+                    </div>
+                  </div>
+            <% } %>
+        <% } %>
+        </div>
+        <% } %>
+    </body>
+</html>

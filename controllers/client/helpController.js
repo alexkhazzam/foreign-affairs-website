@@ -1,14 +1,14 @@
 const helpModel = require('../../models/client/helpModel');
 
 let refs = [];
-let chars = [];
+let matchingRefs = [];
 let searchedVal;
 
 exports.getHelpPage = (req, res, next) => {
   res.render('client/help', {
     links: refs,
     searchedVal: searchedVal,
-    chars: chars,
+    matchingRefs: matchingRefs,
   });
 };
 
@@ -17,7 +17,6 @@ exports.postHelpPage = (req, res, next) => {
   const matchInputs = new helpModel.helpModel(searchedVal);
   const obj = matchInputs.matchPossibleRefs();
   refs = [...obj.matchedRefs];
-  chars = [...obj.chars];
   if (refs.length === 0) {
     res.redirect('/help/?links=fail');
   } else {

@@ -29,7 +29,6 @@ exports.helpModel = class {
       'Entertainment',
     ];
     this.refs = this.preMadeRefs.concat(parsedMemberNames);
-    console.log(this.refs);
     this.matchedRefs = [];
     this.refs.forEach((ref) => {
       if (
@@ -39,16 +38,38 @@ exports.helpModel = class {
         this.matchedRefs.push(ref);
       }
     });
-    const chars = [];
-    for (let i = 0; i <= this.searchedValue.length; i++) {
-      this.matchedRefs.forEach((ref) => {
-        for (let k = 0; k <= ref.length; k++) {
-          if (this.searchedValue.split('')[i] === ref.charAt(k)) {
-            chars.push(ref.charAt(k));
-          }
-        }
-      });
+
+    const words = [];
+    const list = [];
+    for (let i = 0; i < this.matchedRefs.length; i++) {
+      console.log(
+        this.matchedRefs[i].split(
+          this.matchedRefs[i].indexOf([this.searchedValue.length])
+        )
+      );
     }
-    return { matchedRefs: this.matchedRefs, chars: chars };
+
+    return { matchedRefs: this.matchedRefs };
   }
 };
+
+// <% let currentChar %>
+// <% let styleDiff %>
+// <% for (let i = 0; i < matchingRefs.length; i++) { %>
+//   <% for (let k = 0; k < matchingRefs[i].ref.length; k++) { %>
+//     <% for (let j = 0; j < matchingRefs[i].chars.length; j++) { %>
+//       <% if (matchingRefs[i].ref[k] === matchingRefs[i].chars[j]) { %>
+//         <% currentChar = matchingRefs[i].ref[k] %>
+//         <% styleDiff = true %>
+//       <% } else { %>
+//         <% currentChar = matchingRefs[i].ref[k] %>
+//         <% styleDiff = false %>
+//         <% } %>
+//     <% } %>
+//     <% if (styleDiff) { %>
+//       <span style="background-color: aquamarine;"><%= currentChar %></span>
+//     <% } else { %>
+//       <span style="color: black;"><%= currentChar %></span>
+//       <% } %>
+//   <% } %>
+// <% } %>
