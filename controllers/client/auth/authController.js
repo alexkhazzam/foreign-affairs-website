@@ -1,6 +1,6 @@
 const registerModel = require('../../../models/auth/registerModel');
 const confirmationEmail = require('../../../models/auth/confirmationEmail');
-
+fds;
 exports.getRegister = (req, res, next) => {
   const queryObj = [
     req.query.queryFirstName === 'fail' ? true : false,
