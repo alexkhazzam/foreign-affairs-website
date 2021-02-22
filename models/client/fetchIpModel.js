@@ -25,6 +25,7 @@ exports.fetchIpModel = class {
     const promise = new Promise((resolve, reject) => {
       superagent
         .get(
+        // yes, i know i have a key displayed on a public repo, feel free to take it 
           `http://api.ipstack.com/${ip}?access_key=${'5bce7537594b52d327777315eece71e9'}`
         )
         .then((data) => {
