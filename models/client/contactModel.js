@@ -16,18 +16,7 @@ exports.contactModel = class HandleForm {
     } else {
       const words = [...this.message.split(' ')];
       const curseWords = [ // filtering curse words when sent through email
-        'fuck',
-        'bitch',
-        'ass',
-        'dick',
-        'sucker',
-        'cock',
-        'pussy',
-        'fatass',
-        'nigger',
-        'spic',
-        'shit',
-        'shreds',
+        "",
       ];
       curseWords.forEach((word) => {
         words.forEach((wrd) => {
